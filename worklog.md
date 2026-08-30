@@ -82,3 +82,27 @@ Stage Summary:
 - Impressive animated backgrounds (gradient orbs, dot patterns, floating leaves)
 - YouTube iframe video modal already in place from Task 2
 - Lint passes, dev server runs cleanly on port 3000
+
+---
+Task ID: 4
+Agent: main (Z.ai Code)
+Task: Add impressive real images for every product item (researched online), ensure fonts render properly
+
+Work Log:
+- Used image-search skill (z-ai image-search CLI) to find real product images for all 73 products
+- Created descriptive English search queries for each product (e.g., "snake plant sansevieria indoor pot", "NPK 20-20-20 water soluble fertilizer")
+- Ran sequential searches with 8s delays to avoid rate limiting (429 errors); retried failed searches
+- Collected 73/73 image URLs hosted on z-cdn.chatglm.cn (OSS-hosted, stable, embeddable)
+- Added z-cdn.chatglm.cn to next.config.ts images.remotePatterns
+- Added image field to Product type and image URLs to all 73 products in data.ts
+- Rebuilt ProductCard to use Next.js Image component with real product photos, with emoji fallback on error
+- Updated CartDrawer to show real product images in cart items (with emoji fallback)
+- Improved font readability: antialiased rendering, optimizeLegibility, 15px base size, 1.6 line-height, tighter letter-spacing on headings, Bengali ligature features
+- Verified with agent-browser: all 95 images on page load successfully (0 failed), Hind Siliguri Bengali font renders at 15px, cart shows real product images, mobile responsive
+
+Stage Summary:
+- All 73 products now have impressive real images sourced from web image search (fertilizers, seeds, pots, tools, pesticides, indoor plants)
+- ProductCard displays real product photos with smooth hover zoom, emoji fallback on load error
+- Cart drawer shows real product thumbnails
+- Font readability improved: antialiased, optimized legibility, proper Bengali ligatures, 15px base, balanced text wrapping
+- Lint passes, dev server runs cleanly, all images load (95/95), no console errors

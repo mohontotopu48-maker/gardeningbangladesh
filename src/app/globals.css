@@ -119,9 +119,24 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 15px;
+    line-height: 1.6;
   }
   html {
     scroll-behavior: smooth;
+  }
+  /* Ensure Bengali text renders with proper weight */
+  [lang="bn"], .font-bengali {
+    font-feature-settings: "kern", "liga";
+    font-variant-ligatures: common-ligatures;
+  }
+  /* Headings - bolder and tighter for readability */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+    text-wrap: balance;
   }
 }
 

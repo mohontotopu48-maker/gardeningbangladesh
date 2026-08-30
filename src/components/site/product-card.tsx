@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ShoppingBag, Star, Plus, Check } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,7 @@ const lightLabels: Record<string, string> = {
 export function ProductCard({ product, className, index = 0 }: ProductCardProps) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const discount =
     product.originalPrice && product.originalPrice > product.price
@@ -44,6 +46,8 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
   };
+
+  const showImage = product.image && !imgError;
 
   return (
     <motion.div
@@ -63,16 +67,27 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
           product.gradient,
         )}
       >
-        <motion.span
-          className="text-5xl sm:text-6xl select-none drop-shadow-sm"
-          whileHover={{ scale: 1.15, rotate: -3 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          {product.emoji}
-        </motion.span>
+        {showImage ? (
+          <Image
+            src={product.image!}
+            alt={product.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <motion.span
+            className="text-5xl sm:text-6xl select-none drop-shadow-sm"
+            whileHover={{ scale: 1.15, rotate: -3 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {product.emoji}
+          </motion.span>
+        )}
 
         {/* Badges */}
-        <div className="absolute left-2 top-2 flex flex-col gap-1.5">
+        <div className="absolute left-2 top-2 flex flex-col gap-1.5 z-10">
           {product.popular && (
             <span className="inline-flex items-center rounded-full bg-brand-green px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
               🔥 জনপ্রিয়
@@ -95,7 +110,7 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
           onClick={handleAdd}
           whileTap={{ scale: 0.9 }}
           className={cn(
-            "absolute bottom-2 right-2 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full shadow-lg ring-1 transition-all duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
+            "absolute bottom-2 right-2 z-10 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full shadow-lg ring-1 transition-all duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
             added
               ? "bg-brand-green text-white ring-brand-green"
               : "bg-white text-brand-green-dark ring-brand-green/20 hover:bg-brand-green hover:text-white",
@@ -105,7 +120,7 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
           {added ? <Check className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
         </motion.button>
 
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors pointer-events-none" />
       </div>
 
       {/* Content */}

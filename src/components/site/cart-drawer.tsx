@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { X, Plus, Minus, Trash2, ShoppingBag, ArrowLeft, Truck, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart-store";
@@ -132,11 +133,7 @@ export function CartDrawer() {
                         className="flex gap-3 rounded-2xl border border-border bg-card p-3 shadow-sm"
                       >
                         {/* Image */}
-                        <div
-                          className={`relative flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${item.product.gradient}`}
-                        >
-                          <span className="text-3xl">{item.product.emoji}</span>
-                        </div>
+                        <CartItemImage product={item.product} />
                         {/* Info */}
                         <div className="flex flex-1 flex-col gap-1 min-w-0">
                           <h3 className="text-sm font-medium leading-snug text-foreground line-clamp-2">
@@ -259,5 +256,27 @@ export function CartDrawer() {
         </>
       )}
     </AnimatePresence>
+  );
+}
+
+function CartItemImage({ product }: { product: import("@/lib/data").Product }) {
+  const [error, setError] = useState(false);
+  return (
+    <div
+      className={`relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${product.gradient}`}
+    >
+      {product.image && !error ? (
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover"
+          sizes="64px"
+          onError={() => setError(true)}
+        />
+      ) : (
+        <span className="text-3xl">{product.emoji}</span>
+      )}
+    </div>
   );
 }

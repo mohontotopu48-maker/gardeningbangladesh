@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "i.ytimg.com",
       },
+      {
+        protocol: "https",
+        hostname: "sfile.chatglm.cn",
+      },
+      {
+        protocol: "https",
+        hostname: "z-cdn.chatglm.cn",
+      },
     ],
   },
 };
