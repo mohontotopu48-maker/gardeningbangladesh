@@ -205,3 +205,18 @@ Stage Summary:
 - Header banner now uses the 2 new uploaded images (garden view + indoor plants) with updated Bengali content
 - Old mango/rooftop images removed, new images in place
 - Slider fully functional, lint passes
+
+---
+Task ID: 10
+Agent: main (Z.ai Code)
+Task: Replace header banner slider with single uploaded image (pasted_image_1788133776758.png)
+
+Work Log:
+- Copied uploaded image pasted_image_1788133776758.png → public/header-banner.png (550x606, brand green promotional graphic)
+- Rebuilt HeaderBanner component: removed slider, now displays single image as centered banner with rounded corners, shadow-brand-lg, ring, dot pattern background, responsive width
+- Verified with agent-browser: image loads correctly (naturalWidth 412, loaded true), displays on desktop and mobile (390px), no errors, lint passes
+
+Stage Summary:
+- Header banner now shows the single uploaded promotional image (replacing the 2-slide slider)
+- Clean, responsive image banner with premium styling
+- Lint passes, image loads on all viewports
