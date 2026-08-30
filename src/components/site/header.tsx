@@ -90,25 +90,26 @@ export function Header() {
               <Button
                 variant="outline"
                 onClick={() => setTrackOpen(true)}
-                className="hidden sm:flex h-10 text-sm font-medium rounded-full"
+                className="group hidden sm:flex h-10 text-sm font-semibold rounded-full border-brand-green/30 bg-brand-green-tint/50 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all hover:shadow-brand"
               >
-                <MapPin className="h-4 w-4 mr-1.5" />
+                <MapPin className="h-4 w-4 mr-1.5 transition-transform group-hover:scale-110 group-hover:rotate-12" />
                 ট্র্যাক
               </Button>
               <Button
                 onClick={openCart}
-                className="relative h-10 bg-brand-green hover:bg-brand-green-dark text-white shadow-brand rounded-full"
+                className="group relative h-10 overflow-hidden bg-gradient-brand hover:shadow-brand-lg text-white rounded-full transition-all hover:scale-105"
               >
-                <ShoppingBag className="h-4 w-4 mr-1.5" />
-                <span className="hidden sm:inline">কার্ট</span>
+                <ShoppingBag className="h-4 w-4 mr-1.5 transition-transform group-hover:scale-110 group-hover:-rotate-6" />
+                <span className="hidden sm:inline font-semibold">কার্ট</span>
                 <AnimatePresence>
                   {count > 0 && (
                     <motion.span
                       key={count}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      exit={{ scale: 0 }}
-                      className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white text-brand-green-dark px-1.5 text-xs font-bold"
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      exit={{ scale: 0, rotate: 180 }}
+                      transition={{ type: "spring", stiffness: 500, damping: 15 }}
+                      className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white text-brand-green-dark px-1.5 text-xs font-bold shadow-md ring-2 ring-white/30"
                     >
                       {count}
                     </motion.span>
@@ -208,25 +209,27 @@ export function Header() {
             <nav className="flex items-center gap-1 h-11 overflow-visible">
               <MegaMenu />
               <span className="h-4 w-px bg-border mx-1" />
-              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide flex-1">
+              <div className="flex items-center gap-0.5 overflow-x-auto scrollbar-hide flex-1">
                 {categories.map((cat) => (
                   <a
                     key={cat.id}
                     href={`/category/${cat.id}`}
-                    className="px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark hover:bg-white rounded-md transition-colors whitespace-nowrap"
+                    className="group relative px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark rounded-md transition-colors whitespace-nowrap"
                   >
                     {cat.name}
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-gradient-brand rounded-full transition-all duration-300 group-hover:w-3/4" />
                   </a>
                 ))}
               </div>
               <a
                 href="#videos"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-md transition-colors whitespace-nowrap"
+                className="group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-md transition-all whitespace-nowrap hover:shadow-sm"
               >
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="h-4 w-4 transition-transform group-hover:scale-125" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1 1.8.6 9.5.6 9.5.6s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
                 </svg>
                 ভিডিও
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-red-500 rounded-full transition-all duration-300 group-hover:w-3/4" />
               </a>
             </nav>
           </div>

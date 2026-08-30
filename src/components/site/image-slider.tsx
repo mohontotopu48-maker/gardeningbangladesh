@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ZoomIn, X, Expand } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn, X, Expand, ArrowLeft } from "lucide-react";
 
 type Slide = {
   src: string;
@@ -146,15 +146,16 @@ export function ImageSlider() {
               >
                 <a
                   href={slides[current].href}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-brand-green-deep shadow-lg transition-transform hover:scale-105"
+                  className="group inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-brand-green-deep shadow-lg transition-all hover:scale-105 hover:shadow-brand-lg"
                 >
                   {slides[current].cta}
+                  <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 </a>
                 <button
                   onClick={() => setZoomed(current)}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/10 px-4 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                  className="group inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/10 px-4 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-105"
                 >
-                  <ZoomIn className="h-4 w-4" />
+                  <ZoomIn className="h-4 w-4 transition-transform group-hover:scale-125" />
                   জুম করে দেখুন
                 </button>
               </motion.div>
@@ -165,21 +166,21 @@ export function ImageSlider() {
         {/* Arrows */}
         <button
           onClick={() => paginate(-1)}
-          className="absolute left-3 top-1/2 z-20 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm ring-1 ring-white/30 transition-all hover:bg-white/30 hover:scale-110"
+          className="group absolute left-3 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white ring-1 ring-white/40 transition-all hover:bg-white hover:text-brand-green-deep hover:scale-110 hover:shadow-brand-lg"
           aria-label="পূর্ববর্তী"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-0.5" />
         </button>
         <button
           onClick={() => paginate(1)}
-          className="absolute right-3 top-1/2 z-20 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm ring-1 ring-white/30 transition-all hover:bg-white/30 hover:scale-110"
+          className="group absolute right-3 top-1/2 z-20 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white ring-1 ring-white/40 transition-all hover:bg-white hover:text-brand-green-deep hover:scale-110 hover:shadow-brand-lg"
           aria-label="পরবর্তী"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-0.5" />
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 flex items-center gap-2">
+        <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2 flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 backdrop-blur-sm">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -187,10 +188,10 @@ export function ImageSlider() {
                 setDirection(i > current ? 1 : -1);
                 setCurrent(i);
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "w-8 bg-white"
-                  : "w-2 bg-white/50 hover:bg-white/70"
+                  ? "h-2.5 w-8 bg-white shadow-md"
+                  : "h-2.5 w-2.5 bg-white/40 hover:bg-white/70 hover:scale-110"
               }`}
               aria-label={`স্লাইড ${i + 1}`}
             />

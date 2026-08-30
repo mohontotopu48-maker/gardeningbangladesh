@@ -14,6 +14,7 @@ import {
   Home,
   ArrowRight,
   Sparkles,
+  ChevronDown,
   type LucideIcon,
 } from "lucide-react";
 import { categories, products } from "@/lib/data";
@@ -58,9 +59,10 @@ export function MegaMenu() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <button className="flex h-full items-center gap-1.5 px-3 text-sm font-semibold text-brand-green-dark hover:text-brand-green transition-colors whitespace-nowrap">
-        <Home className="h-4 w-4" />
+      <button className="group flex h-full items-center gap-1.5 px-3 text-sm font-bold text-white bg-gradient-brand rounded-lg mx-1 my-0.5 transition-all hover:shadow-brand hover:scale-[1.03] whitespace-nowrap">
+        <Home className="h-4 w-4 transition-transform group-hover:scale-110 group-hover:rotate-12" />
         সব ক্যাটাগরি
+        <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
       </button>
 
       <AnimatePresence>
