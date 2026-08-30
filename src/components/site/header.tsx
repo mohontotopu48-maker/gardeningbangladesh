@@ -167,7 +167,7 @@ export function Header() {
                         className="justify-start h-11 font-medium"
                         onClick={() => setOpen(false)}
                       >
-                        <a href={`#category-${cat.id}`}>{cat.name}</a>
+                        <a href={`/category/${cat.id}`}>{cat.name}</a>
                       </Button>
                     ))}
                     <div className="my-2 h-px bg-border" />
@@ -212,7 +212,7 @@ export function Header() {
                 {categories.map((cat) => (
                   <a
                     key={cat.id}
-                    href={`#category-${cat.id}`}
+                    href={`/category/${cat.id}`}
                     className="px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark hover:bg-white rounded-md transition-colors whitespace-nowrap"
                   >
                     {cat.name}

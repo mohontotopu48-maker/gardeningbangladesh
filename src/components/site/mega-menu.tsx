@@ -102,7 +102,7 @@ export function MegaMenu() {
                         return (
                           <li key={cat.id}>
                             <a
-                              href={`#category-${cat.id}`}
+                              href={`/category/${cat.id}`}
                               onClick={() => setHovered(false)}
                               className="group flex items-center gap-2.5 rounded-lg px-2.5 py-2 transition-colors hover:bg-brand-green-tint"
                             >
@@ -145,7 +145,7 @@ export function MegaMenu() {
                     .map((p) => (
                       <a
                         key={p.id}
-                        href="#category-9"
+                        href="/category/9"
                         onClick={() => setHovered(false)}
                         className="flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-medium text-foreground shadow-sm transition-all hover:shadow-brand hover:-translate-y-0.5"
                       >

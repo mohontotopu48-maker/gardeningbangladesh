@@ -106,3 +106,27 @@ Stage Summary:
 - Cart drawer shows real product thumbnails
 - Font readability improved: antialiased, optimized legibility, proper Bengali ligatures, 15px base, balanced text wrapping
 - Lint passes, dev server runs cleanly, all images load (95/95), no console errors
+
+---
+Task ID: 5
+Agent: main (Z.ai Code)
+Task: Add separate category webpages with iframe/motions/animations/infographics/visuals/CTA/redirect links, and add 3 uploaded images as home slider with click-to-zoom motion
+
+Work Log:
+- Copied 3 uploaded images (gardening_bangladesh_dhaka_rooftop_night.jpg, garden_view_01.jpg, indoor_plants_02.jpg) to public/slide-1.jpg, slide-2.jpg, slide-3.jpg
+- Built ImageSlider component: auto-advancing carousel (6s), Framer Motion slide transitions, content overlay with title/description/CTA, arrow nav, dot indicators, thumbnail strip with zoom hints, click-to-zoom modal with keyboard nav (arrows + escape), full-screen image viewer with caption
+- Added ImageSlider to home page after Hero (before FeaturesStrip)
+- Added CategoryPageContent type + categoryContent data for all 9 categories: hero title/subtitle/description, YouTube video ID, 4 benefits (icon+title+desc), 4 infographics (value+label+icon), 4 usage tips, 3 FAQ items — all in Bengali
+- Created dynamic category page route at /category/[id] (server component awaits params, renders CategoryPageView client component)
+- Built CategoryPageView with sections: CategoryHero (gradient bg + animated background + breadcrumb + CTAs), InfographicStrip (4 animated stat cards), BenefitsSection (4 benefit cards with hover), ProductsSection (full product grid), CategoryYouTube (click-to-play YouTube iframe with thumbnail), UsageGuide (numbered steps), CategoryFaq (accordion), CTASection (gradient card with phone + product links)
+- Split interactive parts (FAQ accordion, YouTube player) into category-interactive.tsx client component to avoid async client component warning
+- Updated all navigation links to point to /category/[id]: mega menu, category strip, header nav, mobile menu, category section headings + "সব দেখুন" buttons
+- Verified with agent-browser: home slider displays 3 images with auto-advance + click-to-zoom modal works; category pages load at /category/1, /category/7, /category/3, /category/9 with all sections (hero, infographics, benefits, products, YouTube iframe plays, FAQ accordion, CTA); add-to-cart works on category pages; mega menu links point to /category/[id]; mobile responsive; lint passes with 0 warnings
+
+Stage Summary:
+- 3-image slider on home page after hero with auto-advance, click-to-zoom full-screen modal, keyboard navigation, thumbnail strip
+- 9 separate category webpages at /category/[id] with: hero banner, animated infographics, benefits cards, full product grid, YouTube iframe video guide, usage guide, FAQ accordion, CTA section
+- All navigation synced: mega menu, category strip, header nav, mobile menu, category sections all link to /category/[id]
+- Framer Motion animations throughout (staggered reveals, hover effects, slide transitions)
+- YouTube iframes on category pages with click-to-play
+- Lint passes (0 errors, 0 warnings), dev server runs cleanly

@@ -1,5 +1,6 @@
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
+import { ImageSlider } from "@/components/site/image-slider";
 import { FeaturesStrip } from "@/components/site/features-strip";
 import { CategoryStrip } from "@/components/site/category-strip";
 import { CategorySection } from "@/components/site/category-section";
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <ImageSlider />
         <FeaturesStrip />
         <CategoryStrip />
 

@@ -18,8 +18,8 @@ export function CategorySection({ category, products }: CategorySectionProps) {
         <div className="mb-5 flex items-end justify-between gap-4 border-b-2 border-brand-green-light pb-3">
           <div className="flex items-center gap-3">
             <span className="h-8 w-1.5 rounded-full bg-gradient-brand" />
-            <div>
-              <h2 className="text-xl font-extrabold text-brand-green-deep sm:text-2xl">
+            <a href={`/category/${category.id}`} className="group">
+              <h2 className="text-xl font-extrabold text-brand-green-deep sm:text-2xl group-hover:text-brand-green transition-colors">
                 {category.name}
               </h2>
               <p className="mt-0.5 text-sm text-muted-foreground">
@@ -28,14 +28,14 @@ export function CategorySection({ category, products }: CategorySectionProps) {
                   {products.length} পণ্য
                 </span>
               </p>
-            </div>
+            </a>
           </div>
           <Button
             variant="ghost"
             asChild
             className="shrink-0 text-sm font-semibold text-brand-green hover:text-brand-green-dark hover:bg-brand-green-light rounded-full"
           >
-            <a href="#products">
+            <a href={`/category/${category.id}`}>
               সব দেখুন
               <ArrowLeft className="h-4 w-4 ml-1" />
             </a>
