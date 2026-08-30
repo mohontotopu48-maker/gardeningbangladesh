@@ -1,16 +1,38 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, Search, ShoppingBag, MapPin, Phone, Truck, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Menu,
+  Search,
+  ShoppingBag,
+  MapPin,
+  Phone,
+  Truck,
+  X,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Logo } from "./logo";
+import { MegaMenu } from "./mega-menu";
+import { TrackDialog } from "./track-dialog";
+import { useCart } from "@/lib/cart-store";
 import { categories, shopInfo } from "@/lib/data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [trackOpen, setTrackOpen] = useState(false);
+  const { open: openCart, totalCount } = useCart();
+  const [count, setCount] = useState(0);
+
+  // Subscribe to cart count for the badge (avoids hydration mismatch)
+  useEffect(() => {
+    return useCart.subscribe((s) => {
+      setCount(s.totalCount());
+    });
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -67,25 +89,31 @@ export function Header() {
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
-                asChild
+                onClick={() => setTrackOpen(true)}
                 className="hidden sm:flex h-10 text-sm font-medium rounded-full"
               >
-                <a href="#track">
-                  <MapPin className="h-4 w-4 mr-1.5" />
-                  ট্র্যাক
-                </a>
+                <MapPin className="h-4 w-4 mr-1.5" />
+                ট্র্যাক
               </Button>
               <Button
-                asChild
-                className="h-10 bg-brand-green hover:bg-brand-green-dark text-white shadow-brand rounded-full"
+                onClick={openCart}
+                className="relative h-10 bg-brand-green hover:bg-brand-green-dark text-white shadow-brand rounded-full"
               >
-                <a href="#cart">
-                  <ShoppingBag className="h-4 w-4 mr-1.5" />
-                  <span className="hidden sm:inline">কার্ট</span>
-                  <span className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white text-brand-green-dark px-1.5 text-xs font-bold">
-                    0
-                  </span>
-                </a>
+                <ShoppingBag className="h-4 w-4 mr-1.5" />
+                <span className="hidden sm:inline">কার্ট</span>
+                <AnimatePresence>
+                  {count > 0 && (
+                    <motion.span
+                      key={count}
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      exit={{ scale: 0 }}
+                      className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white text-brand-green-dark px-1.5 text-xs font-bold"
+                    >
+                      {count}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
               </Button>
 
               {/* Mobile menu */}
@@ -103,6 +131,14 @@ export function Header() {
                 <SheetContent side="right" className="w-[300px] p-0">
                   <div className="flex items-center justify-between p-4 border-b bg-brand-green-tint">
                     <Logo variant="icon" />
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setOpen(false)}
+                      className="rounded-full"
+                    >
+                      <X className="h-5 w-5" />
+                    </Button>
                   </div>
                   {/* Mobile search */}
                   <div className="p-4 border-b">
@@ -137,14 +173,14 @@ export function Header() {
                     <div className="my-2 h-px bg-border" />
                     <Button
                       variant="outline"
-                      asChild
+                      onClick={() => {
+                        setOpen(false);
+                        setTrackOpen(true);
+                      }}
                       className="justify-start h-11"
-                      onClick={() => setOpen(false)}
                     >
-                      <a href="#track">
-                        <MapPin className="h-4 w-4 mr-2" />
-                        ট্র্যাক
-                      </a>
+                      <MapPin className="h-4 w-4 mr-2" />
+                      অর্ডার ট্র্যাক করুন
                     </Button>
                     <Button
                       variant="outline"
@@ -153,7 +189,9 @@ export function Header() {
                       onClick={() => setOpen(false)}
                     >
                       <a href="#videos">
-                        <Youtube className="h-4 w-4 mr-2" />
+                        <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1 1.8.6 9.5.6 9.5.6s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+                        </svg>
                         ভিডিও গাইড
                       </a>
                     </Button>
@@ -164,44 +202,38 @@ export function Header() {
           </div>
         </div>
 
-        {/* Category nav (desktop) */}
+        {/* Category nav (desktop) — with Mega Menu */}
         <div className="hidden lg:block border-t border-brand-green-light/40 bg-brand-green-tint/50">
           <div className="mx-auto max-w-7xl px-4">
-            <nav className="flex items-center gap-1 h-11 overflow-x-auto scrollbar-hide">
-              <a
-                href="#products"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-brand-green-dark hover:text-brand-green transition-colors whitespace-nowrap"
-              >
-                <Menu className="h-4 w-4" />
-                সব পণ্য
-              </a>
+            <nav className="flex items-center gap-1 h-11 overflow-visible">
+              <MegaMenu />
               <span className="h-4 w-px bg-border mx-1" />
-              {categories.map((cat) => (
-                <a
-                  key={cat.id}
-                  href={`#category-${cat.id}`}
-                  className="px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark hover:bg-white rounded-md transition-colors whitespace-nowrap"
-                >
-                  {cat.name}
-                </a>
-              ))}
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide flex-1">
+                {categories.map((cat) => (
+                  <a
+                    key={cat.id}
+                    href={`#category-${cat.id}`}
+                    className="px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark hover:bg-white rounded-md transition-colors whitespace-nowrap"
+                  >
+                    {cat.name}
+                  </a>
+                ))}
+              </div>
+              <a
+                href="#videos"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-md transition-colors whitespace-nowrap"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1 1.8.6 9.5.6 9.5.6s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+                </svg>
+                ভিডিও
+              </a>
             </nav>
           </div>
         </div>
       </div>
-    </header>
-  );
-}
 
-function Youtube({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1 1.8.6 9.5.6 9.5.6s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
-    </svg>
+      <TrackDialog open={trackOpen} onOpenChange={setTrackOpen} />
+    </header>
   );
 }

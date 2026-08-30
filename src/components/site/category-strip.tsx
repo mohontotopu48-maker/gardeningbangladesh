@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   Leaf,
   FlaskConical,
@@ -7,7 +10,7 @@ import {
   Scissors,
   Bug,
   Package,
-  ArrowRight,
+  Home,
   type LucideIcon,
 } from "lucide-react";
 import { categories } from "@/lib/data";
@@ -21,13 +24,20 @@ const iconMap: Record<string, LucideIcon> = {
   Scissors,
   Bug,
   Package,
+  Home,
 };
 
 export function CategoryStrip() {
   return (
-    <section className="bg-white border-b border-brand-green-light/50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-5 flex items-end justify-between">
+    <section className="bg-white border-b border-brand-green-light/50 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 py-8 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="mb-5 flex items-end justify-between"
+        >
           <div>
             <h2 className="text-xl font-extrabold text-brand-green-deep sm:text-2xl">
               কেনাকাটা করুন ক্যাটাগরি অনুযায়ী
@@ -36,17 +46,21 @@ export function CategoryStrip() {
               আপনার বাগানের সব প্রয়োজন এক ছাদে
             </p>
           </div>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-          {categories.map((cat) => {
+        </motion.div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-9 gap-3">
+          {categories.map((cat, i) => {
             const Icon = iconMap[cat.icon] ?? Package;
             return (
-              <a
+              <motion.a
                 key={cat.id}
                 href={`#category-${cat.id}`}
-                className="group relative flex flex-col items-center gap-2.5 rounded-2xl border border-border bg-white p-4 text-center shadow-premium transition-all duration-300 hover:border-brand-green hover:shadow-brand hover:-translate-y-1 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                whileHover={{ y: -4 }}
+                className="group relative flex flex-col items-center gap-2.5 rounded-2xl border border-border bg-white p-4 text-center shadow-premium transition-all duration-300 hover:border-brand-green hover:shadow-brand overflow-hidden"
               >
-                {/* Hover gradient bg */}
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-green-light to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-green-light text-brand-green-dark transition-all duration-300 group-hover:bg-brand-green group-hover:text-white group-hover:scale-110">
                   <Icon className="h-7 w-7" />
@@ -57,7 +71,7 @@ export function CategoryStrip() {
                 <span className="relative text-[10px] text-muted-foreground hidden sm:block">
                   {cat.nameEn}
                 </span>
-              </a>
+              </motion.a>
             );
           })}
         </div>

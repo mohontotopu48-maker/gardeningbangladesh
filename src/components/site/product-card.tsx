@@ -1,21 +1,56 @@
-import { ShoppingBag, Star, Plus } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ShoppingBag, Star, Plus, Check } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/lib/cart-store";
 import type { Product } from "@/lib/data";
 
 type ProductCardProps = {
   product: Product;
   className?: string;
+  index?: number;
 };
 
-export function ProductCard({ product, className }: ProductCardProps) {
+const careLabels: Record<string, string> = {
+  easy: "সহজ যত্ন",
+  medium: "মাঝারি",
+  hard: "বিশেষ যত্ন",
+};
+
+const lightLabels: Record<string, string> = {
+  low: "ছায়ায়",
+  medium: "আলো-ছায়া",
+  bright: "পূর্ণ আলো",
+};
+
+export function ProductCard({ product, className, index = 0 }: ProductCardProps) {
+  const { add } = useCart();
+  const [added, setAdded] = useState(false);
+
   const discount =
     product.originalPrice && product.originalPrice > product.price
-      ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+      ? Math.round(
+          ((product.originalPrice - product.price) / product.originalPrice) * 100,
+        )
       : 0;
 
+  const handleAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    add(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  };
+
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.4) }}
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-premium transition-all duration-300 hover:shadow-lg hover:border-brand-green/40 hover:-translate-y-1",
         className,
@@ -28,9 +63,13 @@ export function ProductCard({ product, className }: ProductCardProps) {
           product.gradient,
         )}
       >
-        <span className="text-5xl sm:text-6xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 select-none drop-shadow-sm">
+        <motion.span
+          className="text-5xl sm:text-6xl select-none drop-shadow-sm"
+          whileHover={{ scale: 1.15, rotate: -3 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           {product.emoji}
-        </span>
+        </motion.span>
 
         {/* Badges */}
         <div className="absolute left-2 top-2 flex flex-col gap-1.5">
@@ -52,12 +91,19 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </div>
 
         {/* Quick add button (appears on hover) */}
-        <button
-          className="absolute bottom-2 right-2 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-white text-brand-green-dark opacity-0 shadow-lg ring-1 ring-brand-green/20 transition-all duration-300 hover:bg-brand-green hover:text-white group-hover:translate-y-0 group-hover:opacity-100"
+        <motion.button
+          onClick={handleAdd}
+          whileTap={{ scale: 0.9 }}
+          className={cn(
+            "absolute bottom-2 right-2 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full shadow-lg ring-1 transition-all duration-300 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
+            added
+              ? "bg-brand-green text-white ring-brand-green"
+              : "bg-white text-brand-green-dark ring-brand-green/20 hover:bg-brand-green hover:text-white",
+          )}
           aria-label="কার্টে যোগ করুন"
         >
-          <Plus className="h-5 w-5" />
-        </button>
+          {added ? <Check className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+        </motion.button>
 
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
       </div>
@@ -78,6 +124,18 @@ export function ProductCard({ product, className }: ProductCardProps) {
           {product.name}
         </h3>
 
+        {/* Care info for indoor plants */}
+        {product.care && (
+          <div className="flex flex-wrap gap-1">
+            <span className="inline-flex items-center rounded-md bg-brand-green-tint px-1.5 py-0.5 text-[10px] font-medium text-brand-green-dark">
+              🌿 {careLabels[product.care]}
+            </span>
+            <span className="inline-flex items-center rounded-md bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
+              ☀️ {lightLabels[product.light || "medium"]}
+            </span>
+          </div>
+        )}
+
         <div className="mt-auto flex items-end justify-between gap-2 pt-1">
           <div className="flex flex-col">
             <div className="flex items-baseline gap-1.5">
@@ -95,13 +153,28 @@ export function ProductCard({ product, className }: ProductCardProps) {
           </div>
           <Button
             size="sm"
-            className="h-8 gap-1 bg-brand-green px-2.5 text-xs font-semibold text-white hover:bg-brand-green-dark shadow-sm rounded-lg"
+            onClick={handleAdd}
+            className={cn(
+              "h-8 gap-1 px-2.5 text-xs font-semibold text-white shadow-sm rounded-lg transition-colors",
+              added
+                ? "bg-brand-green-dark"
+                : "bg-brand-green hover:bg-brand-green-dark",
+            )}
           >
-            <ShoppingBag className="h-3.5 w-3.5" />
-            কিনুন
+            {added ? (
+              <>
+                <Check className="h-3.5 w-3.5" />
+                যোগ হয়েছে
+              </>
+            ) : (
+              <>
+                <ShoppingBag className="h-3.5 w-3.5" />
+                কিনুন
+              </>
+            )}
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

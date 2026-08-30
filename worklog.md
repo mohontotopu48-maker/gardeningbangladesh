@@ -49,3 +49,36 @@ Stage Summary:
 - Premium design: vibrant green theme from logo, gradient hero, glassmorphism, premium shadows/animations, ratings & discount badges, floating call button, newsletter signup
 - Enhanced e-commerce: product ratings/reviews/sold counts, discount % badges, sort by price/rating/popularity, category filter with counts, 61 products
 - Lint passes, dev server runs cleanly on port 3000 with 200 responses
+
+---
+Task ID: 3
+Agent: main (Z.ai Code)
+Task: Add mega menu, more indoor gardening plants, impressive background + navigation, working add-to-cart, working tracking, motions (Framer Motion), and iframes
+
+Work Log:
+- Researched Bangladesh gardening context: 82% of Dhaka households do food production, 28% have rooftop gardens; popular indoor plants = Snake Plant, Money Plant, ZZ Plant, Spider Plant, Peace Lily, Aloe Vera, Areca Palm, Anthurium
+- Added new "ইনডোর প্লান্ট" category (id 9) + 12 indoor plant products with care level (easy/medium/hard), light requirements, and tags
+- Extended Product type with care, light, tags fields; added care/light badges to ProductCard
+- Built Zustand cart store (src/lib/cart-store.ts) with persist middleware (localStorage), add/remove/updateQuantity/clear, totalCount/totalPrice
+- Built CartDrawer: slide-in animation (Framer Motion), free-shipping progress bar, quantity controls, remove, totals (subtotal+delivery+total), checkout button, empty state, scroll lock
+- Built TrackDialog: order tracking modal with form (order ID + phone), simulated API lookup, animated 4-step timeline (অর্ডার গৃহীত → প্যাকেজিং → পথে আছে → ডেলিভারি সম্পন্ন) with check icons + pulse animation
+- Built MegaMenu: 3-column dropdown (সার ও পুষ্টি / গাছ ও বীজ / টুলস ও সুরক্ষা) with category icons + product counts, featured indoor plants strip (Snake/Money/ZZ)
+- Built AnimatedBackground component: hero orbs (animated gradient blurs), dots pattern, floating leaves
+- Built IndoorPlantsHighlight section: dark green gradient bg with dot pattern, benefits cards (air-purifying/low-light/easy-care), 6 indoor plants grid
+- Added Framer Motion animations throughout: Hero (staggered children, floating stats card), CategoryStrip (staggered reveal), ProductCard (whileInView + whileHover), Testimonials (staggered + hover lift), IndoorPlantsHighlight
+- Rewired Header: mega menu in nav, cart button opens drawer with animated count badge, track button opens dialog, mobile sheet menu
+- Updated ProductCard: working add-to-cart (Zustand), "যোগ হয়েছে" confirmation state, care/light badges for indoor plants, motion animations
+- Assembled page with all new sections: Hero → Features → Categories → CategorySections → IndoorPlantsHighlight → Popular → AllProducts → Videos → Testimonials → Newsletter → Footer + CartDrawer + FloatingBar
+- Fixed: added "use client" to hero.tsx (framer-motion requires client component)
+- Verified with agent-browser: mega menu opens on hover showing 3 columns + featured indoor plants; add-to-cart works (item added, drawer opens, count badge updates to 3, quantity controls work, totals calculate correctly); cart persists across page reload (localStorage); order tracking form works (enter ID+phone → animated 4-step timeline shows); mobile responsive (390px) with working cart drawer; lint passes; no console errors
+
+Stage Summary:
+- Working e-commerce cart system with Zustand + localStorage persistence, slide-in drawer, quantity controls, free-shipping progress, totals
+- Working order tracking with form + animated timeline (4 steps)
+- Mega menu navigation (3-column dropdown with category icons, counts, featured products)
+- 12 new indoor plants popular in Bangladesh (Snake Plant, Money Plant, ZZ Plant, Spider Plant, Peace Lily, Aloe Vera, Areca Palm, Anthurium, Rubber Plant, Lucky Bamboo, Cactus, Bird Nest Snake Plant) with care/light info
+- Indoor Plants Highlight section with dark gradient bg + benefits
+- Framer Motion animations throughout (hero staggered reveal, card hover, section reveals, floating elements)
+- Impressive animated backgrounds (gradient orbs, dot patterns, floating leaves)
+- YouTube iframe video modal already in place from Task 2
+- Lint passes, dev server runs cleanly on port 3000

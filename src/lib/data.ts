@@ -23,6 +23,9 @@ export type Product = {
   popular?: boolean;
   isNew?: boolean;
   unit: string;
+  care?: "easy" | "medium" | "hard";
+  light?: "low" | "medium" | "bright";
+  tags?: string[];
 };
 
 export type Testimonial = {
@@ -122,6 +125,15 @@ export const categories: Category[] = [
     description: "বাগানের বিবিধ প্রয়োজনীয় উপকরণ",
     descriptionEn: "Miscellaneous garden essentials",
   },
+  {
+    id: 9,
+    name: "ইনডোর প্লান্ট",
+    nameEn: "Indoor Plants",
+    slug: "indoor-plants",
+    icon: "Home",
+    description: "ঘরের ভেতরের সৌন্দর্য ও বাতাস পরিষ্কার করার গাছ",
+    descriptionEn: "Air-purifying plants for homes & offices",
+  },
 ];
 
 export const products: Product[] = [
@@ -201,6 +213,20 @@ export const products: Product[] = [
   { id: 59, name: "মোটা লাল বালি (১ কেজি)", nameEn: "Coarse Red Sand", price: 40, categoryId: 6, emoji: "🟧", gradient: "from-orange-50 to-red-100", rating: 4.3, reviews: 35, sold: 160, unit: "১ কেজি" },
   { id: 60, name: "গাছের সুতো (৫০ মি)", nameEn: "Plant Tie Wire", price: 40, categoryId: 6, emoji: "🧵", gradient: "from-stone-50 to-amber-100", rating: 4.4, reviews: 38, sold: 170, unit: "৫০ মিটার" },
   { id: 61, name: "ওয়াটারিং ক্যান (৫ লি)", nameEn: "Watering Can 5L", price: 250, originalPrice: 320, categoryId: 6, emoji: "🚰", gradient: "from-blue-50 to-cyan-100", rating: 4.8, reviews: 113, sold: 490, popular: true, unit: "১টি" },
+
+  // ইনডোর প্লান্ট (Indoor Plants) - Category 9 — popular in Bangladesh
+  { id: 62, name: "স্নেক প্লান্ট (Sansevieria)", nameEn: "Snake Plant", price: 350, originalPrice: 450, categoryId: 9, emoji: "🌿", gradient: "from-green-100 to-emerald-200", rating: 4.9, reviews: 234, sold: 890, popular: true, unit: "১টি", care: "easy", light: "low", tags: ["air-purifying", "low-light"] },
+  { id: 63, name: "মানি প্লান্ট (Pothos)", nameEn: "Money Plant", price: 280, originalPrice: 350, categoryId: 9, emoji: "💚", gradient: "from-green-50 to-lime-100", rating: 4.9, reviews: 312, sold: 1240, popular: true, unit: "১টি", care: "easy", light: "low", tags: ["air-purifying", "hanging"] },
+  { id: 64, name: "জেড প্লান্ট (ZZ Plant)", nameEn: "ZZ Plant", price: 450, originalPrice: 550, categoryId: 9, emoji: "🪴", gradient: "from-emerald-50 to-green-100", rating: 4.8, reviews: 156, sold: 520, popular: true, unit: "১টি", care: "easy", light: "low", tags: ["low-maintenance"] },
+  { id: 65, name: "স্পাইডার প্লান্ট", nameEn: "Spider Plant", price: 220, categoryId: 9, emoji: "🕷️", gradient: "from-green-50 to-teal-100", rating: 4.7, reviews: 98, sold: 410, unit: "১টি", care: "easy", light: "medium", tags: ["air-purifying", "hanging"] },
+  { id: 66, name: "পিস লিলি (Peace Lily)", nameEn: "Peace Lily", price: 380, originalPrice: 480, categoryId: 9, emoji: "🕊️", gradient: "from-slate-50 to-green-50", rating: 4.8, reviews: 142, sold: 560, popular: true, unit: "১টি", care: "medium", light: "low", tags: ["flowering", "air-purifying"] },
+  { id: 67, name: "অ্যালোভেরা", nameEn: "Aloe Vera", price: 180, categoryId: 9, emoji: "🌵", gradient: "from-green-50 to-emerald-100", rating: 4.7, reviews: 187, sold: 720, unit: "১টি", care: "easy", light: "bright", tags: ["medicinal", "succulent"] },
+  { id: 68, name: "আরেকা পাম", nameEn: "Areca Palm", price: 550, originalPrice: 700, categoryId: 9, emoji: "🌴", gradient: "from-green-50 to-lime-100", rating: 4.8, reviews: 124, sold: 480, popular: true, unit: "১টি", care: "medium", light: "bright", tags: ["air-purifying", "large"] },
+  { id: 69, name: "অ্যানথুরিয়াম", nameEn: "Anthurium", price: 420, originalPrice: 520, categoryId: 9, emoji: "🌺", gradient: "from-rose-50 to-pink-100", rating: 4.7, reviews: 89, sold: 340, isNew: true, unit: "১টি", care: "medium", light: "medium", tags: ["flowering"] },
+  { id: 70, name: "রাবার প্লান্ট", nameEn: "Rubber Plant", price: 480, categoryId: 9, emoji: "🌳", gradient: "from-emerald-50 to-green-100", rating: 4.7, reviews: 76, sold: 290, isNew: true, unit: "১টি", care: "medium", light: "medium", tags: ["large", "air-purifying"] },
+  { id: 71, name: "লাকি বাঁশ", nameEn: "Lucky Bamboo", price: 150, originalPrice: 200, categoryId: 9, emoji: "🎋", gradient: "from-green-50 to-emerald-50", rating: 4.6, reviews: 167, sold: 650, unit: "১টি", care: "easy", light: "low", tags: ["feng-shui", "water"] },
+  { id: 72, name: "ক্যাকটাস (মিক্সড)", nameEn: "Mixed Cactus", price: 200, categoryId: 9, emoji: "🌵", gradient: "from-amber-50 to-orange-50", rating: 4.5, reviews: 92, sold: 380, unit: "১টি", care: "easy", light: "bright", tags: ["succulent", "low-water"] },
+  { id: 73, name: "বার্ড নেস্ট স্নেক প্লান্ট", nameEn: "Bird Nest Snake Plant", price: 320, categoryId: 9, emoji: "🪺", gradient: "from-green-50 to-emerald-100", rating: 4.7, reviews: 64, sold: 240, isNew: true, unit: "১টি", care: "easy", light: "low", tags: ["air-purifying"] },
 ];
 
 export const testimonials: Testimonial[] = [

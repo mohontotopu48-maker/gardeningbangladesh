@@ -1,7 +1,32 @@
+"use client";
+
 import Image from "next/image";
-import { ArrowLeft, Play, Truck, ShieldCheck, Sprout, Star, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  ArrowLeft,
+  Play,
+  Truck,
+  ShieldCheck,
+  Sprout,
+  Star,
+  Phone,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnimatedBackground } from "./animated-background";
 import { shopInfo } from "@/lib/data";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
 
 export function Hero() {
   return (
@@ -17,80 +42,112 @@ export function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-green-deep/95 via-brand-green-dark/75 to-brand-green/30" />
-        {/* Decorative gradient orbs */}
-        <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-brand-green/30 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-brand-green-bright/20 blur-3xl" />
       </div>
+      <AnimatedBackground variant="hero" />
 
       {/* Content */}
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="flex min-h-[500px] sm:min-h-[560px] flex-col justify-center py-16 sm:py-20 max-w-2xl">
-          <span className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-sm ring-1 ring-white/25">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="flex min-h-[500px] sm:min-h-[560px] flex-col justify-center py-16 sm:py-20 max-w-2xl"
+        >
+          <motion.span
+            variants={item}
+            className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-sm ring-1 ring-white/25"
+          >
             <span className="flex h-1.5 w-1.5 rounded-full bg-brand-green-bright animate-pulse" />
             বাংলাদেশের #১ অনলাইন গার্ডেনিং শপ
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight">
+          </motion.span>
+          <motion.h1
+            variants={item}
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
+          >
             সবুজে বাঁচি
             <br />
             <span className="text-brand-green-bright">প্রতিদিন</span>
-          </h1>
-          <p className="mt-2 text-lg sm:text-xl font-semibold text-white/95">
+          </motion.h1>
+          <motion.p
+            variants={item}
+            className="mt-2 text-lg sm:text-xl font-semibold text-white/95"
+          >
             Grow Green, Live Better 🌱
-          </p>
-          <p className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed max-w-xl">
+          </motion.p>
+          <motion.p
+            variants={item}
+            className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed max-w-xl"
+          >
             {shopInfo.description}
-          </p>
+          </motion.p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-brand-green-deep hover:bg-white/90 font-bold shadow-brand-lg rounded-full h-12 px-7"
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
+            <motion.div
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
             >
-              <a href="#products">
-                এখনই কেনাকাটা করুন
-                <ArrowLeft className="h-4 w-4 ml-1.5" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm rounded-full h-12 px-7 font-semibold"
-            >
-              <a href="#videos">
-                <Play className="h-4 w-4 mr-1.5 fill-white" />
-                ভিডিও দেখুন
-              </a>
-            </Button>
-          </div>
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-brand-green-deep hover:bg-white/90 font-bold shadow-brand-lg rounded-full h-12 px-7"
+              >
+                <a href="#products">
+                  এখনই কেনাকাটা করুন
+                  <ArrowLeft className="h-4 w-4 ml-1.5" />
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/40 bg-white/10 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm rounded-full h-12 px-7 font-semibold"
+              >
+                <a href="#videos">
+                  <Play className="h-4 w-4 mr-1.5 fill-white" />
+                  ভিডিও দেখুন
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
 
           {/* Trust badges */}
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20">
-                <Truck className="h-4 w-4" />
-              </span>
-              সারা দেশে ডেলিভারি
-            </div>
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20">
-                <ShieldCheck className="h-4 w-4" />
-              </span>
-              ১০০% আসল পণ্য
-            </div>
-            <div className="flex items-center gap-2 text-white/90 text-sm">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20">
-                <Sprout className="h-4 w-4" />
-              </span>
-              ছাদ বাগানীদের পছন্দ
-            </div>
-          </div>
-        </div>
+          <motion.div
+            variants={item}
+            className="mt-10 flex flex-wrap gap-x-6 gap-y-3"
+          >
+            {[
+              { icon: Truck, text: "সারা দেশে ডেলিভারি" },
+              { icon: ShieldCheck, text: "১০০% আসল পণ্য" },
+              { icon: Sprout, text: "ছাদ বাগানীদের পছন্দ" },
+            ].map((b, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -2 }}
+                className="flex items-center gap-2 text-white/90 text-sm"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20">
+                  <b.icon className="h-4 w-4" />
+                </span>
+                {b.text}
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
 
         {/* Stats card */}
-        <div className="hidden lg:block absolute right-4 bottom-16 w-72">
-          <div className="rounded-2xl bg-white/95 backdrop-blur-md p-5 shadow-brand-lg">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="hidden lg:block absolute right-4 bottom-16 w-72"
+        >
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="rounded-2xl bg-white/95 backdrop-blur-md p-5 shadow-brand-lg"
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="flex -space-x-1">
                 {["🌱", "🌿", "🪴", "🍃"].map((e, i) => (
@@ -112,7 +169,8 @@ export function Hero() {
                   ))}
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  {shopInfo.stats.rating} রেটিং · {shopInfo.stats.customers} কাস্টমার
+                  {shopInfo.stats.rating} রেটিং · {shopInfo.stats.customers}{" "}
+                  কাস্টমার
                 </p>
               </div>
             </div>
@@ -139,8 +197,8 @@ export function Hero() {
                 অর্ডার করতে কল করুন
               </a>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Bottom wave */}
