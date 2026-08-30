@@ -1,4 +1,5 @@
 import { Header } from "@/components/site/header";
+import { HeaderBanner } from "@/components/site/header-banner";
 import { Hero } from "@/components/site/hero";
 import { ImageSlider } from "@/components/site/image-slider";
 import { FeaturesStrip } from "@/components/site/features-strip";
@@ -20,6 +21,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <HeaderBanner />
         <Hero />
         <ImageSlider />
         <FeaturesStrip />

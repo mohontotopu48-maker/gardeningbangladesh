@@ -169,3 +169,22 @@ Stage Summary:
 - Mega menu group titles now clickable → navigate to collection pages
 - All pages have Framer Motion animations, real product images, synced CTAs
 - Lint passes, dev server runs cleanly
+
+---
+Task ID: 8
+Agent: main (Z.ai Code)
+Task: Add 2 uploaded images (mango, rooftop garden) to header area with proper slide view
+
+Work Log:
+- Copied uploaded images: gardening_bangladesh_mango.jpg → public/header-slide-1.jpg, gardening_bangladesh_rooftop_garden.jpg → public/header-slide-2.jpg
+- Built HeaderBanner component: full-width premium slider placed right after Header (before Hero); 2 slides with image backgrounds, gradient overlays, animated content (badge, title with highlight, description, CTA button); auto-advance every 5.5s; Framer Motion slide transitions (scale + x-offset); premium navigation arrows (backdrop-blur, hover fill white→green, shadow-brand-lg, icon translate); pill-style dots container with bg-black/25 backdrop-blur; slide counter badge (top-right); thumbnail strip at bottom for direct navigation; keyboard arrow support
+- Slide 1 (mango): badge "ফলের বাগান", title "টক-মিষ্টি আমে ভরা আপনার ছাদ", CTA "ফলের বীজ দেখুন" → /category/3
+- Slide 2 (rooftop): badge "ছাদ বাগান", title "সবুজে ভরা আপনার ছাদ", CTA "বাগান শুরু করুন" → /collection/plants-seeds
+- Added HeaderBanner to page.tsx right after Header
+- Verified with agent-browser: both slides display with images loading (4/4 images: 2 slides + 2 thumbnails), navigation arrows work, dots work, auto-advance works, mobile responsive (390px), no errors
+
+Stage Summary:
+- Premium header banner slider with 2 uploaded images (mango + rooftop garden) right after header
+- Auto-advancing slides with Framer Motion transitions, content overlays, CTAs synced to category/collection pages
+- Premium navigation: blur arrows, pill dots, slide counter, thumbnail strip
+- All images load, mobile responsive, lint passes
