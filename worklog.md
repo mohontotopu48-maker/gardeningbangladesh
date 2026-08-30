@@ -188,3 +188,20 @@ Stage Summary:
 - Auto-advancing slides with Framer Motion transitions, content overlays, CTAs synced to category/collection pages
 - Premium navigation: blur arrows, pill dots, slide counter, thumbnail strip
 - All images load, mobile responsive, lint passes
+
+---
+Task ID: 9
+Agent: main (Z.ai Code)
+Task: Replace current header banner images with 2 new uploaded images (garden_view_01, indoor_plants_01)
+
+Work Log:
+- Copied new images: gardening_bangladesh_garden_view_01.jpg → public/header-slide-1.jpg (overwrote mango), gardening_bangladesh_indoor_plants_01.jpg → public/header-slide-2.jpg (overwrote rooftop)
+- Updated HeaderBanner slide content to match new images:
+  - Slide 1: badge "বাগানের দৃশ্য", title "সবুজে ঘেরা আপনার বাগান", CTA "বাগানের পণ্য দেখুন" → #products
+  - Slide 2: badge "ইনডোর প্লান্ট", title "ঘরে সবুজের ছোঁয়া দিন", CTA "ইনডোর প্লান্ট কিনুন" → /category/9
+- Verified with agent-browser: both new images load (3/3: 2 slides + thumbnails), slide content updated, navigation works, no errors
+
+Stage Summary:
+- Header banner now uses the 2 new uploaded images (garden view + indoor plants) with updated Bengali content
+- Old mango/rooftop images removed, new images in place
+- Slider fully functional, lint passes
