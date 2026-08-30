@@ -453,6 +453,118 @@ export const categoryContent: Record<number, CategoryPageContent> = {
   },
 };
 
+export type Collection = {
+  slug: string;
+  title: string;
+  titleEn: string;
+  subtitle: string;
+  description: string;
+  categoryIds: number[];
+  heroImage: string;
+  accent: string;
+  benefits: Benefit[];
+  infographics: Infographic[];
+  youtubeId: string;
+  youtubeTitle: string;
+  highlights: string[];
+};
+
+export const collections: Collection[] = [
+  {
+    slug: "fertilizers",
+    title: "সার ও পুষ্টি",
+    titleEn: "Fertilizers & Nutrition",
+    subtitle: "গাছের সম্পূর্ণ পুষ্টি সমাধান",
+    description:
+      "জৈব সার, রাসায়নিক সার ও রেডি মিক্স মিডিয়া — গাছের প্রতিটি পর্যায়ের পুষ্টির চাহিদা মেটাতে ২১+ ধরনের সার। মাটির উর্বরতা বাড়ায়, ফলন বহুগুণ করে এবং গাছকে সুস্থ রাখে। বাংলাদেশের ছাদ ও বাড়ি বাগানের জন্য আদর্শ পুষ্টি সমাধান।",
+    categoryIds: [1, 7, 8],
+    heroImage: "/footer-bg-1.jpg",
+    accent: "from-amber-500 to-brand-green",
+    benefits: [
+      { icon: "Leaf", title: "সম্পূর্ণ পুষ্টি", desc: "জৈব, রাসায়নিক ও রেডিমিক্স — সব ধরনের সার" },
+      { icon: "TrendingUp", title: "ফলন বহুগুণ", desc: "শাকসবজি ও ফলের পরিমাণ ও মান বৃদ্ধি" },
+      { icon: "Sprout", title: "সুস্থ গাছ", desc: "রোগ প্রতিরোধ ও দ্রুত বৃদ্ধি নিশ্চিত" },
+      { icon: "Recycle", title: "পরিবেশবান্ধব", desc: "প্রাকৃতিক ও নিরাপদ উপাদান" },
+    ],
+    infographics: [
+      { value: "২১+", label: "প্রকার সার", icon: "Package" },
+      { value: "৩x", label: "ফলন বৃদ্ধি", icon: "TrendingUp" },
+      { value: "১৯৮০+", label: "বিক্রি", icon: "ShoppingCart" },
+      { value: "৪.৮", label: "রেটিং", icon: "Star" },
+    ],
+    youtubeId: "obbSK3Of0jk",
+    youtubeTitle: "সার ব্যবহারের সম্পূর্ণ গাইড — জৈব ও রাসায়নিক",
+    highlights: [
+      "জৈব সার মাটির উর্বরতা ও গঠন উন্নত করে",
+      "রাসায়নিক সার দ্রুত ফলাফল নিশ্চিত করে",
+      "রেডিমিক্স সয়েল সরাসরি ব্যবহারযোগ্য",
+      "প্রতিটি গাছের জন্য সঠিক সারের গাইড",
+    ],
+  },
+  {
+    slug: "plants-seeds",
+    title: "গাছ ও বীজ",
+    titleEn: "Plants & Seeds",
+    subtitle: "সবুজের সূচনা এখান থেকে",
+    description:
+      "ইনডোর প্লান্ট, বীজ ও টব — আপনার বাগান শুরুর সম্পূর্ণ সংগ্রহ। ১২+ জাতের এয়ার-পিউরিফাইং ইনডোর প্লান্ট, উচ্চ ফলনশীল বীজ এবং বিভিন্ন মাপের সুন্দর টব। ঘরে সবুজের ছোঁয়া আর ছাদে ফলন — সবকিছুই এক ছাদে।",
+    categoryIds: [9, 3, 2],
+    heroImage: "/slide-3.jpg",
+    accent: "from-brand-green to-emerald-500",
+    benefits: [
+      { icon: "Wind", title: "পরিষ্কার বাতাস", desc: "ইনডোর প্লান্ট বিষাক্ত গ্যাস শোষণ করে" },
+      { icon: "Sprout", title: "উচ্চ অঙ্কুরোদ্গম", desc: "৯০%+ বীজ অঙ্কুরিত হয়" },
+      { icon: "Flower2", title: "সুন্দর টব", desc: "বিভিন্ন মাপের আকর্ষণীয় প্লান্টার" },
+      { icon: "Heart", title: "মানসিক শান্তি", desc: "সবুজ পরিবেশে মন ভালো থাকে" },
+    ],
+    infographics: [
+      { value: "২৮+", label: "প্রকার গাছ/বীজ", icon: "Package" },
+      { value: "১২+", label: "ইনডোর প্লান্ট", icon: "Home" },
+      { value: "২৪০০+", label: "বিক্রি", icon: "ShoppingCart" },
+      { value: "৪.৯", label: "রেটিং", icon: "Star" },
+    ],
+    youtubeId: "g91Trssy0X8",
+    youtubeTitle: "গাছ লাগানো ও যত্নের সম্পূর্ণ গাইড",
+    highlights: [
+      "ইনডোর প্লান্ট ঘরের বাতাস পরিষ্কার রাখে",
+      "হাইব্রিড বীজে প্রচুর ফলন",
+      "বিভিন্ন মাপের টব ও প্লান্টার",
+      "বাংলাদেশের আবহাওয়ার উপযোগী",
+    ],
+  },
+  {
+    slug: "tools-care",
+    title: "টুলস ও সুরক্ষা",
+    titleEn: "Tools & Care",
+    subtitle: "বাগানের যত্ন ও সুরক্ষা",
+    description:
+      "গার্ডেন টুলস, কীটনাশক ও অন্যান্য উপকরণ — বাগানের প্রতিটি কাজকে সহজ ও নিরাপদ করতে ২৪+ ধরনের টুলস ও সুরক্ষা উপকরণ। স্প্রেয়ার, সিকেচার, কীটনাশক, ফেরোমন ফাঁদসহ সবকিছু সারা দেশে ক্যাশ অন ডেলিভারিতে।",
+    categoryIds: [4, 5, 6],
+    heroImage: "/footer-bg-2.jpg",
+    accent: "from-amber-600 to-orange-500",
+    benefits: [
+      { icon: "Wrench", title: "মজবুত টুলস", desc: "উন্নতমানের ও টেকসই গার্ডেন টুলস" },
+      { icon: "Bug", title: "পোকা দূর", desc: "কার্যকর কীটনাশক ও ছত্রাকনাশক" },
+      { icon: "ShieldCheck", title: "গাছের সুরক্ষা", desc: "রোগ-বালাই থেকে গাছ রক্ষা" },
+      { icon: "Coins", title: "সাশ্রয়ী", desc: "সব উপকরণ সাশ্রয়ী মূল্যে" },
+    ],
+    infographics: [
+      { value: "২৪+", label: "টুলস ও উপকরণ", icon: "Package" },
+      { value: "৯৫%", label: "কার্যকারিতা", icon: "Bug" },
+      { value: "১২৭০+", label: "বিক্রি", icon: "ShoppingCart" },
+      { value: "৪.৭", label: "রেটিং", icon: "Star" },
+    ],
+    youtubeId: "tue3K_3Iz48",
+    youtubeTitle: "গার্ডেন টুলস ও কীটনাশক ব্যবহারের গাইড",
+    highlights: [
+      "মজবুত ও আরামদায়ক গার্ডেন টুলস",
+      "কার্যকর কীটনাশক ও ছত্রাকনাশক",
+      "সিডলিং ট্রে, পাথর, ফেরোমন ফাঁদ",
+      "বাগানের সম্পূর্ণ যত্ন ও সুরক্ষা",
+    ],
+  },
+];
+
 export const products: Product[] = [
   // জৈব সার (Organic Fertilizer) - Category 1
   { id: 1, name: "ঝিনুক পাউডার (১ কেজি)", nameEn: "Oyster Shell Powder", price: 60, originalPrice: 80, categoryId: 1, emoji: "🐚", gradient: "from-amber-100 to-orange-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f185ae4d4c7c.jpg", rating: 4.8, reviews: 124, sold: 540, popular: true, unit: "১ কেজি" },

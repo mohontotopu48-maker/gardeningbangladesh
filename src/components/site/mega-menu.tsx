@@ -36,16 +36,19 @@ const menuGroups = [
   {
     title: "সার ও পুষ্টি",
     titleEn: "Fertilizers",
+    slug: "fertilizers",
     cats: [1, 7, 8],
   },
   {
     title: "গাছ ও বীজ",
     titleEn: "Plants & Seeds",
+    slug: "plants-seeds",
     cats: [9, 3, 2],
   },
   {
     title: "টুলস ও সুরক্ষা",
     titleEn: "Tools & Care",
+    slug: "tools-care",
     cats: [4, 5, 6],
   },
 ];
@@ -90,9 +93,14 @@ export function MegaMenu() {
                     <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-brand-green">
                       {group.titleEn}
                     </h3>
-                    <p className="mb-3 text-sm font-semibold text-foreground">
+                    <a
+                      href={`/collection/${group.slug}`}
+                      onClick={() => setHovered(false)}
+                      className="group mb-3 flex items-center gap-1 text-sm font-semibold text-foreground hover:text-brand-green-dark transition-colors"
+                    >
                       {group.title}
-                    </p>
+                      <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-brand-green" />
+                    </a>
                     <ul className="space-y-1">
                       {group.cats.map((catId) => {
                         const cat = categories.find((c) => c.id === catId);
