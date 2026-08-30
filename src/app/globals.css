@@ -44,68 +44,72 @@
 }
 
 :root {
-  --radius: 0.75rem;
-  /* Dream Agro green theme */
+  --radius: 0.875rem;
+  /* Gardening Bangladesh premium green theme — vibrant #3CB44C from logo */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.02 150);
+  --foreground: oklch(0.2 0.02 150);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 150);
+  --card-foreground: oklch(0.2 0.02 150);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 150);
-  /* Primary green #22a74e */
-  --primary: oklch(0.62 0.16 145);
+  --popover-foreground: oklch(0.2 0.02 150);
+  /* Primary vibrant green #3CB44C (from logo) */
+  --primary: oklch(0.68 0.18 142);
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.96 0.02 145);
   --secondary-foreground: oklch(0.25 0.04 145);
   --muted: oklch(0.97 0.01 145);
   --muted-foreground: oklch(0.5 0.02 150);
   /* Light green accent */
-  --accent: oklch(0.95 0.04 145);
-  --accent-foreground: oklch(0.3 0.05 145);
+  --accent: oklch(0.95 0.05 142);
+  --accent-foreground: oklch(0.3 0.06 142);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.01 145);
-  --input: oklch(0.92 0.01 145);
-  --ring: oklch(0.62 0.16 145);
-  --chart-1: oklch(0.62 0.16 145);
+  --border: oklch(0.93 0.01 145);
+  --input: oklch(0.93 0.01 145);
+  --ring: oklch(0.68 0.18 142);
+  --chart-1: oklch(0.68 0.18 142);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.99 0.005 145);
-  --sidebar-foreground: oklch(0.18 0.02 150);
-  --sidebar-primary: oklch(0.62 0.16 145);
+  --sidebar-foreground: oklch(0.2 0.02 150);
+  --sidebar-primary: oklch(0.68 0.18 142);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.95 0.04 145);
-  --sidebar-accent-foreground: oklch(0.3 0.05 145);
-  --sidebar-border: oklch(0.92 0.01 145);
-  --sidebar-ring: oklch(0.62 0.16 145);
+  --sidebar-accent: oklch(0.95 0.05 142);
+  --sidebar-accent-foreground: oklch(0.3 0.06 142);
+  --sidebar-border: oklch(0.93 0.01 145);
+  --sidebar-ring: oklch(0.68 0.18 142);
 
   /* Brand-specific colors */
-  --brand-green: #22a74e;
-  --brand-green-dark: #02521e;
-  --brand-green-light: #e8f5ec;
+  --brand-green: #3CB44C;
+  --brand-green-bright: #4ade80;
+  --brand-green-dark: #1a7a2e;
+  --brand-green-deep: #0d4f1c;
+  --brand-green-light: #e8f7ec;
+  --brand-green-tint: #f0faf2;
   --brand-cream: #f8faf7;
+  --brand-gold: #F59E0B;
 }
 
 .dark {
-  --background: oklch(0.15 0.02 150);
+  --background: oklch(0.16 0.02 150);
   --foreground: oklch(0.97 0.01 145);
-  --card: oklch(0.2 0.02 150);
+  --card: oklch(0.21 0.02 150);
   --card-foreground: oklch(0.97 0.01 145);
-  --popover: oklch(0.2 0.02 150);
+  --popover: oklch(0.21 0.02 150);
   --popover-foreground: oklch(0.97 0.01 145);
-  --primary: oklch(0.62 0.16 145);
+  --primary: oklch(0.68 0.18 142);
   --primary-foreground: oklch(0.15 0.02 150);
   --secondary: oklch(0.26 0.02 150);
   --secondary-foreground: oklch(0.97 0.01 145);
   --muted: oklch(0.26 0.02 150);
   --muted-foreground: oklch(0.7 0.02 145);
-  --accent: oklch(0.3 0.03 145);
+  --accent: oklch(0.3 0.04 142);
   --accent-foreground: oklch(0.97 0.01 145);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.62 0.16 145);
+  --ring: oklch(0.68 0.18 142);
 }
 
 @layer base {
@@ -121,7 +125,7 @@
   }
 }
 
-/* Custom utilities for Dream Agro brand */
+/* Custom utilities for Gardening Bangladesh brand */
 @layer utilities {
   .text-brand-green {
     color: var(--brand-green);
@@ -129,20 +133,78 @@
   .text-brand-green-dark {
     color: var(--brand-green-dark);
   }
+  .text-brand-green-deep {
+    color: var(--brand-green-deep);
+  }
+  .text-brand-gold {
+    color: var(--brand-gold);
+  }
   .bg-brand-green {
     background-color: var(--brand-green);
   }
   .bg-brand-green-dark {
     background-color: var(--brand-green-dark);
   }
+  .bg-brand-green-deep {
+    background-color: var(--brand-green-deep);
+  }
   .bg-brand-green-light {
     background-color: var(--brand-green-light);
+  }
+  .bg-brand-green-tint {
+    background-color: var(--brand-green-tint);
   }
   .bg-brand-cream {
     background-color: var(--brand-cream);
   }
+  .bg-brand-gold {
+    background-color: var(--brand-gold);
+  }
   .border-brand-green {
     border-color: var(--brand-green);
+  }
+  .ring-brand-green {
+    --tw-ring-color: var(--brand-green);
+  }
+  /* Premium gradient backgrounds */
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+  }
+  .bg-gradient-brand-deep {
+    background: linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green-deep) 100%);
+  }
+  .bg-gradient-hero {
+    background: linear-gradient(120deg, #0d4f1c 0%, #1a7a2e 45%, #3CB44C 100%);
+  }
+  .text-gradient-brand {
+    background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glass-dark {
+    background: rgba(13, 79, 28, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  /* Premium shadows */
+  .shadow-brand {
+    box-shadow: 0 8px 30px -8px rgba(60, 180, 76, 0.35);
+  }
+  .shadow-brand-lg {
+    box-shadow: 0 20px 50px -12px rgba(60, 180, 76, 0.4);
+  }
+  .shadow-soft {
+    box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.08);
+  }
+  .shadow-premium {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 30px -6px rgba(0,0,0,0.08);
   }
   /* Hide scrollbar for category strips */
   .scrollbar-hide {
@@ -170,5 +232,38 @@
   }
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
     background-color: var(--brand-green);
+  }
+  /* Premium animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(60, 180, 76, 0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(60, 180, 76, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(60, 180, 76, 0); }
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 2s infinite;
+  }
+  /* Premium card hover */
+  .card-hover {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
   }
 }

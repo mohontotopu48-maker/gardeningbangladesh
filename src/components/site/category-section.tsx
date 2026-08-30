@@ -15,19 +15,25 @@ export function CategorySection({ category, products }: CategorySectionProps) {
     <section id={`category-${category.id}`} className="scroll-mt-24">
       <div className="mx-auto max-w-7xl px-4 py-8">
         {/* Section header */}
-        <div className="mb-5 flex items-end justify-between gap-4 border-b border-border pb-3">
-          <div>
-            <h2 className="text-xl font-bold text-brand-green-dark sm:text-2xl">
-              {category.name}
-            </h2>
-            <p className="mt-0.5 text-sm text-muted-foreground">
-              {category.description}
-            </p>
+        <div className="mb-5 flex items-end justify-between gap-4 border-b-2 border-brand-green-light pb-3">
+          <div className="flex items-center gap-3">
+            <span className="h-8 w-1.5 rounded-full bg-gradient-brand" />
+            <div>
+              <h2 className="text-xl font-extrabold text-brand-green-deep sm:text-2xl">
+                {category.name}
+              </h2>
+              <p className="mt-0.5 text-sm text-muted-foreground">
+                {category.description} ·{" "}
+                <span className="text-brand-green font-medium">
+                  {products.length} পণ্য
+                </span>
+              </p>
+            </div>
           </div>
           <Button
             variant="ghost"
             asChild
-            className="shrink-0 text-sm font-medium text-brand-green hover:text-brand-green-dark hover:bg-brand-green-light"
+            className="shrink-0 text-sm font-semibold text-brand-green hover:text-brand-green-dark hover:bg-brand-green-light rounded-full"
           >
             <a href="#products">
               সব দেখুন

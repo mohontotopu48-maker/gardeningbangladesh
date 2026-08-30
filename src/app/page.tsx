@@ -1,11 +1,15 @@
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
+import { FeaturesStrip } from "@/components/site/features-strip";
 import { CategoryStrip } from "@/components/site/category-strip";
 import { CategorySection } from "@/components/site/category-section";
 import { PopularProducts } from "@/components/site/popular-products";
 import { AllProducts } from "@/components/site/all-products";
+import { VideoSection } from "@/components/site/video-section";
 import { Testimonials } from "@/components/site/testimonials";
+import { Newsletter } from "@/components/site/newsletter";
 import { Footer } from "@/components/site/footer";
+import { FloatingBar } from "@/components/site/floating-bar";
 import { categories, products } from "@/lib/data";
 
 export default function Home() {
@@ -14,6 +18,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <FeaturesStrip />
         <CategoryStrip />
 
         {categories.map((category) => {
@@ -31,9 +36,12 @@ export default function Home() {
 
         <PopularProducts />
         <AllProducts />
+        <VideoSection />
         <Testimonials />
+        <Newsletter />
       </main>
       <Footer />
+      <FloatingBar />
     </div>
   );
 }

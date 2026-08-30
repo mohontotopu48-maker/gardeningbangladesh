@@ -11,29 +11,38 @@ const hindSiliguri = Hind_Siliguri({
 });
 
 export const metadata: Metadata = {
-  title: "ড্রিম এগ্রো — সবুজে বাঁচি প্রতিদিন",
+  title: "Gardening Bangladesh — সবুজে বাঁচি প্রতিদিন | সার, বীজ ও কৃষি উপকরণ",
   description:
-    "ড্রিম এগ্রো সারা বাংলাদেশে ছাদ বাগানীদের হাতে সেরা মানের সার, বীজ ও কৃষি উপকরণ পৌঁছে দিতে কাজ করছে।",
+    "বাংলাদেশের #১ অনলাইন গার্ডেনিং শপ। জৈব সার, রাসায়নিক সার, বীজ, টব, গার্ডেন টুলস ও কীটনাশক — ক্যাশ অন ডেলিভারিতে সারা দেশে। Gardening Bangladesh.",
   keywords: [
-    "ড্রিম এগ্রো",
+    "Gardening Bangladesh",
+    "gardeningbangladesh",
     "ছাদ বাগান",
     "জৈব সার",
     "বীজ",
     "কৃষি উপকরণ",
+    "রাসায়নিক সার",
     "ক্যাশ অন ডেলিভারি",
     "বাংলাদেশ",
+    "rooftop gardening Bangladesh",
   ],
-  authors: [{ name: "ড্রিম এগ্রো" }],
+  authors: [{ name: "Gardening Bangladesh" }],
   icons: {
-    icon: "/logo.svg",
+    icon: "/gb-logo.png",
+    appleIcon: "/gb-logo.jpg",
   },
   openGraph: {
-    title: "ড্রিম এগ্রো — সবুজে বাঁচি প্রতিদিন",
+    title: "Gardening Bangladesh — সবুজে বাঁচি প্রতিদিন",
     description:
-      "ড্রিম এগ্রো সারা বাংলাদেশে ছাদ বাগানীদের হাতে সেরা মানের সার, বীজ ও কৃষি উপকরণ পৌঁছে দিতে কাজ করছে।",
-    siteName: "ড্রিম এগ্রো",
+      "বাংলাদেশের #১ অনলাইন গার্ডেনিং শপ। সার, বীজ ও কৃষি উপকরণ — ক্যাশ অন ডেলিভারিতে সারা দেশে।",
+    siteName: "Gardening Bangladesh",
     type: "website",
     locale: "bn_BD",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gardening Bangladesh",
+    description: "বাংলাদেশের #১ অনলাইন গার্ডেনিং শপ",
   },
 };
 

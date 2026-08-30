@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ShoppingBag, MapPin, Leaf, Phone } from "lucide-react";
+import { Menu, Search, ShoppingBag, MapPin, Phone, Truck, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Logo } from "./logo";
 import { categories, shopInfo } from "@/lib/data";
 
 export function Header() {
@@ -18,151 +20,188 @@ export function Header() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full border-b transition-shadow duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-brand-green-light"
-          : "bg-white border-border"
-      }`}
-    >
-      {/* Top bar */}
-      <div className="hidden md:block bg-brand-green-dark text-white">
+    <header className="sticky top-0 z-50 w-full">
+      {/* Announcement bar */}
+      <div className="bg-gradient-brand-deep text-white">
         <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-9 text-xs">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5">
+            <span className="hidden sm:flex items-center gap-1.5">
               <Phone className="h-3.5 w-3.5" />
               {shopInfo.phone}
             </span>
-            <span className="flex items-center gap-1.5 opacity-90">
-              <MapPin className="h-3.5 w-3.5" />
-              {shopInfo.address}
+            <span className="flex items-center gap-1.5 opacity-95">
+              <Truck className="h-3.5 w-3.5" />
+              ক্যাশ অন ডেলিভারি — সারা বাংলাদেশে
             </span>
           </div>
-          <span className="opacity-90">ক্যাশ অন ডেলিভারি সারা বাংলাদেশে</span>
+          <span className="hidden md:block opacity-90 font-medium">
+            🌱 {shopInfo.subtitle}
+          </span>
         </div>
       </div>
 
       {/* Main header */}
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="flex h-16 items-center justify-between gap-4">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 shrink-0">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green text-white shadow-md shadow-brand-green/30">
-              <Leaf className="h-5 w-5" />
-            </span>
-            <span className="flex flex-col leading-tight">
-              <span className="text-lg font-bold text-brand-green-dark">
-                {shopInfo.name}
-              </span>
-              <span className="text-[10px] text-muted-foreground -mt-0.5">
-                {shopInfo.tagline}
-              </span>
-            </span>
-          </a>
+      <div
+        className={`w-full border-b transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-soft border-brand-green-light"
+            : "bg-white border-border"
+        }`}
+      >
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="flex h-18 items-center justify-between gap-4 py-3">
+            <Logo />
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            <Button variant="ghost" asChild className="text-sm font-medium">
-              <a href="#products">সব পণ্য</a>
-            </Button>
-            {categories.slice(0, 6).map((cat) => (
+            {/* Search (desktop) */}
+            <div className="hidden md:flex flex-1 max-w-md mx-4">
+              <div className="relative w-full group">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-brand-green transition-colors" />
+                <Input
+                  placeholder="সার, বীজ, টব খুঁজুন..."
+                  className="pl-9 pr-4 h-11 bg-brand-green-tint border-brand-green-light/50 focus-visible:ring-brand-green rounded-full"
+                />
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2">
               <Button
-                key={cat.id}
-                variant="ghost"
+                variant="outline"
                 asChild
-                className="text-sm font-medium"
+                className="hidden sm:flex h-10 text-sm font-medium rounded-full"
               >
-                <a href={`#category-${cat.id}`}>{cat.name}</a>
+                <a href="#track">
+                  <MapPin className="h-4 w-4 mr-1.5" />
+                  ট্র্যাক
+                </a>
               </Button>
-            ))}
-          </nav>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              asChild
-              className="hidden sm:flex text-sm font-medium"
-            >
-              <a href="#track">
-                <MapPin className="h-4 w-4 mr-1.5" />
-                ট্র্যাক
-              </a>
-            </Button>
-            <Button
-              asChild
-              className="bg-brand-green hover:bg-brand-green-dark text-white shadow-sm"
-            >
-              <a href="#cart">
-                <ShoppingBag className="h-4 w-4 mr-1.5" />
-                <span className="hidden sm:inline">কার্ট</span>
-                <span className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white/25 px-1.5 text-xs font-bold">
-                  0
-                </span>
-              </a>
-            </Button>
-
-            {/* Mobile menu */}
-            <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="lg:hidden"
-                  aria-label="মেনু"
-                >
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] p-0">
-                <div className="flex items-center justify-between p-4 border-b">
-                  <span className="flex items-center gap-2">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-green text-white">
-                      <Leaf className="h-5 w-5" />
-                    </span>
-                    <span className="font-bold text-brand-green-dark">
-                      {shopInfo.name}
-                    </span>
+              <Button
+                asChild
+                className="h-10 bg-brand-green hover:bg-brand-green-dark text-white shadow-brand rounded-full"
+              >
+                <a href="#cart">
+                  <ShoppingBag className="h-4 w-4 mr-1.5" />
+                  <span className="hidden sm:inline">কার্ট</span>
+                  <span className="ml-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white text-brand-green-dark px-1.5 text-xs font-bold">
+                    0
                   </span>
-                </div>
-                <nav className="flex flex-col gap-1 p-3 overflow-y-auto">
+                </a>
+              </Button>
+
+              {/* Mobile menu */}
+              <Sheet open={open} onOpenChange={setOpen}>
+                <SheetTrigger asChild>
                   <Button
                     variant="ghost"
-                    asChild
-                    className="justify-start"
-                    onClick={() => setOpen(false)}
+                    size="icon"
+                    className="lg:hidden h-10 w-10"
+                    aria-label="মেনু"
                   >
-                    <a href="#products">সব পণ্য</a>
+                    <Menu className="h-5 w-5" />
                   </Button>
-                  {categories.map((cat) => (
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] p-0">
+                  <div className="flex items-center justify-between p-4 border-b bg-brand-green-tint">
+                    <Logo variant="icon" />
+                  </div>
+                  {/* Mobile search */}
+                  <div className="p-4 border-b">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        placeholder="পণ্য খুঁজুন..."
+                        className="pl-9 bg-brand-green-tint border-brand-green-light/50 focus-visible:ring-brand-green rounded-full"
+                      />
+                    </div>
+                  </div>
+                  <nav className="flex flex-col gap-1 p-3 overflow-y-auto max-h-[60vh]">
                     <Button
-                      key={cat.id}
                       variant="ghost"
                       asChild
-                      className="justify-start"
+                      className="justify-start h-11 font-medium"
                       onClick={() => setOpen(false)}
                     >
-                      <a href={`#category-${cat.id}`}>{cat.name}</a>
+                      <a href="#products">সব পণ্য</a>
                     </Button>
-                  ))}
-                  <div className="my-2 h-px bg-border" />
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="justify-start"
-                    onClick={() => setOpen(false)}
-                  >
-                    <a href="#track">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      ট্র্যাক
-                    </a>
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
+                    {categories.map((cat) => (
+                      <Button
+                        key={cat.id}
+                        variant="ghost"
+                        asChild
+                        className="justify-start h-11 font-medium"
+                        onClick={() => setOpen(false)}
+                      >
+                        <a href={`#category-${cat.id}`}>{cat.name}</a>
+                      </Button>
+                    ))}
+                    <div className="my-2 h-px bg-border" />
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="justify-start h-11"
+                      onClick={() => setOpen(false)}
+                    >
+                      <a href="#track">
+                        <MapPin className="h-4 w-4 mr-2" />
+                        ট্র্যাক
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="justify-start h-11"
+                      onClick={() => setOpen(false)}
+                    >
+                      <a href="#videos">
+                        <Youtube className="h-4 w-4 mr-2" />
+                        ভিডিও গাইড
+                      </a>
+                    </Button>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+        </div>
+
+        {/* Category nav (desktop) */}
+        <div className="hidden lg:block border-t border-brand-green-light/40 bg-brand-green-tint/50">
+          <div className="mx-auto max-w-7xl px-4">
+            <nav className="flex items-center gap-1 h-11 overflow-x-auto scrollbar-hide">
+              <a
+                href="#products"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-brand-green-dark hover:text-brand-green transition-colors whitespace-nowrap"
+              >
+                <Menu className="h-4 w-4" />
+                সব পণ্য
+              </a>
+              <span className="h-4 w-px bg-border mx-1" />
+              {categories.map((cat) => (
+                <a
+                  key={cat.id}
+                  href={`#category-${cat.id}`}
+                  className="px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark hover:bg-white rounded-md transition-colors whitespace-nowrap"
+                >
+                  {cat.name}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
       </div>
     </header>
+  );
+}
+
+function Youtube({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1 1.8.6 9.5.6 9.5.6s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+    </svg>
   );
 }
