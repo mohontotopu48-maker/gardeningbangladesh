@@ -878,6 +878,7 @@ export const footerLinks = {
   ],
   company: [
     { label: "আমাদের গল্প", href: "#about" },
+    { label: "সদস্যপদ", href: "/membership" },
     { label: "ভিডিও গাইড", href: "#videos" },
     { label: "কাস্টমার রিভিউ", href: "#testimonials" },
     { label: "যোগাযোগ", href: "#contact" },

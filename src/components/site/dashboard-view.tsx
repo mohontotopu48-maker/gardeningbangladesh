@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ShoppingBag, Users, DollarSign, Clock, Package, TrendingUp,
   Search, RefreshCw, Phone, MapPin, ChevronDown, X, CheckCircle2,
-  Truck, PackageCheck, Home as HomeIcon, AlertCircle, ArrowLeft,
+  Truck, PackageCheck, Home as HomeIcon, AlertCircle, ArrowLeft, Crown,
   type LucideIcon,
 } from "lucide-react";
 import { Header } from "@/components/site/header";
@@ -59,9 +59,10 @@ const statusConfig: Record<OrderStatus, { label: string; color: string; bg: stri
 };
 
 export function DashboardView() {
-  const [tab, setTab] = useState<"orders" | "customers">("orders");
+  const [tab, setTab] = useState<"orders" | "customers" | "memberships">("orders");
   const [orders, setOrders] = useState<Order[]>([]);
   const [customers, setCustomers] = useState<any[]>([]);
+  const [memberships, setMemberships] = useState<any[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -96,16 +97,28 @@ export function DashboardView() {
     }
   }, [search]);
 
+  const fetchMemberships = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/memberships?search=${encodeURIComponent(search)}`);
+      const data = await res.json();
+      setMemberships(data.memberships || []);
+    } catch (e) {
+      console.error(e);
+    }
+  }, [search]);
+
   useEffect(() => {
     // Data fetching effect — setState here is standard pattern for async data loading
     /* eslint-disable react-hooks/set-state-in-effect */
     if (tab === "orders") {
       fetchData();
-    } else {
+    } else if (tab === "customers") {
       fetchCustomers();
+    } else if (tab === "memberships") {
+      fetchMemberships();
     }
     /* eslint-enable react-hooks/set-state-in-effect */
-  }, [tab, fetchData, fetchCustomers]);
+  }, [tab, fetchData, fetchCustomers, fetchMemberships]);
 
   const updateStatus = async (orderId: string, status: OrderStatus) => {
     setUpdating(true);
@@ -179,6 +192,15 @@ export function DashboardView() {
           >
             কাস্টমার ({customers.length})
           </button>
+          <button
+            onClick={() => setTab("memberships")}
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+              tab === "memberships" ? "bg-brand-green text-white" : "bg-white text-foreground border border-border"
+            }`}
+          >
+            <Crown className="h-3.5 w-3.5 inline mr-1" />
+            সদস্যপদ ({memberships.length})
+          </button>
         </div>
 
         {/* Search + filter */}
@@ -218,8 +240,10 @@ export function DashboardView() {
           </div>
         ) : tab === "orders" ? (
           <OrdersTable orders={orders} onSelect={setSelectedOrder} onStatusChange={updateStatus} updating={updating} />
-        ) : (
+        ) : tab === "customers" ? (
           <CustomersTable customers={customers} />
+        ) : (
+          <MembershipsTable memberships={memberships} />
         )}
       </main>
 
@@ -384,6 +408,74 @@ function CustomersTable({ customers }: { customers: any[] }) {
                 </td>
               </motion.tr>
             ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function MembershipsTable({ memberships }: { memberships: any[] }) {
+  if (memberships.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16 text-muted-foreground">
+        <Crown className="h-12 w-12 mb-2" />
+        <p>কোনো সদস্যপদের আবেদন নেই</p>
+      </div>
+    );
+  }
+  const planLabels: Record<string, string> = {
+    monthly: "মাসিক (২৫০৳)",
+    lifetime: "এককালীন (১৫০৳)",
+  };
+  const statusLabels: Record<string, { label: string; bg: string; color: string }> = {
+    pending: { label: "অপেক্ষমান", bg: "bg-amber-100", color: "text-amber-700" },
+    active: { label: "সক্রিয়", bg: "bg-brand-green-light", color: "text-brand-green-dark" },
+    expired: { label: "মেয়াদ শেষ", bg: "bg-red-100", color: "text-red-700" },
+    cancelled: { label: "বাতিল", bg: "bg-gray-100", color: "text-gray-700" },
+  };
+  return (
+    <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-premium">
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead className="bg-amber-50">
+            <tr className="text-left">
+              <th className="p-3 font-semibold">সদস্য কোড</th>
+              <th className="p-3 font-semibold">নাম</th>
+              <th className="p-3 font-semibold">ফোন</th>
+              <th className="p-3 font-semibold">প্ল্যান</th>
+              <th className="p-3 font-semibold">মূল্য</th>
+              <th className="p-3 font-semibold">স্ট্যাটাস</th>
+              <th className="p-3 font-semibold">তারিখ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {memberships.map((m, i) => {
+              const cfg = statusLabels[m.status] || statusLabels.pending;
+              return (
+                <motion.tr
+                  key={m.id}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: Math.min(i * 0.03, 0.3) }}
+                  className="border-t border-border hover:bg-amber-50/50"
+                >
+                  <td className="p-3 font-mono text-xs font-bold text-amber-700">{m.memberCode}</td>
+                  <td className="p-3 font-medium">{m.name}</td>
+                  <td className="p-3">{m.phone}</td>
+                  <td className="p-3 text-xs">{planLabels[m.plan] || m.plan}</td>
+                  <td className="p-3 font-bold">{m.amount}৳</td>
+                  <td className="p-3">
+                    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${cfg.bg} ${cfg.color}`}>
+                      {cfg.label}
+                    </span>
+                  </td>
+                  <td className="p-3 text-xs text-muted-foreground">
+                    {new Date(m.createdAt).toLocaleDateString("bn-BD")}
+                  </td>
+                </motion.tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

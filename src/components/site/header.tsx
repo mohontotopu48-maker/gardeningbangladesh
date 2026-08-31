@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Sprout,
   Gift,
+  Crown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -224,6 +225,17 @@ export function Header() {
                         ভিডিও গাইড
                       </a>
                     </Button>
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="justify-start h-11 border-amber-300 bg-amber-50 text-amber-700 hover:bg-amber-100"
+                      onClick={() => setOpen(false)}
+                    >
+                      <a href="/membership">
+                        <Crown className="h-4 w-4 mr-2" />
+                        সদস্যপদ (১৫০৳)
+                      </a>
+                    </Button>
                   </nav>
                 </SheetContent>
               </Sheet>
@@ -258,6 +270,13 @@ export function Header() {
                 </svg>
                 ভিডিও
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-red-500 rounded-full transition-all duration-300 group-hover:w-3/4" />
+              </a>
+              <a
+                href="/membership"
+                className="group flex items-center gap-1.5 px-3 py-1.5 text-sm font-bold text-white bg-gradient-to-r from-amber-500 to-orange-600 hover:shadow-md rounded-md transition-all whitespace-nowrap"
+              >
+                <Crown className="h-4 w-4 transition-transform group-hover:scale-110" />
+                সদস্যপদ
               </a>
             </nav>
           </div>
