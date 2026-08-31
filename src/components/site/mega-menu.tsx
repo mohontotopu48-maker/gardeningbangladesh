@@ -12,6 +12,7 @@ import {
   Bug,
   Package,
   Home,
+  TreePine,
   ArrowRight,
   Sparkles,
   ChevronDown,
@@ -29,6 +30,7 @@ const iconMap: Record<string, LucideIcon> = {
   Bug,
   Package,
   Home,
+  TreePine,
 };
 
 // Group categories into mega menu columns
@@ -40,10 +42,10 @@ const menuGroups = [
     cats: [1, 7, 8],
   },
   {
-    title: "গাছ ও বীজ",
+    title: "প্লান্ট ও বীজ",
     titleEn: "Plants & Seeds",
     slug: "plants-seeds",
-    cats: [9, 3, 2],
+    cats: [9, 10, 3, 2],
   },
   {
     title: "টুলস ও সুরক্ষা",

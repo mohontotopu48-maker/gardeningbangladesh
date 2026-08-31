@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ShoppingBag, Star, Plus, Check } from "lucide-react";
+import { ShoppingBag, Star, Plus, Check, Heart, Eye } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -31,6 +31,7 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
   const { add } = useCart();
   const [added, setAdded] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const [wished, setWished] = useState(false);
 
   const discount =
     product.originalPrice && product.originalPrice > product.price
@@ -89,21 +90,55 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
         {/* Badges */}
         <div className="absolute left-2 top-2 flex flex-col gap-1.5 z-10">
           {product.popular && (
-            <span className="inline-flex items-center rounded-full bg-brand-green px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+            <motion.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              className="inline-flex items-center rounded-full bg-brand-green px-2 py-0.5 text-[10px] font-bold text-white shadow-sm"
+            >
               🔥 জনপ্রিয়
-            </span>
+            </motion.span>
           )}
           {product.isNew && (
-            <span className="inline-flex items-center rounded-full bg-amber-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+            <motion.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.1 }}
+              className="inline-flex items-center rounded-full bg-amber-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm"
+            >
               ✨ নতুন
-            </span>
+            </motion.span>
           )}
           {discount > 0 && (
-            <span className="inline-flex items-center rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+            <motion.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.2 }}
+              className="inline-flex items-center rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm"
+            >
               -{discount}%
-            </span>
+            </motion.span>
           )}
         </div>
+
+        {/* Wishlist heart button */}
+        <motion.button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setWished(!wished);
+          }}
+          whileTap={{ scale: 0.8 }}
+          className={cn(
+            "absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-all",
+            wished
+              ? "bg-red-500 text-white"
+              : "bg-white/80 text-foreground/60 hover:bg-white hover:text-red-500",
+          )}
+          aria-label="পছন্দে যোগ করুন"
+        >
+          <Heart className={cn("h-4 w-4", wished && "fill-white")} />
+        </motion.button>
 
         {/* Quick add button (appears on hover) */}
         <motion.button

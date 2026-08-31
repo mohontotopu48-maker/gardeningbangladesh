@@ -238,3 +238,26 @@ Stage Summary:
 - Site fully functional: all features working, 110 images load, 0 errors
 - New improvements: scroll progress bar (premium UX), rotating announcement bar (4 messages), fixed dev warning
 - Lint passes, dev server runs cleanly
+
+---
+Task ID: 12
+Agent: main (Z.ai Code)
+Task: Add more indoor/outdoor plant products with images, make site more eye-catching
+
+Work Log:
+- Added new "আউটডোর প্লান্ট" (Outdoor Plants) category (id 10) with TreePine icon
+- Added 10 new indoor plant products (id 74-83): Marble Queen Pothos, Monstera Deliciosa, Philodendron, Calathea Prayer Plant, Dracaena, Boston Fern, Mini Jade Plant, English Ivy, Pilea Aluminum Plant, Tiger Aloe — all with care/light/tags
+- Added 12 new outdoor plant products (id 84-95): Rose, Hibiscus, Jasmine Beli, Bougainvillea, Gulmohar, Silk Cotton Tree, Mango/Jackfruit/Lemon/Papaya Saplings, Holy Basil Tulsi, Garden Mint — all with care/light/tags
+- Searched and found real images for all 22 new products via image-search (95 total product images now)
+- Added category page content for outdoor plants (hero, benefits, infographics, usage, FAQ, YouTube)
+- Updated mega menu: "গাছ ও বীজ" → "প্লান্ট ও বীজ" now includes both indoor (9) and outdoor (10) plants
+- Added TreePine + Apple icons to all icon maps (mega-menu, category-strip, category-page-view, collection-page-view)
+- Enhanced ProductCard UX: added wishlist heart button (top-right, toggles red with fill on click), spring-animated badges (popular/new/discount pop in with stagger), backdrop-blur on heart
+- Verified with agent-browser: outdoor plants section renders on home (12 products with care/light badges, discounts, ratings), /category/10 page works (hero, benefits, products, all 12 images load), wishlist heart toggles to red, lint passes (0 errors)
+
+Stage Summary:
+- 22 new plant products (10 indoor + 12 outdoor) with real images — total now 95 products
+- New Outdoor Plants category with full page content
+- Enhanced product cards: wishlist heart, animated badges, better hover effects
+- Mega menu updated to include outdoor plants
+- Lint passes, all images load, all features work

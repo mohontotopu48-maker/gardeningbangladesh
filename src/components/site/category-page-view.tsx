@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import {
-  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home,
+  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine,
   TrendingUp, ShoppingCart, Star, Zap, Clock, Droplets, Wind, Sun, Heart,
-  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck,
+  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck, Apple,
   ArrowLeft, Phone,
   type LucideIcon,
 } from "lucide-react";
@@ -19,9 +19,9 @@ import { CategoryFaq, CategoryYouTube } from "@/components/site/category-interac
 import { categories, products, categoryContent, shopInfo, type Category, type CategoryPageContent } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
-  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home,
+  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine,
   TrendingUp, ShoppingCart, Star, Zap, Clock, Droplets, Wind, Sun, Heart,
-  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck,
+  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck, Apple,
 };
 
 export function CategoryPageView({ catId }: { catId: number }) {

@@ -135,6 +135,15 @@ export const categories: Category[] = [
     description: "ঘরের ভেতরের সৌন্দর্য ও বাতাস পরিষ্কার করার গাছ",
     descriptionEn: "Air-purifying plants for homes & offices",
   },
+  {
+    id: 10,
+    name: "আউটডোর প্লান্ট",
+    nameEn: "Outdoor Plants",
+    slug: "outdoor-plants",
+    icon: "TreePine",
+    description: "বাগান, ছাদ ও বারান্দার জন্য সুন্দর বহিরাঙ্গন গাছ",
+    descriptionEn: "Beautiful plants for garden, rooftop & balcony",
+  },
 ];
 
 export type Benefit = {
@@ -451,6 +460,38 @@ export const categoryContent: Record<number, CategoryPageContent> = {
       { q: "ফেরোমন ফাঁদ কীভাবে কাজ করে?", a: "এটি নারী পোকার গন্ধ ছড়ায়, ফলে পুরুষ পোকা ফাঁদে আসে ও ফল ক্ষতি থেকে রক্ষা পায়।" },
     ],
   },
+  10: {
+    categoryId: 10,
+    heroTitle: "আউটডোর প্লান্ট",
+    heroSubtitle: "Outdoor Plants — বাগানে প্রাণ ফুলিয়ে তুলুন",
+    heroDescription:
+      "গোলাপ, জবা, বেলি, টগর, কৃষ্ণচূড়া সহ ফুল গাছ এবং আম, কাঁঠাল, লেবু, পেঁপে চারাসহ ১২+ জাতের আউটডোর প্লান্ট। বাগান, ছাদ ও বারান্দার সৌন্দর্য বাড়ান এবং ফলের ফলন পান। বাংলাদেশের আবহাওয়ার উপযোগী।",
+    youtubeId: "tue3K_3Iz48",
+    youtubeTitle: "আউটডোর প্লান্ট লাগানো ও যত্নের গাইড",
+    benefits: [
+      { icon: "Flower2", title: "সুন্দর ফুল", desc: "রঙিন ফুলে বাগান সুন্দর করে তোলে" },
+      { icon: "Sun", title: "পূর্ণ রোদে", desc: "বাংলাদেশের রোদে দারুণ বেড়ে ওঠে" },
+      { icon: "Apple", title: "ফলের ফলন", desc: "ফলের গাছে নিজেই ফল ফলান" },
+      { icon: "Leaf", title: "প্রকৃতির ছোঁয়া", desc: "বাড়ির আঙিনায় সবুজ পরিবেশ" },
+    ],
+    infographics: [
+      { value: "১২+", label: "জাতের গাছ", icon: "Package" },
+      { value: "৫৪০+", label: "বিক্রি", icon: "ShoppingCart" },
+      { value: "৪.৮", label: "রেটিং", icon: "Star" },
+      { value: "৬৪", label: "জেলায় ডেলিভারি", icon: "Truck" },
+    ],
+    usage: [
+      "পর্যাপ্ত রোদ ও পানি নিশ্চিত করুন",
+      "মাসে একবার জৈব সার দিন",
+      "নিয়মিত আগাছা পরিষ্কার করুন",
+      "ফুল ও ফল আসার সময় অতিরিক্ত যত্ন নিন",
+    ],
+    faq: [
+      { q: "কোন গাছ ছাদে লাগানো যায়?", a: "গোলাপ, জবা, বেলি, টগর এবং ছোট ফলের চারা ছাদে লাগানো যায়। পর্যাপ্ত রোদ নিশ্চিত করুন।" },
+      { q: "কখন ফুল আসবে?", a: "গোলাপ ও জবা সারা বছর ফুল দেয়। বেলি বর্ষায়, টগর শীতে ভালো ফুল দেয়।" },
+      { q: "ফলের চারা কবে ফল দেবে?", a: "লেবু ও পেঁপে ৬-১২ মাসে ফল দেয়। আম ও কাঁঠাল ৩-৫ বছরে ফল শুরু করে।" },
+    ],
+  },
 };
 
 export type Collection = {
@@ -656,6 +697,32 @@ export const products: Product[] = [
   { id: 71, name: "লাকি বাঁশ", nameEn: "Lucky Bamboo", price: 150, originalPrice: 200, categoryId: 9, emoji: "🎋", gradient: "from-green-50 to-emerald-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/055721274893.jpg", rating: 4.6, reviews: 167, sold: 650, unit: "১টি", care: "easy", light: "low", tags: ["feng-shui", "water"] },
   { id: 72, name: "ক্যাকটাস (মিক্সড)", nameEn: "Mixed Cactus", price: 200, categoryId: 9, emoji: "🌵", gradient: "from-amber-50 to-orange-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5f7cc06ad51b.jpg", rating: 4.5, reviews: 92, sold: 380, unit: "১টি", care: "easy", light: "bright", tags: ["succulent", "low-water"] },
   { id: 73, name: "বার্ড নেস্ট স্নেক প্লান্ট", nameEn: "Bird Nest Snake Plant", price: 320, categoryId: 9, emoji: "🪺", gradient: "from-green-50 to-emerald-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a517bb2223af.jpg", rating: 4.7, reviews: 64, sold: 240, isNew: true, unit: "১টি", care: "easy", light: "low", tags: ["air-purifying"] },
+
+  // More Indoor Plants (74-83)
+  { id: 74, name: "পোথোস (মার্বেল কুইন)", nameEn: "Marble Queen Pothos", price: 300, originalPrice: 380, categoryId: 9, emoji: "💚", gradient: "from-green-50 to-lime-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1d7d5c966a76.jpg", rating: 4.8, reviews: 145, sold: 580, popular: true, unit: "১টি", care: "easy", light: "low", tags: ["air-purifying", "hanging"] },
+  { id: 75, name: "মোনস্টেরা ডেলিসিওসা", nameEn: "Monstera Deliciosa", price: 650, originalPrice: 800, categoryId: 9, emoji: "🍃", gradient: "from-green-50 to-emerald-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/75534988b733.jpg", rating: 4.9, reviews: 98, sold: 320, popular: true, unit: "১টি", care: "medium", light: "medium", tags: ["large", "trending"] },
+  { id: 76, name: "ফিলোডেনড্রন", nameEn: "Philodendron", price: 380, categoryId: 9, emoji: "🌿", gradient: "from-green-50 to-teal-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d2beece2b6f1.jpg", rating: 4.7, reviews: 76, sold: 280, isNew: true, unit: "১টি", care: "easy", light: "low", tags: ["air-purifying"] },
+  { id: 77, name: "ক্যালাথিয়া (প্রেয়ার প্লান্ট)", nameEn: "Calathea Prayer Plant", price: 450, categoryId: 9, emoji: "🌱", gradient: "from-green-50 to-emerald-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4803c4e15998.png", rating: 4.6, reviews: 54, sold: 190, unit: "১টি", care: "medium", light: "medium", tags: ["decorative"] },
+  { id: 78, name: "ড্রাসেনা", nameEn: "Dracaena", price: 420, originalPrice: 500, categoryId: 9, emoji: "🌴", gradient: "from-green-50 to-lime-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a5a726f6c462.jpg", rating: 4.5, reviews: 67, sold: 230, unit: "১টি", care: "easy", light: "medium", tags: ["air-purifying", "large"] },
+  { id: 79, name: "বোস্টন ফার্ন", nameEn: "Boston Fern", price: 280, categoryId: 9, emoji: "🌿", gradient: "from-green-50 to-emerald-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/14eab4860957.jpg", rating: 4.4, reviews: 43, sold: 160, unit: "১টি", care: "medium", light: "low", tags: ["hanging", "air-purifying"] },
+  { id: 80, name: "জেড প্লান্ট (ছোট)", nameEn: "Mini Jade Plant", price: 180, categoryId: 9, emoji: "🪴", gradient: "from-emerald-50 to-green-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9778be9d58ed.jpg", rating: 4.6, reviews: 89, sold: 340, popular: true, unit: "১টি", care: "easy", light: "bright", tags: ["succulent", "feng-shui"] },
+  { id: 81, name: "ইংলিশ আইভি", nameEn: "English Ivy", price: 220, categoryId: 9, emoji: "🍃", gradient: "from-green-50 to-teal-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/df5317aae11c.jpg", rating: 4.5, reviews: 56, sold: 210, unit: "১টি", care: "easy", light: "medium", tags: ["hanging", "air-purifying"] },
+  { id: 82, name: "পিলিয়া (অ্যালুমিনিয়াম প্লান্ট)", nameEn: "Pilea Aluminum Plant", price: 250, originalPrice: 320, categoryId: 9, emoji: "🌱", gradient: "from-green-50 to-lime-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e9fe6e070112.png", rating: 4.6, reviews: 48, sold: 180, isNew: true, unit: "১টি", care: "easy", light: "medium", tags: ["decorative"] },
+  { id: 83, name: "টয় অ্যালো", nameEn: "Tiger Aloe", price: 200, categoryId: 9, emoji: "🌵", gradient: "from-green-50 to-emerald-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3514af29b353.jpeg", rating: 4.5, reviews: 34, sold: 140, unit: "১টি", care: "easy", light: "bright", tags: ["succulent", "medicinal"] },
+
+  // Outdoor Plants (84-95) - Category 10
+  { id: 84, name: "গোলাপ (রোজ)", nameEn: "Rose Plant", price: 350, originalPrice: 450, categoryId: 10, emoji: "🌹", gradient: "from-rose-50 to-red-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9919038b01d8.jpg", rating: 4.9, reviews: 312, sold: 890, popular: true, unit: "১টি", care: "medium", light: "bright", tags: ["flowering", "fragrant"] },
+  { id: 85, name: "জবা (হিবিস্কাস)", nameEn: "Hibiscus", price: 280, categoryId: 10, emoji: "🌺", gradient: "from-red-50 to-rose-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5865e95e4caf.jpg", rating: 4.8, reviews: 234, sold: 670, popular: true, unit: "১টি", care: "easy", light: "bright", tags: ["flowering"] },
+  { id: 86, name: "বেলি (জুই)", nameEn: "Jasmine Beli", price: 320, originalPrice: 400, categoryId: 10, emoji: "🌼", gradient: "from-yellow-50 to-amber-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/76b28b3341bd.jpg", rating: 4.9, reviews: 187, sold: 540, popular: true, unit: "১টি", care: "easy", light: "bright", tags: ["flowering", "fragrant"] },
+  { id: 87, name: "টগর (বুগেনভিলিয়া)", nameEn: "Bougainvillea", price: 380, categoryId: 10, emoji: "🌸", gradient: "from-fuchsia-50 to-pink-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fadf35885b5f.jpg", rating: 4.7, reviews: 156, sold: 430, unit: "১টি", care: "easy", light: "bright", tags: ["flowering", "climbing"] },
+  { id: 88, name: "কৃষ্ণচূড়া", nameEn: "Gulmohar Royal Poinciana", price: 550, originalPrice: 700, categoryId: 10, emoji: "🔥", gradient: "from-orange-50 to-red-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/60deb04803e3.png", rating: 4.8, reviews: 98, sold: 210, isNew: true, unit: "১টি", care: "medium", light: "bright", tags: ["flowering", "large"] },
+  { id: 89, name: "শিমুল", nameEn: "Silk Cotton Tree", price: 600, categoryId: 10, emoji: "🌳", gradient: "from-red-50 to-orange-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3b13460c4cfe.jpg", rating: 4.6, reviews: 45, sold: 120, unit: "১টি", care: "medium", light: "bright", tags: ["large", "flowering"] },
+  { id: 90, name: "আম চারা", nameEn: "Mango Sapling", price: 250, originalPrice: 320, categoryId: 10, emoji: "🥭", gradient: "from-green-50 to-lime-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/aff200d53203.jpg", rating: 4.7, reviews: 167, sold: 450, popular: true, unit: "১টি", care: "easy", light: "bright", tags: ["fruit", "large"] },
+  { id: 91, name: "কাঁঠাল চারা", nameEn: "Jackfruit Sapling", price: 280, categoryId: 10, emoji: "🍈", gradient: "from-green-50 to-emerald-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f2ba74b45c71.jpg", rating: 4.6, reviews: 89, sold: 230, unit: "১টি", care: "easy", light: "bright", tags: ["fruit", "large"] },
+  { id: 92, name: "লেবু চারা", nameEn: "Lemon Sapling", price: 220, originalPrice: 280, categoryId: 10, emoji: "🍋", gradient: "from-yellow-50 to-lime-100", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b121b291d1b3.jpg", rating: 4.8, reviews: 143, sold: 380, popular: true, unit: "১টি", care: "easy", light: "bright", tags: ["fruit"] },
+  { id: 93, name: "পেঁপে চারা", nameEn: "Papaya Sapling", price: 150, categoryId: 10, emoji: "🌴", gradient: "from-green-50 to-lime-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/774ab18466e0.jpg", rating: 4.5, reviews: 76, sold: 290, unit: "১টি", care: "easy", light: "bright", tags: ["fruit"] },
+  { id: 94, name: "তুলসী", nameEn: "Holy Basil Tulsi", price: 80, categoryId: 10, emoji: "🌿", gradient: "from-green-50 to-emerald-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/dad7be7a3482.jpg", rating: 4.9, reviews: 234, sold: 680, popular: true, unit: "১টি", care: "easy", light: "bright", tags: ["medicinal", "herb"] },
+  { id: 95, name: "পুদিনা (বাগান)", nameEn: "Garden Mint", price: 60, categoryId: 10, emoji: "🍃", gradient: "from-green-50 to-teal-50", image: "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c24f98c619d6.jpg", rating: 4.7, reviews: 112, sold: 420, unit: "১টি", care: "easy", light: "medium", tags: ["herb", "edible"] },
 ];
 
 export const testimonials: Testimonial[] = [

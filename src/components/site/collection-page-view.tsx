@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
-  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home,
+  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine,
   TrendingUp, ShoppingCart, Star, Zap, Clock, Droplets, Wind, Sun, Heart,
-  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck,
+  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck, Apple,
   ArrowLeft, Phone, Play, Youtube as YoutubeIcon, ArrowRight, Sparkles,
   type LucideIcon,
 } from "lucide-react";
@@ -21,9 +21,9 @@ import { CategoryYouTube } from "@/components/site/category-interactive";
 import { collections, categories, products, shopInfo } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
-  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home,
+  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine,
   TrendingUp, ShoppingCart, Star, Zap, Clock, Droplets, Wind, Sun, Heart,
-  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck,
+  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck, Apple,
 };
 
 export function CollectionPageView({ slug }: { slug: string }) {
