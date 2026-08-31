@@ -34,7 +34,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-banner.png"
+          src="/gallery/gardening-bangladesh-hero-reference.png"
           alt="Gardening Bangladesh ছাদ বাগান"
           fill
           priority

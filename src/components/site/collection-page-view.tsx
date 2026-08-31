@@ -18,6 +18,7 @@ import { CartDrawer } from "@/components/site/cart-drawer";
 import { ProductCard } from "@/components/site/product-card";
 import { AnimatedBackground } from "@/components/site/animated-background";
 import { CategoryYouTube } from "@/components/site/category-interactive";
+import { HeaderGallery } from "@/components/site/header-gallery";
 import { collections, categories, products, shopInfo } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -57,6 +58,7 @@ export function CollectionPageView({ slug }: { slug: string }) {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <HeaderGallery />
         <CollectionHero collection={collection} />
         <InfographicStrip collection={collection} />
         <SubCategoriesSection subCategories={subCategories} />

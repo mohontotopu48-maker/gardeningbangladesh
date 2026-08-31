@@ -16,16 +16,16 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/slide-1.jpg",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-night.png",
     title: "ঢাকার ছাদে সবুজ বিপ্লব",
     subtitle: "Rooftop Gardening in Dhaka",
     description:
       "শহরের কংক্রিটের জগতে ছাদ বাগান তৈরি করে সবুজ প্রকৃতির সংস্পর্শে আসুন। আমরা পৌঁছে দিচ্ছি সেরা সার, বীজ ও কৃষি উপকরণ।",
     cta: "ছাদ বাগান শুরু করুন",
-    href: "#category-1",
+    href: "/collection/plants-seeds",
   },
   {
-    src: "/slide-2.jpg",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-aerial.png",
     title: "সবুজে ভরা আপনার বাগান",
     subtitle: "Beautiful Garden Views",
     description:
@@ -34,13 +34,13 @@ const slides: Slide[] = [
     href: "#products",
   },
   {
-    src: "/slide-3.jpg",
-    title: "ইনডোর প্লান্ট সংগ্রহ",
-    subtitle: "Indoor Plants Collection",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-lounge.png",
+    title: "ছাদের সবুজ বিশ্রাম কোণ",
+    subtitle: "Rooftop Lounge Garden",
     description:
-      "ঘরের ভেতরে বাতাস পরিষ্কার করার সেরা গাছ — স্নেক প্লান্ট, মানি প্লান্ট, পিস লিলি সহ ১২+ জাতের ইনডোর প্লান্ট।",
-    cta: "ইনডোর প্লান্ট কিনুন",
-    href: "#category-9",
+      "ছাদের এক কোণে সবুজ গাছপালা দিয়ে তৈরি করুন আপনার বিশ্রামের জায়গা। ইনডোর ও আউটডোর প্লান্টের সেরা সংগ্রহ।",
+    cta: "প্লান্ট সংগ্রহ দেখুন",
+    href: "/category/9",
   },
 ];
 

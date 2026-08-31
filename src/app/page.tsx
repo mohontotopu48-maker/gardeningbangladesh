@@ -1,4 +1,5 @@
 import { Header } from "@/components/site/header";
+import { HeaderGallery } from "@/components/site/header-gallery";
 import { HeaderBanner } from "@/components/site/header-banner";
 import { Hero } from "@/components/site/hero";
 import { ImageSlider } from "@/components/site/image-slider";
@@ -9,6 +10,7 @@ import { IndoorPlantsHighlight } from "@/components/site/indoor-plants-highlight
 import { PopularProducts } from "@/components/site/popular-products";
 import { AllProducts } from "@/components/site/all-products";
 import { VideoSection } from "@/components/site/video-section";
+import { GardenGallery } from "@/components/site/garden-gallery";
 import { Testimonials } from "@/components/site/testimonials";
 import { Newsletter } from "@/components/site/newsletter";
 import { Footer } from "@/components/site/footer";
@@ -23,6 +25,7 @@ export default function Home() {
       <ScrollProgress />
       <Header />
       <main className="flex-1">
+        <HeaderGallery />
         <HeaderBanner />
         <Hero />
         <ImageSlider />
@@ -45,6 +48,7 @@ export default function Home() {
         <IndoorPlantsHighlight />
         <PopularProducts />
         <AllProducts />
+        <GardenGallery />
         <VideoSection />
         <Testimonials />
         <Newsletter />

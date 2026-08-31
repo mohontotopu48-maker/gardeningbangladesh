@@ -17,7 +17,7 @@ type BannerSlide = {
 
 const slides: BannerSlide[] = [
   {
-    src: "/header-slide-1.jpg",
+    src: "/gallery/gardening-bangladesh-garden-view-01.png",
     badge: "বাগানের দৃশ্য",
     title: "সবুজে ঘেরা",
     highlight: "আপনার বাগান",
@@ -27,7 +27,7 @@ const slides: BannerSlide[] = [
     href: "#products",
   },
   {
-    src: "/header-slide-2.jpg",
+    src: "/gallery/gardening-bangladesh-indoor-plants-01.png",
     badge: "ইনডোর প্লান্ট",
     title: "ঘরে সবুজের",
     highlight: "ছোঁয়া দিন",
@@ -35,6 +35,16 @@ const slides: BannerSlide[] = [
       "স্নেক প্লান্ট, মানি প্লান্ট, পিস লিলি সহ ১২+ জাতের এয়ার-পিউরিফাইং ইনডোর প্লান্ট। ঘরের বাতাস পরিষ্কার করুন।",
     cta: "ইনডোর প্লান্ট কিনুন",
     href: "/category/9",
+  },
+  {
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-food-garden.png",
+    badge: "ছাদে খাদ্য বাগান",
+    title: "ছাদেই ফলাও",
+    highlight: "শাকসবজি",
+    description:
+      "ছাদের বাগানে তাজা শাকসবজি চাষ করুন। আমাদের জৈব সার ও বীজ দিয়ে নিশ্চিত করুন প্রচুর ফলন।",
+    cta: "বীজ ও সার দেখুন",
+    href: "/collection/fertilizers",
   },
 ];
 

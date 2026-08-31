@@ -519,7 +519,7 @@ export const collections: Collection[] = [
     description:
       "জৈব সার, রাসায়নিক সার ও রেডি মিক্স মিডিয়া — গাছের প্রতিটি পর্যায়ের পুষ্টির চাহিদা মেটাতে ২১+ ধরনের সার। মাটির উর্বরতা বাড়ায়, ফলন বহুগুণ করে এবং গাছকে সুস্থ রাখে। বাংলাদেশের ছাদ ও বাড়ি বাগানের জন্য আদর্শ পুষ্টি সমাধান।",
     categoryIds: [1, 7, 8],
-    heroImage: "/footer-bg-1.jpg",
+    heroImage: "/gallery/gardening-bangladesh-nursery.png",
     accent: "from-amber-500 to-brand-green",
     benefits: [
       { icon: "Leaf", title: "সম্পূর্ণ পুষ্টি", desc: "জৈব, রাসায়নিক ও রেডিমিক্স — সব ধরনের সার" },
@@ -550,7 +550,7 @@ export const collections: Collection[] = [
     description:
       "ইনডোর প্লান্ট, বীজ ও টব — আপনার বাগান শুরুর সম্পূর্ণ সংগ্রহ। ১২+ জাতের এয়ার-পিউরিফাইং ইনডোর প্লান্ট, উচ্চ ফলনশীল বীজ এবং বিভিন্ন মাপের সুন্দর টব। ঘরে সবুজের ছোঁয়া আর ছাদে ফলন — সবকিছুই এক ছাদে।",
     categoryIds: [9, 3, 2],
-    heroImage: "/slide-3.jpg",
+    heroImage: "/gallery/gardening-bangladesh-indoor-plants-02.png",
     accent: "from-brand-green to-emerald-500",
     benefits: [
       { icon: "Wind", title: "পরিষ্কার বাতাস", desc: "ইনডোর প্লান্ট বিষাক্ত গ্যাস শোষণ করে" },
@@ -581,7 +581,7 @@ export const collections: Collection[] = [
     description:
       "গার্ডেন টুলস, কীটনাশক ও অন্যান্য উপকরণ — বাগানের প্রতিটি কাজকে সহজ ও নিরাপদ করতে ২৪+ ধরনের টুলস ও সুরক্ষা উপকরণ। স্প্রেয়ার, সিকেচার, কীটনাশক, ফেরোমন ফাঁদসহ সবকিছু সারা দেশে ক্যাশ অন ডেলিভারিতে।",
     categoryIds: [4, 5, 6],
-    heroImage: "/footer-bg-2.jpg",
+    heroImage: "/gallery/gardening-bangladesh-rooftop-garden.png",
     accent: "from-amber-600 to-orange-500",
     benefits: [
       { icon: "Wrench", title: "মজবুত টুলস", desc: "উন্নতমানের ও টেকসই গার্ডেন টুলস" },
