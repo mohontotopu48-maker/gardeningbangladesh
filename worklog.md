@@ -388,3 +388,26 @@ Stage Summary:
 - Vercel deployment ready: vercel.json configured, .env.example documents required env vars, postinstall runs prisma generate, build script is Vercel-compatible
 - .env and db/custom.db removed from git (security), .env.example added for documentation
 - To deploy: import repo on Vercel, set DATABASE_URL env var, deploy
+
+---
+Task ID: 19
+Agent: main (Z.ai Code)
+Task: Add membership webpage with contact form, monthly 250৳ + lifetime 150৳ plans
+
+Work Log:
+- Added Membership model to Prisma schema (id, name, phone, email, address, city, plan, amount, status, memberCode, note, timestamps); ran db:push
+- Created API routes: POST/GET /api/memberships (create membership with auto-generated member code GBM+date+random, list with search), PATCH/DELETE /api/memberships/[id] (update status: pending/active/expired/cancelled, delete)
+- Built membership page at /membership with: hero banner (community image bg + gradient), 2 pricing cards (মাসিক ২৫০৳/মাস popular, এককালীন ১৫০৳ best value) with selectable highlight + checkmark, 6 benefits grid (সদস্য ছাড়, ফ্রি ডেলিভারি, উপহার, অগ্রাধিকার, কমিউনিটি, টিপস), contact form (name, phone, email, address, city, note) with plan selection, loading state, success state with member code, COD payment notice
+- Added membership link to header nav (gradient amber button with Crown icon) + mobile menu (amber-styled button) + footer company links
+- Added Memberships tab to admin dashboard: table with member code, name, phone, plan, amount, status badge, date; amber-themed styling; search support
+- Verified end-to-end: submitted monthly membership (সদস্য টেস্ট, GBM260831284) → success with member code → dashboard shows it; submitted lifetime membership (লাইফটাইম ইউজার, GBM260831153) → both appear in dashboard memberships tab
+- Committed and pushed to GitHub (commit ff2ae0e)
+
+Stage Summary:
+- Membership page at /membership with 2 plans (monthly 250৳, lifetime 150৳), 6 benefits, contact form
+- Backend: Membership model + 4 API routes (create, list, update, delete)
+- Member codes auto-generated (GBM+date+random)
+- Dashboard memberships tab with full table view
+- Navigation: header nav + mobile menu + footer all link to /membership
+- Verified: 2 test memberships created and visible in dashboard
+- Lint passes, committed and pushed to GitHub
