@@ -491,3 +491,26 @@ Stage Summary:
 - Slide images now show at proper size (no zoom modal, no scale animation — clean slide transitions only)
 - Every webpage has a related header image section: category pages (10), collection pages (3), membership page, dashboard page
 - All 144 images load successfully, lint passes
+
+---
+Task ID: 24
+Agent: main (Z.ai Code)
+Task: Replace home page first slider with 3 new uploaded images (community, indoor, hero-reference)
+
+Work Log:
+- Downloaded/converted 3 uploaded images to optimized JPEGs:
+  - gardening_bangladesh_hero_reference.jpg → public/slide-hero.jpg (2560x1440, 840KB)
+  - gardening_bangladesh_indoor_plants_03.jpg → public/slide-indoor.jpg (2176x1632, 812KB)
+  - gardening_bangladesh_community.jpg → public/slide-community.jpg (2304x1536, 775KB)
+- Replaced all 3 HeaderBanner slides with new images:
+  - Slide 1: slide-hero.jpg — "সবুজে বাঁচি প্রতিদিন" — CTA: এখনই কেনাকাটা করুন → #products
+  - Slide 2: slide-indoor.jpg — "ঘরে সবুজের ছোঁয়া দিন" — CTA: ইনডোর প্লান্ট কিনুন → /category/9
+  - Slide 3: slide-community.jpg — "একসাথে সবুজ বিপ্লব গড়ি" — CTA: সদস্যপদ নিন → /membership
+- All images are high-res (2176-2560px), display at proper size with object-cover (no zoom beyond cover)
+- Verified: all 3 slides display correctly with proper images and Bengali content, no errors, lint passes
+
+Stage Summary:
+- Home page first slider now uses 3 new uploaded images (hero reference, indoor plants, community)
+- All images high-res, proper size, clear view
+- Old gallery images replaced, CTAs synced to relevant pages
+- Lint passes

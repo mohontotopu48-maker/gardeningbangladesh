@@ -17,17 +17,17 @@ type BannerSlide = {
 
 const slides: BannerSlide[] = [
   {
-    src: "/gallery/gardening-bangladesh-garden-view-01.jpg",
-    badge: "বাগানের দৃশ্য",
-    title: "সবুজে ঘেরা",
-    highlight: "আপনার বাগান",
+    src: "/slide-hero.jpg",
+    badge: "সবুজে বাঁচি প্রতিদিন",
+    title: "সবুজে বাঁচি",
+    highlight: "প্রতিদিন",
     description:
-      "ফুল, শাকসবজি আর ফলের বাগানে প্রাকৃতিক সৌন্দর্য। আমাদের ২২০+ পণ্য দিয়ে গড়ে তুলুন আপনার স্বপ্নের বাগান।",
-    cta: "বাগানের পণ্য দেখুন",
+      "গার্ডেনিং বাংলাদেশ — সারা বাংলাদেশে ছাদ বাগানীদের হাতে সেরা মানের সার, বীজ ও কৃষি উপকরণ পৌঁছে দিচ্ছি।",
+    cta: "এখনই কেনাকাটা করুন",
     href: "#products",
   },
   {
-    src: "/gallery/gardening-bangladesh-indoor-plants-01.jpg",
+    src: "/slide-indoor.jpg",
     badge: "ইনডোর প্লান্ট",
     title: "ঘরে সবুজের",
     highlight: "ছোঁয়া দিন",
@@ -37,14 +37,14 @@ const slides: BannerSlide[] = [
     href: "/category/9",
   },
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-food-garden.jpg",
-    badge: "ছাদে খাদ্য বাগান",
-    title: "ছাদেই ফলাও",
-    highlight: "শাকসবজি",
+    src: "/slide-community.jpg",
+    badge: "গার্ডেনিং কমিউনিটি",
+    title: "একসাথে সবুজ",
+    highlight: "বিপ্লব গড়ি",
     description:
-      "ছাদের বাগানে তাজা শাকসবজি চাষ করুন। আমাদের জৈব সার ও বীজ দিয়ে নিশ্চিত করুন প্রচুর ফলন।",
-    cta: "বীজ ও সার দেখুন",
-    href: "/collection/fertilizers",
+      "গার্ডেনিং প্রেমীদের বড় কমিউনিটিতে যুক্ত হন। আমাদের সাথে বাংলাদেশে সবুজ বিপ্লবে অংশ নিন।",
+    cta: "সদস্যপদ নিন",
+    href: "/membership",
   },
 ];
 
