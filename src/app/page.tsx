@@ -26,9 +26,6 @@ export default function Home() {
       <main className="flex-1">
         {/* Top: 1 slide view */}
         <HeaderBanner />
-        {/* Middle: 1 section */}
-        <Hero />
-        {/* Last: ImageSlider */}
         <ImageSlider />
         <FeaturesStrip />
         <CategoryStrip />
@@ -53,6 +50,8 @@ export default function Home() {
         <VideoSection />
         <Testimonials />
         <Newsletter />
+        {/* Last: সবুজে বাঁচি প্রতিদিন */}
+        <Hero />
       </main>
       <Footer />
       <FloatingBar />

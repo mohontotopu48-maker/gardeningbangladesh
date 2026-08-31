@@ -301,3 +301,19 @@ Stage Summary:
 - Clean top layout: 1 slide view (HeaderBanner) at top, 1 section (Hero) in middle, ImageSlider at last
 - Removed redundant HeaderGallery strip from all pages
 - Less clutter, better visual hierarchy, lint passes
+
+---
+Task ID: 15
+Agent: main (Z.ai Code)
+Task: Move "সবুজে বাঁচি প্রতিদিন" (Hero) section to last position on home page
+
+Work Log:
+- Moved Hero component from middle (position 2) to last position (after Newsletter, before Footer) on home page
+- New top layout: HeaderBanner (slide view) → ImageSlider → FeaturesStrip → CategoryStrip → ... → Newsletter → Hero (last)
+- Hero displays "সবুজে বাঁচি প্রতিদিন" with hero-reference garden image + stats card + CTAs at the bottom of the page
+- Verified with agent-browser: Hero is now the last section before footer (h1 "সবুজে বাঁচি প্রতিদিন" confirmed, image loads), top starts with HeaderBanner slider, lint passes
+
+Stage Summary:
+- "সবুজে বাঁচি প্রতিদিন" Hero section moved to end of home page (before footer)
+- Top now starts with HeaderBanner slider, Hero serves as a powerful closing section
+- Image loads, lint passes
