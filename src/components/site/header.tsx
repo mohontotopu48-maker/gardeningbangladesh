@@ -39,6 +39,18 @@ export function Header() {
   const { open: openCart, totalCount } = useCart();
   const [count, setCount] = useState(0);
 
+  // Smooth scroll to element
+  const scrollToSection = (href: string) => {
+    if (href.startsWith("#") && href.length > 1) {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
+      }
+    }
+    return false;
+  };
+
   // Rotate announcement messages
   useEffect(() => {
     const t = setInterval(() => {
@@ -263,6 +275,7 @@ export function Header() {
               </div>
               <a
                 href="#videos"
+                onClick={(e) => { e.preventDefault(); scrollToSection("#videos"); }}
                 className="group flex items-center gap-1.5 px-3.5 py-1.5 text-sm font-bold text-red-600 hover:bg-red-50 rounded-lg transition-all whitespace-nowrap hover:shadow-sm"
               >
                 <svg className="h-4 w-4 transition-transform group-hover:scale-125 group-hover:rotate-6" viewBox="0 0 24 24" fill="currentColor">
