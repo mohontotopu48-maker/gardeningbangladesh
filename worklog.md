@@ -514,3 +514,28 @@ Stage Summary:
 - All images high-res, proper size, clear view
 - Old gallery images replaced, CTAs synced to relevant pages
 - Lint passes
+
+---
+Task ID: 25
+Agent: main (Z.ai Code)
+Task: Add uploaded image to জৈব সার header + create planting/care guides for জৈব সার, রাসায়নিক সার, রেডি মিক্স মিডিয়া
+
+Work Log:
+- Converted uploaded image (pasted_image_1788143671483.png, 2688x1152) to public/gallery/organic-fertilizer-header.jpg (640KB, quality 90)
+- Updated categoryHeaderImages mapping: category 1 (জৈব সার) now uses organic-fertilizer-header.jpg
+- Added PlantingGuide type to data.ts: title, icon, steps[], careTips[], usageInstructions[]
+- Added planting guides to 3 categories:
+  - জৈব সার (1): 5 steps (মাটি প্রস্তুত → সার মেশান → চারা লাগান → পানি দিন → যত্ন নিন), 6 care tips, 4 usage instructions (টব, ছাদ, স্প্রে, চারা)
+  - রাসায়নিক সার (7): 5 steps (সার নির্বাচন → পরিমাণ → গোড়ায় প্রয়োগ → ঢেকে দিন → পানি), 6 care tips, 4 usage instructions (NPK স্প্রে, ইউরিয়া, DAP/পটাশ, বোরন)
+  - রেডি মিক্স মিডিয়া (8): 5 steps (টব প্রস্তুত → সয়েল ভরুন → গাছ লাগান → চাপ দিন → পানি), 6 care tips, 4 usage instructions (অ্যাডেনিয়াম, ক্যাকটাস, রেডিমিক্স, অর্কিড)
+- Built PlantingGuideSection component: numbered timeline steps with vertical line, care tips grid with check icons, usage instructions cards with hover
+- Added PlantingGuideSection to category page view (after products, before YouTube) — renders only if content.plantingGuide exists
+- Verified: জৈব সার page shows header image + planting guide (5 steps, 6 tips, 4 instructions); রাসায়নিক সার and রেডি মিক্স মিডিয়া pages also have guides; lint passes
+
+Stage Summary:
+- জৈব সার page header now uses the uploaded image (2688x1152, high-res)
+- 3 category pages (জৈব সার, রাসায়নিক সার, রেডি মিক্স মিডিয়া) now have planting/care guides with:
+  - Step-by-step planting instructions (5 steps each with numbered timeline)
+  - Care tips (6 tips each with checkmark icons)
+  - Usage instructions (4 specific use cases each)
+- All guides in Bengali, Framer Motion animations, lint passes

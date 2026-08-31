@@ -43,7 +43,7 @@ export function PageHeaderImage({ src, alt, title, subtitle }: PageHeaderImagePr
 
 // Category-to-related-image mapping
 export const categoryHeaderImages: Record<number, string> = {
-  1: "/gallery/gardening-bangladesh-nursery.jpg", // Organic fertilizer → nursery
+  1: "/gallery/organic-fertilizer-header.jpg", // Organic fertilizer → dedicated header image
   7: "/gallery/gardening-bangladesh-dhaka-rooftop-food-garden.jpg", // Chemical fertilizer → food garden
   8: "/gallery/gardening-bangladesh-garden-view-03.jpg", // Ready mix media → garden view
   2: "/gallery/gardening-bangladesh-garden-view-04.jpg", // Pots & planters → garden view

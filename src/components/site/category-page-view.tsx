@@ -17,6 +17,7 @@ import { ProductCard } from "@/components/site/product-card";
 import { AnimatedBackground } from "@/components/site/animated-background";
 import { CategoryFaq, CategoryYouTube } from "@/components/site/category-interactive";
 import { PageHeaderImage, categoryHeaderImages } from "@/components/site/page-header-image";
+import { PlantingGuideSection } from "@/components/site/planting-guide";
 import { categories, products, categoryContent, shopInfo, type Category, type CategoryPageContent } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -61,6 +62,7 @@ export function CategoryPageView({ catId }: { catId: number }) {
         <InfographicStrip content={content} />
         <BenefitsSection content={content} />
         <ProductsSection products={catProducts} category={category} />
+        {content.plantingGuide && <PlantingGuideSection guide={content.plantingGuide} />}
         <CategoryYouTube content={content} />
         <UsageGuide content={content} />
         <CategoryFaq content={content} />
