@@ -119,7 +119,7 @@ export function MembershipView() {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/gallery/gardening-bangladesh-community.png"
+              src="/gallery/gardening-bangladesh-community.jpg"
               alt="Gardening Bangladesh Membership"
               fill
               priority

@@ -11,7 +11,7 @@ export function Footer() {
       <div className="relative border-b border-white/10">
         <div className="absolute inset-0">
           <Image
-            src="/gallery/gardening-bangladesh-garden-view-03.png"
+            src="/gallery/gardening-bangladesh-garden-view-03.jpg"
             alt="Gardening Bangladesh garden view"
             fill
             className="object-cover"
@@ -56,7 +56,7 @@ export function Footer() {
       <div className="relative">
         <div className="absolute inset-0">
           <Image
-            src="/gallery/gardening-bangladesh-garden-view-04.png"
+            src="/gallery/gardening-bangladesh-garden-view-04.jpg"
             alt="Gardening Bangladesh lush garden"
             fill
             className="object-cover"

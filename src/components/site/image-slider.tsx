@@ -16,7 +16,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-night.png",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-night.jpg",
     title: "ঢাকার ছাদে সবুজ বিপ্লব",
     subtitle: "Rooftop Gardening in Dhaka",
     description:
@@ -25,7 +25,7 @@ const slides: Slide[] = [
     href: "/collection/plants-seeds",
   },
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-aerial.png",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-aerial.jpg",
     title: "সবুজে ভরা আপনার বাগান",
     subtitle: "Beautiful Garden Views",
     description:
@@ -34,7 +34,7 @@ const slides: Slide[] = [
     href: "#products",
   },
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-lounge.png",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-lounge.jpg",
     title: "ছাদের সবুজ বিশ্রাম কোণ",
     subtitle: "Rooftop Lounge Garden",
     description:

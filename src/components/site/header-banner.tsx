@@ -17,7 +17,7 @@ type BannerSlide = {
 
 const slides: BannerSlide[] = [
   {
-    src: "/gallery/gardening-bangladesh-garden-view-01.png",
+    src: "/gallery/gardening-bangladesh-garden-view-01.jpg",
     badge: "বাগানের দৃশ্য",
     title: "সবুজে ঘেরা",
     highlight: "আপনার বাগান",
@@ -27,7 +27,7 @@ const slides: BannerSlide[] = [
     href: "#products",
   },
   {
-    src: "/gallery/gardening-bangladesh-indoor-plants-01.png",
+    src: "/gallery/gardening-bangladesh-indoor-plants-01.jpg",
     badge: "ইনডোর প্লান্ট",
     title: "ঘরে সবুজের",
     highlight: "ছোঁয়া দিন",
@@ -37,7 +37,7 @@ const slides: BannerSlide[] = [
     href: "/category/9",
   },
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-food-garden.png",
+    src: "/gallery/gardening-bangladesh-dhaka-rooftop-food-garden.jpg",
     badge: "ছাদে খাদ্য বাগান",
     title: "ছাদেই ফলাও",
     highlight: "শাকসবজি",
