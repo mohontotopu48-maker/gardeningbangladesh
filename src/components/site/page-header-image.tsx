@@ -52,7 +52,7 @@ export const categoryHeaderImages: Record<number, string> = {
   5: "/gallery/gardening-bangladesh-dhaka-rooftop-lounge.jpg", // Pesticides → rooftop lounge
   6: "/gallery/gardening-bangladesh-nursery.jpg", // Other accessories → nursery
   9: "/gallery/gardening-bangladesh-indoor-plants-01.jpg", // Indoor plants → indoor
-  10: "/gallery/gardening-bangladesh-garden-view-01.jpg", // Outdoor plants → garden view
+  10: "/gallery/outdoor-plants-header.jpg", // Outdoor plants → dedicated header image
 };
 
 // Collection-to-related-image mapping
