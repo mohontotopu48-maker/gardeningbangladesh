@@ -12,7 +12,7 @@ import {
   Bug,
   Package,
   Home,
-  TreePine,
+  TreePine, Apple,
   ArrowRight,
   Sparkles,
   ChevronDown,
@@ -30,7 +30,7 @@ const iconMap: Record<string, LucideIcon> = {
   Bug,
   Package,
   Home,
-  TreePine,
+  TreePine, Apple,
 };
 
 // Group categories into mega menu columns

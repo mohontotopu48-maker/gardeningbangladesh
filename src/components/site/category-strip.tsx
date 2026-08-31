@@ -11,7 +11,7 @@ import {
   Bug,
   Package,
   Home,
-  TreePine,
+  TreePine, Apple,
   type LucideIcon,
 } from "lucide-react";
 import { categories } from "@/lib/data";
@@ -26,7 +26,7 @@ const iconMap: Record<string, LucideIcon> = {
   Bug,
   Package,
   Home,
-  TreePine,
+  TreePine, Apple,
 };
 
 export function CategoryStrip() {

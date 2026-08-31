@@ -53,6 +53,7 @@ export const categoryHeaderImages: Record<number, string> = {
   6: "/gallery/gardening-bangladesh-nursery.jpg", // Other accessories → nursery
   9: "/gallery/gardening-bangladesh-indoor-plants-01.jpg", // Indoor plants → indoor
   10: "/gallery/outdoor-plants-header.jpg", // Outdoor plants → dedicated header image
+  11: "/gallery/gardening-bangladesh-mango.jpg", // Fruit plants → mango image
 };
 
 // Collection-to-related-image mapping

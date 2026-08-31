@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import {
-  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine,
+  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine, Apple,
   TrendingUp, ShoppingCart, Star, Zap, Clock, Droplets, Wind, Sun, Heart,
-  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck, Apple,
+  Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck,
   ArrowLeft, Phone,
   type LucideIcon,
 } from "lucide-react";
@@ -21,7 +21,7 @@ import { PlantingGuideSection } from "@/components/site/planting-guide";
 import { categories, products, categoryContent, shopInfo, type Category, type CategoryPageContent } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
-  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine,
+  Leaf, FlaskConical, Layers, Flower2, Sprout, Scissors, Bug, Package, Home, TreePine, Apple,
   TrendingUp, ShoppingCart, Star, Zap, Clock, Droplets, Wind, Sun, Heart,
   Wrench, Hand, Coins, Truck, Ruler, CheckCircle2, Recycle, ShieldCheck, Apple,
 };
