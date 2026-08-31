@@ -665,3 +665,25 @@ Stage Summary:
 - Typing animation: 5 Bengali taglines cycle on Hero first screen with cursor — impressive first impression
 - Search bar: focus ring + bg change + icon scale animation
 - All committed and pushed to GitHub
+
+---
+Task ID: 32
+Agent: main (Z.ai Code)
+Task: Research Bangladesh market, add more indoor plants + pots, improve navigation with smooth scrolling
+
+Work Log:
+- Researched Bangladesh plant market via web search: popular indoor plants (Aglaonema, Syngonium, Dieffenbachia, String of Pearls, Parlor Palm, Calathea Orbifolia, Fittonia, String of Hearts, etc.) and popular pots (ceramic, vertical garden, wall hanging, terracotta, premium baskets from Daraz/mygardenbd)
+- Added 15 new indoor plant products (id 96-110): Aglaonema Silver Bay, Syngonium Pink, Dieffenbachia, String of Pearls, Parlor Palm, Purple Heart, Calathea Orbifolia, Sword Fern, Peperomia, Fittonia Nerve Plant, String of Hearts, Arali Lucky Plant, Neon Pothos, Bromeliad, Staghorn Fern — all with care/light/tags
+- Added 10 new pots & planters (id 111-120): Ceramic Pots 01-04, Vertical Garden Pot, Wall Hanging Pot, Premium Hanging Basket, Terracotta Pots (medium/large), Square Plastic Planter
+- Searched and found real images for all 25 new products (total 120 products with images)
+- Added smooth scroll function to Header: scrollToSection() for in-page navigation links
+- Applied smooth scroll to "ভিডিও" nav button — scrolls smoothly to #videos section instead of instant jump
+- Verified: new indoor plants appear on /category/9 (Aglaonema, Syngonium, String of Pearls, Parlor Palm, String of Hearts confirmed), new pots appear on /category/2 (Ceramic Pots, Vertical Garden, Terracotta confirmed), smooth scroll works (clicked ভিডিও → scrolled to videos section), lint passes
+- Committed and pushed to GitHub (commit e80f760)
+
+Stage Summary:
+- 25 new products added: 15 indoor plants + 10 pots/planters (total now 120 products)
+- All new products have real images, care info, ratings
+- Navigation improved: smooth scrolling on in-page links, functional buttons
+- Researched from Bangladesh market (Daraz, mygardenbd, Facebook plant groups)
+- Lint passes, committed and pushed to GitHub
