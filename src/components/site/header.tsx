@@ -10,6 +10,9 @@ import {
   Phone,
   Truck,
   X,
+  ShieldCheck,
+  Sprout,
+  Gift,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,12 +23,28 @@ import { TrackDialog } from "./track-dialog";
 import { useCart } from "@/lib/cart-store";
 import { categories, shopInfo } from "@/lib/data";
 
+const announceMessages = [
+  { icon: <Truck className="h-3.5 w-3.5" />, text: "ক্যাশ অন ডেলিভারি — সারা বাংলাদেশে" },
+  { icon: <ShieldCheck className="h-3.5 w-3.5" />, text: "১০০% আসল পণ্য — মান নিশ্চিত" },
+  { icon: <Sprout className="h-3.5 w-3.5" />, text: "২২০+ গার্ডেনিং পণ্য — এক ছাদে" },
+  { icon: <Gift className="h-3.5 w-3.5" />, text: "১০০০৳+ অর্ডারে ফ্রি ডেলিভারি" },
+];
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [trackOpen, setTrackOpen] = useState(false);
+  const [announceIdx, setAnnounceIdx] = useState(0);
   const { open: openCart, totalCount } = useCart();
   const [count, setCount] = useState(0);
+
+  // Rotate announcement messages
+  useEffect(() => {
+    const t = setInterval(() => {
+      setAnnounceIdx((prev) => (prev + 1) % announceMessages.length);
+    }, 3500);
+    return () => clearInterval(t);
+  }, []);
 
   // Subscribe to cart count for the badge (avoids hydration mismatch)
   useEffect(() => {
@@ -43,18 +62,27 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Announcement bar */}
-      <div className="bg-gradient-brand-deep text-white">
+      {/* Announcement bar with rotating messages */}
+      <div className="bg-gradient-brand-deep text-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-9 text-xs">
           <div className="flex items-center gap-4">
             <span className="hidden sm:flex items-center gap-1.5">
               <Phone className="h-3.5 w-3.5" />
               {shopInfo.phone}
             </span>
-            <span className="flex items-center gap-1.5 opacity-95">
-              <Truck className="h-3.5 w-3.5" />
-              ক্যাশ অন ডেলিভারি — সারা বাংলাদেশে
-            </span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={announceIdx}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.4 }}
+                className="flex items-center gap-1.5 opacity-95"
+              >
+                {announceMessages[announceIdx].icon}
+                {announceMessages[announceIdx].text}
+              </motion.span>
+            </AnimatePresence>
           </div>
           <span className="hidden md:block opacity-90 font-medium">
             🌱 {shopInfo.subtitle}

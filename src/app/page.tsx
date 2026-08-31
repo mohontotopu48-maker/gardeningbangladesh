@@ -14,11 +14,13 @@ import { Newsletter } from "@/components/site/newsletter";
 import { Footer } from "@/components/site/footer";
 import { FloatingBar } from "@/components/site/floating-bar";
 import { CartDrawer } from "@/components/site/cart-drawer";
+import { ScrollProgress } from "@/components/site/scroll-progress";
 import { categories, products } from "@/lib/data";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <ScrollProgress />
       <Header />
       <main className="flex-1">
         <HeaderBanner />
