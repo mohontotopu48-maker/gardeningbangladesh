@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedBackground } from "./animated-background";
+import { TypingText } from "./typing-text";
 import { shopInfo } from "@/lib/data";
 
 const container = {
@@ -70,9 +71,20 @@ export function Hero() {
           </motion.h1>
           <motion.p
             variants={item}
-            className="mt-2 text-lg sm:text-xl font-semibold text-white/95 text-shadow-md"
+            className="mt-2 text-lg sm:text-xl font-bold text-brand-green-bright text-shadow-md"
           >
-            Grow Green, Live Better 🌱
+            <TypingText
+              texts={[
+                "🌱 সবুজে বাঁচি প্রতিদিন",
+                "🏡 ছাদে গড়ি বাগান",
+                "🌿 জৈব চাষে স্বাস্থ্য",
+                "💚 প্রকৃতির ছোঁয়া ঘরে",
+                "🌻 ফুল ফোটাক মনে",
+              ]}
+              speed={70}
+              deleteSpeed={35}
+              delay={1800}
+            />
           </motion.p>
           <motion.p
             variants={item}

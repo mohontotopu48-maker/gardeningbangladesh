@@ -106,10 +106,10 @@ export function Header() {
             {/* Search (desktop) */}
             <div className="hidden md:flex flex-1 max-w-md mx-4">
               <div className="relative w-full group">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-brand-green transition-colors" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-brand-green group-focus-within:scale-110 transition-all" />
                 <Input
                   placeholder="সার, বীজ, টব খুঁজুন..."
-                  className="pl-9 pr-4 h-11 bg-brand-green-tint border-brand-green-light/50 focus-visible:ring-brand-green rounded-full"
+                  className="pl-9 pr-4 h-11 bg-brand-green-tint border-brand-green-light/50 focus-visible:ring-brand-green focus-visible:ring-2 focus-visible:bg-white focus-visible:border-brand-green rounded-full transition-all"
                 />
               </div>
             </div>
@@ -244,38 +244,38 @@ export function Header() {
         </div>
 
         {/* Category nav (desktop) — with Mega Menu */}
-        <div className="hidden lg:block border-t border-brand-green-light/40 bg-brand-green-tint/50">
+        <div className="hidden lg:block border-t border-brand-green-light/40 bg-gradient-to-r from-brand-green-tint/60 via-brand-green-tint/40 to-brand-green-tint/60">
           <div className="mx-auto max-w-7xl px-4">
-            <nav className="flex items-center gap-1 h-11 overflow-visible">
+            <nav className="flex items-center gap-1 h-12 overflow-visible">
               <MegaMenu />
-              <span className="h-4 w-px bg-border mx-1" />
+              <span className="h-5 w-px bg-brand-green-light mx-1" />
               <div className="flex items-center gap-0.5 overflow-x-auto scrollbar-hide flex-1">
                 {categories.map((cat) => (
                   <a
                     key={cat.id}
                     href={`/category/${cat.id}`}
-                    className="group relative px-3 py-1.5 text-sm font-medium text-foreground/70 hover:text-brand-green-dark rounded-md transition-colors whitespace-nowrap"
+                    className="group relative px-3.5 py-1.5 text-sm font-semibold text-foreground/70 hover:text-brand-green-dark rounded-lg transition-all whitespace-nowrap hover:bg-white/60"
                   >
                     {cat.name}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-gradient-brand rounded-full transition-all duration-300 group-hover:w-3/4" />
+                    <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-gradient-brand rounded-full transition-all duration-300 group-hover:w-4/5" />
                   </a>
                 ))}
               </div>
               <a
                 href="#videos"
-                className="group flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-md transition-all whitespace-nowrap hover:shadow-sm"
+                className="group flex items-center gap-1.5 px-3.5 py-1.5 text-sm font-bold text-red-600 hover:bg-red-50 rounded-lg transition-all whitespace-nowrap hover:shadow-sm"
               >
-                <svg className="h-4 w-4 transition-transform group-hover:scale-125" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="h-4 w-4 transition-transform group-hover:scale-125 group-hover:rotate-6" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.5.6c-1 .3-1.8 1.1-2 2.1C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2.1 1.8.6 9.5.6 9.5.6s7.7 0 9.5-.6c1-.3 1.8-1.1 2-2.1.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
                 </svg>
                 ভিডিও
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-red-500 rounded-full transition-all duration-300 group-hover:w-3/4" />
+                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-red-500 rounded-full transition-all duration-300 group-hover:w-4/5" />
               </a>
               <a
                 href="/membership"
-                className="group flex items-center gap-1.5 px-3 py-1.5 text-sm font-bold text-white bg-gradient-to-r from-amber-500 to-orange-600 hover:shadow-md rounded-md transition-all whitespace-nowrap"
+                className="group flex items-center gap-1.5 px-4 py-1.5 text-sm font-bold text-white bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 hover:shadow-brand rounded-lg transition-all whitespace-nowrap hover:scale-105"
               >
-                <Crown className="h-4 w-4 transition-transform group-hover:scale-110" />
+                <Crown className="h-4 w-4 transition-transform group-hover:scale-125 group-hover:-rotate-6" />
                 সদস্যপদ
               </a>
             </nav>

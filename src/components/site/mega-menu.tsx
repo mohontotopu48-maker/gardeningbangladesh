@@ -64,8 +64,8 @@ export function MegaMenu() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <button className="group flex h-full items-center gap-1.5 px-3 text-sm font-bold text-white bg-gradient-brand rounded-lg mx-1 my-0.5 transition-all hover:shadow-brand hover:scale-[1.03] whitespace-nowrap">
-        <Home className="h-4 w-4 transition-transform group-hover:scale-110 group-hover:rotate-12" />
+      <button className="group flex h-full items-center gap-1.5 px-4 text-sm font-bold text-white bg-gradient-brand rounded-lg mx-1 my-0.5 transition-all hover:shadow-brand hover:scale-105 whitespace-nowrap">
+        <Home className="h-4 w-4 transition-transform group-hover:scale-125 group-hover:rotate-12" />
         সব ক্যাটাগরি
         <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
       </button>
