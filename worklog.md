@@ -576,3 +576,19 @@ Stage Summary:
 - রাসায়নিক সার page header now uses the new uploaded image
 - Checkout flow fully verified: cart → form → DB order creation → success → dashboard → tracking — all working
 - Lint passes
+
+---
+Task ID: 28
+Agent: main (Z.ai Code)
+Task: Add uploaded image to আউটডোর প্লান্ট header + commit to GitHub
+
+Work Log:
+- Converted uploaded image (pasted_image_1788144844721.png, 1024x439) to public/gallery/outdoor-plants-header.jpg (105KB)
+- Updated categoryHeaderImages: category 10 (আউটডোর প্লান্ট) now uses outdoor-plants-header.jpg
+- Verified: image loads on /category/10 page, title "আউটডোর প্লান্ট" displays correctly
+- Committed all pending changes (header images, planting guides, checkout fixes, slide images) and pushed to GitHub (commit 61f6736)
+
+Stage Summary:
+- আউটডোর প্লান্ট page header now uses the new uploaded image
+- All recent changes committed and pushed to GitHub: https://github.com/mohontotopu48-maker/gardeningbangladesh
+- Lint passes
