@@ -16,7 +16,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-night.jpg",
+    src: "/gallery/slide-rooftop-mango.jpg",
     title: "ঢাকার ছাদে সবুজ বিপ্লব",
     subtitle: "Rooftop Gardening in Dhaka",
     description:
@@ -25,22 +25,22 @@ const slides: Slide[] = [
     href: "/collection/plants-seeds",
   },
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-aerial.jpg",
-    title: "সবুজে ভরা আপনার বাগান",
-    subtitle: "Beautiful Garden Views",
+    src: "/gallery/slide-rooftop-food.jpg",
+    title: "ছাদে ফলের বাগান",
+    subtitle: "Rooftop Food Garden",
     description:
-      "ফুল, শাকসবজি আর ফলের বাগানে প্রাকৃতিক সৌন্দর্য। আমাদের ২২০+ পণ্য দিয়ে গড়ে তুলুন আপনার স্বপ্নের বাগান।",
-    cta: "বাগানের পণ্য দেখুন",
-    href: "#products",
+      "ছাদের বাগানে আম, লেবু, পেঁপেসহ ফলের চারা লাগান। তাজা ফল উৎপাদন করুন নিজের ছাদে। আমাদের জৈব সার ও চারা দিয়ে নিশ্চিত ফলন।",
+    cta: "ফলের চারা দেখুন",
+    href: "/category/10",
   },
   {
-    src: "/gallery/gardening-bangladesh-dhaka-rooftop-lounge.jpg",
-    title: "ছাদের সবুজ বিশ্রাম কোণ",
-    subtitle: "Rooftop Lounge Garden",
+    src: "/gallery/slide-rooftop-view.jpg",
+    title: "সবুজে ভরা আপনার ছাদ",
+    subtitle: "Beautiful Rooftop Views",
     description:
-      "ছাদের এক কোণে সবুজ গাছপালা দিয়ে তৈরি করুন আপনার বিশ্রামের জায়গা। ইনডোর ও আউটডোর প্লান্টের সেরা সংগ্রহ।",
-    cta: "প্লান্ট সংগ্রহ দেখুন",
-    href: "/category/9",
+      "ফুল, শাকসবজি আর ফলের বাগানে প্রাকৃতিক সৌন্দর্য। আমাদের ২২০+ পণ্য দিয়ে গড়ে তুলুন আপনার স্বপ্নের ছাদ বাগান।",
+    cta: "বাগানের পণ্য দেখুন",
+    href: "#products",
   },
 ];
 
