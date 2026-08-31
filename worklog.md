@@ -554,3 +554,25 @@ Stage Summary:
 - Home page last section (Hero "সবুজে বাঁচি প্রতিদিন") now uses the new uploaded image as background
 - Old hero-reference image replaced, new image displays properly (2688x1152, high-res)
 - Lint passes
+
+---
+Task ID: 27
+Agent: main (Z.ai Code)
+Task: Add uploaded image to রাসায়নিক সার header + verify checkout works proper
+
+Work Log:
+- Converted uploaded image (pasted_image_1788144523459.png, 1024x439) to public/gallery/chemical-fertilizer-header.jpg (129KB)
+- Updated categoryHeaderImages: category 7 (রাসায়নিক সার) now uses chemical-fertilizer-header.jpg
+- Verified checkout flow end-to-end:
+  1. Added product to cart → cart drawer opened with item
+  2. Clicked "চেকআউট করুন" → checkout dialog opened with form
+  3. Filled form (name, phone, email, address, city) → clicked submit
+  4. Order created successfully (GB260831671) → success screen with order number
+  5. Verified order appears in dashboard
+  6. Tracked order with real order number + phone → showed correct order details (GB260831671, 1 item, 120৳, timeline)
+- Lint passes, all flows working properly
+
+Stage Summary:
+- রাসায়নিক সার page header now uses the new uploaded image
+- Checkout flow fully verified: cart → form → DB order creation → success → dashboard → tracking — all working
+- Lint passes
