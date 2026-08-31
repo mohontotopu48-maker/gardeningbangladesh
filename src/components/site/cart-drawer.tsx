@@ -7,12 +7,14 @@ import { X, Plus, Minus, Trash2, ShoppingBag, ArrowLeft, Truck, ShieldCheck } fr
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart-store";
 import { shopInfo } from "@/lib/data";
+import { CheckoutDialog } from "./checkout-dialog";
 
 const FREE_SHIPPING_THRESHOLD = 1000;
 
 export function CartDrawer() {
   const { items, isOpen, close, remove, updateQuantity, totalPrice, totalCount, clear } =
     useCart();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   // Lock scroll when open
   useEffect(() => {
@@ -32,6 +34,7 @@ export function CartDrawer() {
   const shippingProgress = Math.min(100, (total / FREE_SHIPPING_THRESHOLD) * 100);
 
   return (
+    <>
     <AnimatePresence>
       {isOpen && (
         <>
@@ -241,13 +244,11 @@ export function CartDrawer() {
                     <Trash2 className="h-4 w-4" />
                   </Button>
                   <Button
-                    asChild
+                    onClick={() => setCheckoutOpen(true)}
                     className="flex-1 bg-brand-green hover:bg-brand-green-dark rounded-full font-bold shadow-brand"
                   >
-                    <a href={`tel:${shopInfo.phone}`}>
-                      চেকআউট করুন
-                      <ArrowLeft className="h-4 w-4 ml-1.5" />
-                    </a>
+                    চেকআউট করুন
+                    <ArrowLeft className="h-4 w-4 ml-1.5" />
                   </Button>
                 </div>
               </div>
@@ -255,7 +256,10 @@ export function CartDrawer() {
           </motion.aside>
         </>
       )}
-    </AnimatePresence>
+      </AnimatePresence>
+
+      <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
+    </>
   );
 }
 

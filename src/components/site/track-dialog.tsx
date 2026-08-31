@@ -52,31 +52,50 @@ export function TrackDialog({
     total: number;
   } | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const statusMap: Record<string, number> = {
+    pending: 1,
+    confirmed: 1,
+    packaging: 2,
+    shipping: 3,
+    delivered: 4,
+    cancelled: 0,
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!orderId.trim() || !phone.trim()) return;
     setLoading(true);
     setResult(null);
-    // Simulate API lookup — deterministic status based on order id length
-    setTimeout(() => {
-      const statusNum = Math.min(
-        4,
-        Math.max(1, (orderId.replace(/\D/g, "").length % 4) + 1),
+    setError("");
+
+    try {
+      const res = await fetch(
+        `/api/orders/${encodeURIComponent(orderId.trim())}?phone=${encodeURIComponent(phone.trim())}`,
       );
-      setResult({
-        status: statusNum,
-        name: `GB${orderId.slice(-6).padStart(6, "0")}`,
-        date: new Date().toLocaleDateString("bn-BD", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        }),
-        items: 3,
-        total: 540,
-      });
-      setLoading(false);
-    }, 1200);
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "অর্ডার পাওয়া যায়নি");
+      } else {
+        const order = data.order;
+        setResult({
+          status: statusMap[order.status] || 1,
+          name: order.orderNumber,
+          date: new Date(order.createdAt).toLocaleDateString("bn-BD", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          }),
+          items: order.items.length,
+          total: order.total,
+        });
+      }
+    } catch {
+      setError("অর্ডার খুঁজতে সমস্যা হয়েছে");
+    }
+    setLoading(false);
   };
 
   const reset = () => {
@@ -159,8 +178,11 @@ export function TrackDialog({
                 )}
               </Button>
               <p className="text-center text-xs text-muted-foreground">
-                💡 টেস্টের জন্য যেকোনো আইডি ও নম্বর দিন
+                💡 অর্ডার নম্বর ও ফোন দিয়ে ট্র্যাক করুন
               </p>
+              {error && (
+                <p className="text-center text-sm text-red-500 font-medium">{error}</p>
+              )}
             </form>
           ) : (
             <motion.div

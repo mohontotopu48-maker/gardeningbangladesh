@@ -339,3 +339,29 @@ Stage Summary:
 - All elements proper and working: cart (add/quantity/totals/persist), tracking (form/timeline), mega menu, category pages, collection pages, all images load
 - Purchase flow complete: add to cart → adjust quantity → checkout via phone (COD model)
 - No issues found, lint passes, site fully functional
+
+---
+Task ID: 17
+Agent: main (Z.ai Code)
+Task: Add more animations + create proper backend for order and customer management dashboard
+
+Work Log:
+- Created Prisma schema with Order, OrderItem, Customer models (SQLite); ran db:push to sync
+- Built API routes: POST/GET /api/orders (create order with auto-generated order number GB+date+random, list with status/search filter), GET/PATCH/DELETE /api/orders/[id] (with phone verification for tracking), GET/POST /api/customers, GET /api/dashboard (stats: totalOrders, totalCustomers, pendingOrders, deliveredOrders, totalRevenue, recentOrders, statusBreakdown)
+- Built CheckoutDialog component: full checkout form (name, phone, email, address, city, note), order summary with totals, COD notice, loading state with spinner, success state with order number + animated checkmark; creates real order in DB via POST /api/orders; clears cart on success
+- Updated CartDrawer: checkout button now opens CheckoutDialog (instead of tel: link); added checkoutOpen state
+- Updated TrackDialog: now queries real DB orders via GET /api/orders/[id]?phone=X instead of simulated lookup; shows real order number, date, items count, total; error handling for wrong order number or phone mismatch
+- Built admin dashboard at /dashboard: 5 stat cards (total orders, customers, pending, delivered, revenue) with animated reveal; orders table with order number, customer, items, total, status badge, date, view button + inline status dropdown; customers table with name, phone, address, order count, join date; search + status filter; order detail dialog with full info + status change; refresh button
+- Status management: 6 statuses (pending, confirmed, packaging, shipping, delivered, cancelled) with color-coded badges and icons; inline status update via PATCH API
+- Added animation components: PageTransition (fade+slide), FadeInWhenVisible, StaggerContainer/StaggerItem for staggered reveals
+- Added skeleton components: ProductCardSkeleton + ProductGridSkeleton for loading states
+- Verified end-to-end: added product to cart → checkout form → submitted → order GB260831145 created in DB → dashboard shows order with stats (1 order, 1 customer, pending) → updated status to delivered → tracking with real order number shows correct data (GB260831145, date, 1 item, 120৳, timeline)
+- Lint passes (0 errors)
+
+Stage Summary:
+- Full backend: Prisma + SQLite with Order/OrderItem/Customer models, 5 API routes (orders CRUD, customers CRUD, dashboard stats)
+- Working checkout: cart → form → DB order creation → success with order number
+- Real order tracking: queries DB with phone verification
+- Admin dashboard at /dashboard: stats, orders table with status management, customers table, search/filter, order detail dialog
+- More animations: page transitions, stagger containers, scroll reveals, skeletons
+- Full e-commerce flow verified end-to-end: purchase → order in DB → dashboard management → customer tracking
