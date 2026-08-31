@@ -1,5 +1,4 @@
 import { Header } from "@/components/site/header";
-import { HeaderGallery } from "@/components/site/header-gallery";
 import { HeaderBanner } from "@/components/site/header-banner";
 import { Hero } from "@/components/site/hero";
 import { ImageSlider } from "@/components/site/image-slider";
@@ -25,9 +24,11 @@ export default function Home() {
       <ScrollProgress />
       <Header />
       <main className="flex-1">
-        <HeaderGallery />
+        {/* Top: 1 slide view */}
         <HeaderBanner />
+        {/* Middle: 1 section */}
         <Hero />
+        {/* Last: ImageSlider */}
         <ImageSlider />
         <FeaturesStrip />
         <CategoryStrip />

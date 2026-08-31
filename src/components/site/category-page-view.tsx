@@ -16,7 +16,6 @@ import { CartDrawer } from "@/components/site/cart-drawer";
 import { ProductCard } from "@/components/site/product-card";
 import { AnimatedBackground } from "@/components/site/animated-background";
 import { CategoryFaq, CategoryYouTube } from "@/components/site/category-interactive";
-import { HeaderGallery } from "@/components/site/header-gallery";
 import { categories, products, categoryContent, shopInfo, type Category, type CategoryPageContent } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -51,7 +50,6 @@ export function CategoryPageView({ catId }: { catId: number }) {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <HeaderGallery />
         <CategoryHero category={category} content={content} />
         <InfographicStrip content={content} />
         <BenefitsSection content={content} />
