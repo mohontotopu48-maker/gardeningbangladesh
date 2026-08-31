@@ -317,3 +317,25 @@ Stage Summary:
 - "সবুজে বাঁচি প্রতিদিন" Hero section moved to end of home page (before footer)
 - Top now starts with HeaderBanner slider, Hero serves as a powerful closing section
 - Image loads, lint passes
+
+---
+Task ID: 16
+Agent: main (Z.ai Code)
+Task: Recheck all elements proper and test purchase done
+
+Work Log:
+- Comprehensive review: dev server started, lint passes (0 errors), no runtime errors
+- Home page: all sections render properly (HeaderBanner slider → ImageSlider → FeaturesStrip → CategoryStrip → 10 category sections → IndoorPlantsHighlight → PopularProducts → AllProducts → GardenGallery → VideoSection → Testimonials → Newsletter → Hero at end)
+- Full purchase flow tested: added 2 products to cart (ঝিনুক পাউডার 60৳ + ডিমের খোসা 45৳), increased quantity to 3, verified cart math (225৳ subtotal + 60৳ delivery = 285৳ total), checkout button links to tel:01822025322 (COD ordering via phone)
+- Cart persistence verified: items persisted across page reload (localStorage working)
+- Order tracking tested: filled form (GB123456 + phone), submitted, got full 4-step timeline (অর্ডার গৃহীত → প্যাকেজিং → পথে আছে → ডেলিভারি সম্পন্ন) with order number, date, items, total
+- Mega menu tested: shows all categories including indoor (22 products) + outdoor (12 products) with counts, links to /category/[id] and /collection/[slug]
+- Category page (/category/10) tested: renders hero, benefits, products, YouTube, FAQ, CTA
+- Collection page (/collection/plants-seeds) tested: renders hero, sub-categories, benefits, products, highlights, YouTube, CTA
+- Image loading: all 144 images on home page load successfully (0 failed)
+- Lint passes (0 errors)
+
+Stage Summary:
+- All elements proper and working: cart (add/quantity/totals/persist), tracking (form/timeline), mega menu, category pages, collection pages, all images load
+- Purchase flow complete: add to cart → adjust quantity → checkout via phone (COD model)
+- No issues found, lint passes, site fully functional
