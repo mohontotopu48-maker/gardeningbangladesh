@@ -539,3 +539,18 @@ Stage Summary:
   - Care tips (6 tips each with checkmark icons)
   - Usage instructions (4 specific use cases each)
 - All guides in Bengali, Framer Motion animations, lint passes
+
+---
+Task ID: 26
+Agent: main (Z.ai Code)
+Task: Replace home page last section (Hero) background image with new uploaded image
+
+Work Log:
+- Converted uploaded image (pasted_image_1788144310732.png, 2688x1152) to public/gallery/home-last-bg.jpg (690KB, quality 90)
+- Updated hero.tsx: replaced /gallery/gardening-bangladesh-hero-reference.jpg → /gallery/home-last-bg.jpg
+- Verified: last section on home page now uses home-last-bg.jpg, image loads successfully, lint passes
+
+Stage Summary:
+- Home page last section (Hero "সবুজে বাঁচি প্রতিদিন") now uses the new uploaded image as background
+- Old hero-reference image replaced, new image displays properly (2688x1152, high-res)
+- Lint passes
