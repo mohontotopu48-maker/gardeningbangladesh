@@ -365,3 +365,26 @@ Stage Summary:
 - Admin dashboard at /dashboard: stats, orders table with status management, customers table, search/filter, order detail dialog
 - More animations: page transitions, stagger containers, scroll reveals, skeletons
 - Full e-commerce flow verified end-to-end: purchase → order in DB → dashboard management → customer tracking
+
+---
+Task ID: 18
+Agent: main (Z.ai Code)
+Task: Commit and ensure Vercel deployment environment is proper
+
+Work Log:
+- Removed `.env` and `db/custom.db` from git tracking (were accidentally committed; kept locally for dev)
+- Added `db/`, `*.db`, `*.db-journal` to .gitignore (SQLite database files should not be committed)
+- Added `!.env.example` exception to .gitignore (so .env.example IS committed for documentation)
+- Created `.env.example` documenting DATABASE_URL options: local SQLite, Turso (cloud SQLite), Vercel Postgres, or /tmp SQLite
+- Created `vercel.json` with framework: nextjs, buildCommand: next build, installCommand: bun install
+- Updated package.json: changed build script from `next build && cp...` (standalone) to just `next build` (Vercel-compatible); added `build:standalone` for standalone deployments; added `postinstall: prisma generate` (essential for Vercel — generates Prisma client during install)
+- Committed all changes: "feat: Vercel deployment config"
+- Pushed to GitHub: https://github.com/mohontotopu48-maker/gardeningbangladesh (commit 8807f5b)
+- Removed token from git remote URL for security
+- Verified dev server still runs cleanly, lint passes
+
+Stage Summary:
+- Code committed and pushed to GitHub (2 commits: dashboard/backend + deployment config)
+- Vercel deployment ready: vercel.json configured, .env.example documents required env vars, postinstall runs prisma generate, build script is Vercel-compatible
+- .env and db/custom.db removed from git (security), .env.example added for documentation
+- To deploy: import repo on Vercel, set DATABASE_URL env var, deploy
