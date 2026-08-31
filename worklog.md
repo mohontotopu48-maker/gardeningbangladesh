@@ -592,3 +592,25 @@ Stage Summary:
 - আউটডোর প্লান্ট page header now uses the new uploaded image
 - All recent changes committed and pushed to GitHub: https://github.com/mohontotopu48-maker/gardeningbangladesh
 - Lint passes
+
+---
+Task ID: 29
+Agent: main (Z.ai Code)
+Task: Add 3 rooftop images to "ঢাকার ছাদে সবুজ বিপ্লব" ImageSlider section
+
+Work Log:
+- Downloaded 3 images from ibb.co, used high-res originals from upload folder:
+  - slide-rooftop-mango.jpg (2304x1536, 477KB) — mango/garden image
+  - slide-rooftop-food.jpg (2176x1632, 751KB) — rooftop garden image
+  - slide-rooftop-view.jpg (2304x1536, 954KB) — garden view image
+- Updated ImageSlider slides:
+  - Slide 1: slide-rooftop-mango.jpg — "ঢাকার ছাদে সবুজ বিপ্লব" — CTA: ছাদ বাগান শুরু করুন → /collection/plants-seeds
+  - Slide 2: slide-rooftop-food.jpg — "ছাদে ফলের বাগান" — CTA: ফলের চারা দেখুন → /category/10
+  - Slide 3: slide-rooftop-view.jpg — "সবুজে ভরা আপনার ছাদ" — CTA: বাগানের পণ্য দেখুন → #products
+- Verified: all 3 slides display with correct images and titles, images load successfully
+- Committed and pushed to GitHub (commit 108999a)
+
+Stage Summary:
+- ImageSlider now uses 3 new rooftop images (mango, food garden, garden view) — all high-res
+- "ঢাকার ছাদে সবুজ বিপ্লব" section updated with new images and Bengali content
+- Committed and pushed to GitHub
