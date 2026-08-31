@@ -614,3 +614,32 @@ Stage Summary:
 - ImageSlider now uses 3 new rooftop images (mango, food garden, garden view) — all high-res
 - "ঢাকার ছাদে সবুজ বিপ্লব" section updated with new images and Bengali content
 - Committed and pushed to GitHub
+
+---
+Task ID: 30
+Agent: main (Z.ai Code)
+Task: Check font colors, sizes, contrast — ensure clear view, no conflicts, impressive text
+
+Work Log:
+- Increased body font size from 15px → 16px (standard web readability)
+- Increased line-height from 1.6 → 1.65 for better text spacing
+- Tightened heading letter-spacing from -0.01em → -0.015em for clearer hierarchy
+- Added heading line-height 1.25 for consistent vertical rhythm
+- Darkened muted-foreground from oklch(0.5) → oklch(0.45) for better contrast on white backgrounds
+- Added text-shadow utility classes: text-shadow-lg (0 2px 8px), text-shadow-md (0 1px 4px), text-shadow-sm (0 1px 2px)
+- Applied text-shadow-lg to Hero h1, ImageSlider h2, HeaderBanner h2, PageHeaderImage h2 — ensures white text is clearly readable on image backgrounds (no color conflict)
+- Applied text-shadow-md/sm to Hero subtitles and descriptions for improved readability
+- Increased ImageSlider description opacity from /85 → /90 for better contrast
+- Increased HeaderBanner description opacity from /85 → /90
+- Increased product card text sizes: rating/sold from text-[11px] → text-xs (12px), sold count from text-[10px] → text-[11px], unit from text-[10px] → text-[11px]
+- Changed product name from font-medium → font-semibold for stronger visual weight
+- Added ::selection styling (green bg, white text) for impressive text selection
+- Verified: body 16px, headings have text shadows, product cards more readable, no contrast conflicts, lint passes
+
+Stage Summary:
+- Font sizes increased (body 16px, product card text larger)
+- Text shadows added to all image-overlay text (hero, slider, header banner, page headers) — no more color conflicts with backgrounds
+- Muted text darkened for better contrast
+- Product names made semibold for stronger hierarchy
+- Text selection styled with brand green
+- Lint passes, all text clearly readable and impressive

@@ -62,7 +62,7 @@ export function Hero() {
           </motion.span>
           <motion.h1
             variants={item}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight text-shadow-lg"
           >
             সবুজে বাঁচি
             <br />
@@ -70,13 +70,13 @@ export function Hero() {
           </motion.h1>
           <motion.p
             variants={item}
-            className="mt-2 text-lg sm:text-xl font-semibold text-white/95"
+            className="mt-2 text-lg sm:text-xl font-semibold text-white/95 text-shadow-md"
           >
             Grow Green, Live Better 🌱
           </motion.p>
           <motion.p
             variants={item}
-            className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed max-w-xl"
+            className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed max-w-xl text-shadow-sm"
           >
             {shopInfo.description}
           </motion.p>

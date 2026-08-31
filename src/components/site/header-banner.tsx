@@ -121,7 +121,7 @@ export function HeaderBanner() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight"
+                className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight text-shadow-lg"
               >
                 {slides[current].title}{" "}
                 <span className="text-brand-green-bright">
@@ -132,7 +132,7 @@ export function HeaderBanner() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="mt-3 text-sm sm:text-base text-white/85 leading-relaxed max-w-md"
+                className="mt-3 text-sm sm:text-base text-white/90 leading-relaxed max-w-md text-shadow-sm"
               >
                 {slides[current].description}
               </motion.p>

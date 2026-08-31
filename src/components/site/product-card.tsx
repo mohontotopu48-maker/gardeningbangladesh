@@ -161,16 +161,16 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
       {/* Content */}
       <div className="flex flex-1 flex-col gap-1.5 p-3">
         {/* Rating + sold */}
-        <div className="flex items-center justify-between gap-1 text-[11px] text-muted-foreground">
+        <div className="flex items-center justify-between gap-1 text-xs text-muted-foreground">
           <span className="flex items-center gap-0.5">
             <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
             <span className="font-semibold text-foreground">{product.rating}</span>
             <span>({product.reviews})</span>
           </span>
-          <span className="text-[10px]">{product.sold}+ বিক্রি</span>
+          <span className="text-[11px]">{product.sold}+ বিক্রি</span>
         </div>
 
-        <h3 className="text-sm font-medium leading-snug text-foreground line-clamp-2 min-h-[2.5rem]">
+        <h3 className="text-sm font-semibold leading-snug text-foreground line-clamp-2 min-h-[2.5rem]">
           {product.name}
         </h3>
 
@@ -199,7 +199,7 @@ export function ProductCard({ product, className, index = 0 }: ProductCardProps)
                 </span>
               )}
             </div>
-            <span className="text-[10px] text-muted-foreground">{product.unit}</span>
+            <span className="text-[11px] text-muted-foreground">{product.unit}</span>
           </div>
           <Button
             size="sm"

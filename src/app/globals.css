@@ -58,7 +58,7 @@
   --secondary: oklch(0.96 0.02 145);
   --secondary-foreground: oklch(0.25 0.04 145);
   --muted: oklch(0.97 0.01 145);
-  --muted-foreground: oklch(0.5 0.02 150);
+  --muted-foreground: oklch(0.45 0.02 150);
   /* Light green accent */
   --accent: oklch(0.95 0.05 142);
   --accent-foreground: oklch(0.3 0.06 142);
@@ -122,8 +122,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.65;
   }
   html {
     scroll-behavior: smooth;
@@ -133,10 +133,26 @@
     font-feature-settings: "kern", "liga";
     font-variant-ligatures: common-ligatures;
   }
-  /* Headings - bolder and tighter for readability */
+  /* Headings - bolder, tighter, clear hierarchy */
   h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     text-wrap: balance;
+    line-height: 1.25;
+  }
+  /* Improve text selection */
+  ::selection {
+    background-color: var(--brand-green);
+    color: white;
+  }
+  /* Ensure text on image overlays is readable */
+  .text-shadow-lg {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.3);
+  }
+  .text-shadow-md {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 }
 

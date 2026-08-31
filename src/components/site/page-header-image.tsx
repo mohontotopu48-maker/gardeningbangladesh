@@ -30,7 +30,7 @@ export function PageHeaderImage({ src, alt, title, subtitle }: PageHeaderImagePr
                   {subtitle}
                 </p>
               )}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white drop-shadow-lg">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white text-shadow-lg">
                 {title}
               </h2>
             </div>
