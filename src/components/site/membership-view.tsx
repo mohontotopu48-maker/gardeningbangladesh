@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { FloatingBar } from "@/components/site/floating-bar";
+import { QuickSidebar } from "@/components/site/quick-sidebar";
 import { CartDrawer } from "@/components/site/cart-drawer";
 import { AnimatedBackground } from "@/components/site/animated-background";
 import { PageHeaderImage } from "@/components/site/page-header-image";
@@ -476,6 +477,7 @@ export function MembershipView() {
       </main>
       <Footer />
       <FloatingBar />
+      <QuickSidebar />
       <CartDrawer />
     </div>
   );

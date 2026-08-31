@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { FloatingBar } from "@/components/site/floating-bar";
+import { QuickSidebar } from "@/components/site/quick-sidebar";
 import { CartDrawer } from "@/components/site/cart-drawer";
 import { ProductCard } from "@/components/site/product-card";
 import { AnimatedBackground } from "@/components/site/animated-background";
@@ -70,6 +71,7 @@ export function CategoryPageView({ catId }: { catId: number }) {
       </main>
       <Footer />
       <FloatingBar />
+      <QuickSidebar />
       <CartDrawer />
     </div>
   );

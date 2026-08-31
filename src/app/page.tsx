@@ -15,6 +15,7 @@ import { Newsletter } from "@/components/site/newsletter";
 import { Footer } from "@/components/site/footer";
 import { FloatingBar } from "@/components/site/floating-bar";
 import { CartDrawer } from "@/components/site/cart-drawer";
+import { QuickSidebar } from "@/components/site/quick-sidebar";
 import { ScrollProgress } from "@/components/site/scroll-progress";
 import { categories, products } from "@/lib/data";
 
@@ -56,6 +57,7 @@ export default function Home() {
       <Footer />
       <FloatingBar />
       <CartDrawer />
+      <QuickSidebar />
     </div>
   );
 }
