@@ -16,6 +16,7 @@ import { CartDrawer } from "@/components/site/cart-drawer";
 import { ProductCard } from "@/components/site/product-card";
 import { AnimatedBackground } from "@/components/site/animated-background";
 import { CategoryFaq, CategoryYouTube } from "@/components/site/category-interactive";
+import { PageHeaderImage, categoryHeaderImages } from "@/components/site/page-header-image";
 import { categories, products, categoryContent, shopInfo, type Category, type CategoryPageContent } from "@/lib/data";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -50,6 +51,12 @@ export function CategoryPageView({ catId }: { catId: number }) {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <PageHeaderImage
+          src={categoryHeaderImages[catId] || "/gallery/gardening-bangladesh-garden-view-01.jpg"}
+          alt={category.name}
+          title={category.name}
+          subtitle={category.nameEn}
+        />
         <CategoryHero category={category} content={content} />
         <InfographicStrip content={content} />
         <BenefitsSection content={content} />

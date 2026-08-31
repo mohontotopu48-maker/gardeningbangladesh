@@ -16,6 +16,7 @@ import { Footer } from "@/components/site/footer";
 import { FloatingBar } from "@/components/site/floating-bar";
 import { CartDrawer } from "@/components/site/cart-drawer";
 import { AnimatedBackground } from "@/components/site/animated-background";
+import { PageHeaderImage } from "@/components/site/page-header-image";
 import { shopInfo } from "@/lib/data";
 
 type Plan = "monthly" | "lifetime";
@@ -115,6 +116,12 @@ export function MembershipView() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        <PageHeaderImage
+          src="/gallery/gardening-bangladesh-community.jpg"
+          alt="Gardening Bangladesh Membership"
+          title="সদস্যপদ"
+          subtitle="Gardening Bangladesh Membership"
+        />
         {/* Hero */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0">

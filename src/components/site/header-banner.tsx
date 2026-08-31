@@ -78,10 +78,10 @@ export function HeaderBanner() {
           <motion.div
             key={current}
             custom={direction}
-            initial={{ opacity: 0, scale: 1.08, x: direction * 80 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.95, x: direction * -80 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, x: direction * 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: direction * -60 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0"
           >
             <Image

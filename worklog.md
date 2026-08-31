@@ -468,3 +468,26 @@ Stage Summary:
 - 47 dreamagrobd.com products now have their real product images (downloaded locally)
 - All images load successfully, no failures
 - Lint passes, site fully functional
+
+---
+Task ID: 23
+Agent: main (Z.ai Code)
+Task: Fix slide images to proper size (no zoom), add related header images to every webpage
+
+Work Log:
+- Rewrote ImageSlider: removed zoom modal (no more click-to-zoom), removed scale animation (was 1.05→1, now just opacity+x slide), kept object-cover for proper full-width display, simplified to clean slide transitions
+- Fixed HeaderBanner: removed scale 1.08→0.95 zoom animation, now uses clean opacity+x slide transition (no zoom effect)
+- Created PageHeaderImage component: proper-size header banner (200-280px height) with related image, gradient overlay, optional title/subtitle — shows image at full width with object-cover (no zoom beyond cover)
+- Created categoryHeaderImages mapping: each category (1-10) has a related gallery image (nursery, food-garden, garden-view, mango, rooftop-garden, etc.)
+- Created collectionHeaderImages mapping: each collection (fertilizers, plants-seeds, tools-care) has a related gallery image
+- Added PageHeaderImage to ALL pages:
+  - Category pages (/category/[id]): related image + category name as title
+  - Collection pages (/collection/[slug]): related image + collection name as title
+  - Membership page (/membership): community image + "সদস্যপদ" title
+  - Dashboard page (/dashboard): nursery image + "অ্যাডমিন ড্যাশবোর্ড" title
+- Verified with agent-browser: all 144 images load (0 failed), header images appear on all pages (category, collection, membership, dashboard), slides show proper size without zoom, lint passes
+
+Stage Summary:
+- Slide images now show at proper size (no zoom modal, no scale animation — clean slide transitions only)
+- Every webpage has a related header image section: category pages (10), collection pages (3), membership page, dashboard page
+- All 144 images load successfully, lint passes

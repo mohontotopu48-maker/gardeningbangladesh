@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { PageHeaderImage } from "@/components/site/page-header-image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -141,6 +142,12 @@ export function DashboardView() {
   return (
     <div className="flex min-h-screen flex-col bg-brand-cream">
       <Header />
+      <PageHeaderImage
+        src="/gallery/gardening-bangladesh-nursery.jpg"
+        alt="Admin Dashboard"
+        title="অ্যাডমিন ড্যাশবোর্ড"
+        subtitle="Gardening Bangladesh Admin"
+      />
       <main className="flex-1 mx-auto max-w-7xl w-full px-4 py-8">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
