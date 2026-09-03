@@ -1,7 +1,6 @@
 import { Header } from "@/components/site/header";
 import { HeaderBanner } from "@/components/site/header-banner";
 import { Hero } from "@/components/site/hero";
-import { ImageSlider } from "@/components/site/image-slider";
 import { FeaturesStrip } from "@/components/site/features-strip";
 import { CategoryStrip } from "@/components/site/category-strip";
 import { CategorySection } from "@/components/site/category-section";
@@ -25,9 +24,8 @@ export default function Home() {
       <ScrollProgress />
       <Header />
       <main className="flex-1">
-        {/* Top: 1 slide view */}
+        {/* Single slider at top */}
         <HeaderBanner />
-        <ImageSlider />
         <FeaturesStrip />
         <CategoryStrip />
 
