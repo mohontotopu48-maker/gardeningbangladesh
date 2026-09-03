@@ -18,33 +18,53 @@ type BannerSlide = {
 const slides: BannerSlide[] = [
   {
     src: "/slide-hero.jpg",
-    badge: "সবুজে বাঁচি প্রতিদিন",
-    title: "সবুজে বাঁচি",
-    highlight: "প্রতিদিন",
+    badge: "Gardening Bangladesh",
+    title: "Grow Green,",
+    highlight: "Live Better",
     description:
-      "গার্ডেনিং বাংলাদেশ — সারা বাংলাদেশে ছাদ বাগানীদের হাতে সেরা মানের সার, বীজ ও কৃষি উপকরণ পৌঁছে দিচ্ছি।",
-    cta: "এখনই কেনাকাটা করুন",
+      "Gardening Bangladesh — Bangladesh's #1 online gardening shop. Premium fertilizers, seeds, plants & tools delivered nationwide.",
+    cta: "Shop Now",
     href: "#products",
   },
   {
     src: "/slide-indoor.jpg",
-    badge: "ইনডোর প্লান্ট",
-    title: "ঘরে সবুজের",
-    highlight: "ছোঁয়া দিন",
+    badge: "Indoor Plants",
+    title: "Bring Nature",
+    highlight: "Indoors",
     description:
-      "স্নেক প্লান্ট, মানি প্লান্ট, পিস লিলি সহ ১২+ জাতের এয়ার-পিউরিফাইং ইনডোর প্লান্ট। ঘরের বাতাস পরিষ্কার করুন।",
-    cta: "ইনডোর প্লান্ট কিনুন",
+      "Air-purifying indoor plants for your home & office. Snake plant, money plant, peace lily & 25+ varieties available.",
+    cta: "Browse Indoor Plants",
     href: "/category/9",
   },
   {
     src: "/slide-community.jpg",
-    badge: "গার্ডেনিং কমিউনিটি",
-    title: "একসাথে সবুজ",
-    highlight: "বিপ্লব গড়ি",
+    badge: "Join Our Community",
+    title: "Be Part of the",
+    highlight: "Green Revolution",
     description:
-      "গার্ডেনিং প্রেমীদের বড় কমিউনিটিতে যুক্ত হন। আমাদের সাথে বাংলাদেশে সবুজ বিপ্লবে অংশ নিন।",
-    cta: "সদস্যপদ নিন",
+      "Join thousands of gardening enthusiasts. Membership from just 150৳ lifetime. Exclusive discounts & free delivery.",
+    cta: "Get Membership",
     href: "/membership",
+  },
+  {
+    src: "/gallery/gardening-bangladesh-nursery.jpg",
+    badge: "Quality You Trust",
+    title: "240+ Products",
+    highlight: "One Roof",
+    description:
+      "Organic & chemical fertilizers, seeds, pots, tools, pesticides — everything for your garden in one place.",
+    cta: "View All Products",
+    href: "#products",
+  },
+  {
+    src: "/gallery/gardening-bangladesh-rooftop-garden.jpg",
+    badge: "Cash on Delivery",
+    title: "Delivered",
+    highlight: "Nationwide",
+    description:
+      "Cash on delivery across all 64 districts of Bangladesh. Order online or call us at 01753961715.",
+    cta: "Order Now",
+    href: "#products",
   },
 ];
 

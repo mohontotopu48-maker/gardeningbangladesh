@@ -17,29 +17,29 @@ type Slide = {
 const slides: Slide[] = [
   {
     src: "/gallery/slide-rooftop-mango.jpg",
-    title: "ঢাকার ছাদে সবুজ বিপ্লব",
-    subtitle: "Rooftop Gardening in Dhaka",
+    title: "Rooftop Gardening Revolution",
+    subtitle: "Urban Green Spaces in Dhaka",
     description:
-      "শহরের কংক্রিটের জগতে ছাদ বাগান তৈরি করে সবুজ প্রকৃতির সংস্পর্শে আসুন। আমরা পৌঁছে দিচ্ছি সেরা সার, বীজ ও কৃষি উপকরণ।",
-    cta: "ছাদ বাগান শুরু করুন",
+      "Create your own rooftop garden in the city. We deliver the best fertilizers, seeds & gardening tools across Bangladesh.",
+    cta: "Start Your Garden",
     href: "/collection/plants-seeds",
   },
   {
     src: "/gallery/slide-rooftop-food.jpg",
-    title: "ছাদে ফলের বাগান",
-    subtitle: "Rooftop Food Garden",
+    title: "Grow Your Own Food",
+    subtitle: "Fresh & Organic",
     description:
-      "ছাদের বাগানে আম, লেবু, পেঁপেসহ ফলের চারা লাগান। তাজা ফল উৎপাদন করুন নিজের ছাদে। আমাদের জৈব সার ও চারা দিয়ে নিশ্চিত ফলন।",
-    cta: "ফলের চারা দেখুন",
-    href: "/category/10",
+      "From rooftop to table — grow fresh vegetables & fruits at home. Premium organic fertilizers ensure abundant harvest.",
+    cta: "Browse Fertilizers",
+    href: "/collection/fertilizers",
   },
   {
     src: "/gallery/slide-rooftop-view.jpg",
-    title: "সবুজে ভরা আপনার ছাদ",
-    subtitle: "Beautiful Rooftop Views",
+    title: "Your Green Sanctuary",
+    subtitle: "Beautiful Garden Views",
     description:
-      "ফুল, শাকসবজি আর ফলের বাগানে প্রাকৃতিক সৌন্দর্য। আমাদের ২২০+ পণ্য দিয়ে গড়ে তুলুন আপনার স্বপ্নের ছাদ বাগান।",
-    cta: "বাগানের পণ্য দেখুন",
+      "Transform your rooftop into a lush green paradise. 240+ gardening products to build your dream garden.",
+    cta: "Shop All Products",
     href: "#products",
   },
 ];

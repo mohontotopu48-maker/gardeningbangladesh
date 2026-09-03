@@ -1123,17 +1123,22 @@ export const shopInfo = {
   nameBn: "গার্ডেনিং বাংলাদেশ",
   tagline: "Grow Green, Live Better",
   taglineBn: "সবুজে বাঁচি প্রতিদিন",
-  subtitle: "বাংলাদেশের #১ অনলাইন গার্ডেনিং শপ",
-  phone: "01822025322",
-  email: "hello@gardeningbangladesh.com",
-  address: "মাধবদী, নরসিংদী, বাংলাদেশ",
+  subtitle: "Bangladesh's #1 Online Gardening Shop",
+  subtitleBn: "বাংলাদেশের #১ অনলাইন গার্ডেনিং শপ",
+  phone: "01753961715",
+  email: "contact.gardeningbd@gmail.com",
+  address: "Dhaka, Bangladesh",
+  addressBn: "ঢাকা, বাংলাদেশ",
   description:
-    "গার্ডেনিং বাংলাদেশ সারা দেশের ছাদ ও বাড়ি বাগানীদের হাতে সেরা মানের সার, বীজ, টব ও কৃষি উপকরণ পৌঁছে দিয়ে সবুজ বিপ্লবে নেতৃত্ব দিচ্ছে। ক্যাশ অন ডেলিভারি সুবিধাসহ নিশ্চিন্তে অর্ডার করুন।",
-  copyright: "© 2022 - 2026 Gardening Bangladesh. সর্বস্বত্ব সংরক্ষিত।",
+    "Gardening Bangladesh delivers premium fertilizers, seeds, plants & gardening tools to rooftop and home gardeners across all 64 districts of Bangladesh. Cash on delivery available — order with confidence.",
+  descriptionBn:
+    "গার্ডেনিং বাংলাদেশ সারা দেশের ছাদ ও বাড়ি বাগানীদের হাতে সেরা মানের সার, বীজ, টব ও কৃষি উপকরণ পৌঁছে দিচ্ছে। ক্যাশ অন ডেলিভারি সুবিধাসহ নিশ্চিন্তে অর্ডার করুন।",
+  copyright: "© 2022 - 2026 Gardening Bangladesh. All rights reserved.",
+  copyrightBn: "© ২০২২ - ২০২৬ গার্ডেনিং বাংলাদেশ. সর্বস্বত্ব সংরক্ষিত।",
   youtubeChannel: "https://www.youtube.com/@gardeningbangladesh",
   youtubeChannelId: "UCQALXmlTF5vIA_PRna-hz4Q",
   stats: {
-    products: "220+",
+    products: "240+",
     customers: "15K+",
     rating: "4.9",
     districts: "64",
@@ -1152,7 +1157,7 @@ export const footerLinks = {
   support: [
     { label: "অর্ডার ট্র্যাক করুন", href: "#track" },
     { label: "কার্ট ও চেকআউট", href: "#cart" },
-    { label: "অর্ডার করতে কল করুন", href: "tel:01822025322" },
+    { label: "অর্ডার করতে কল করুন", href: "tel:01753961715" },
     { label: "ইউটিউবে শিখুন", href: "https://www.youtube.com/@gardeningbangladesh" },
   ],
   company: [

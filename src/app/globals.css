@@ -80,7 +80,7 @@
   --sidebar-border: oklch(0.93 0.01 145);
   --sidebar-ring: oklch(0.68 0.18 142);
 
-  /* Brand-specific colors */
+  /* Brand-specific colors — Green 40%, Red 20%, White 30%, Black 30% */
   --brand-green: #3CB44C;
   --brand-green-bright: #4ade80;
   --brand-green-dark: #1a7a2e;
@@ -89,6 +89,19 @@
   --brand-green-tint: #f0faf2;
   --brand-cream: #f8faf7;
   --brand-gold: #F59E0B;
+  /* Red accent (20% of palette) */
+  --brand-red: #DC2626;
+  --brand-red-dark: #991B1B;
+  --brand-red-light: #FEE2E2;
+  --brand-red-tint: #FEF2F2;
+  /* Black (30% of palette) */
+  --brand-black: #0A0A0A;
+  --brand-black-light: #1A1A1A;
+  --brand-black-soft: #2D2D2D;
+  /* White (30% of palette) */
+  --brand-white: #FFFFFF;
+  --brand-white-off: #FAFAFA;
+  --brand-white-soft: #F5F5F5;
 }
 
 .dark {
@@ -191,6 +204,24 @@
   .bg-brand-gold {
     background-color: var(--brand-gold);
   }
+  /* Red accent utilities */
+  .text-brand-red { color: var(--brand-red); }
+  .text-brand-red-dark { color: var(--brand-red-dark); }
+  .bg-brand-red { background-color: var(--brand-red); }
+  .bg-brand-red-dark { background-color: var(--brand-red-dark); }
+  .bg-brand-red-light { background-color: var(--brand-red-light); }
+  .bg-brand-red-tint { background-color: var(--brand-red-tint); }
+  .border-brand-red { border-color: var(--brand-red); }
+  /* Black utilities */
+  .text-brand-black { color: var(--brand-black); }
+  .text-brand-black-light { color: var(--brand-black-light); }
+  .bg-brand-black { background-color: var(--brand-black); }
+  .bg-brand-black-light { background-color: var(--brand-black-light); }
+  .bg-brand-black-soft { background-color: var(--brand-black-soft); }
+  /* White utilities */
+  .bg-brand-white { background-color: var(--brand-white); }
+  .bg-brand-white-off { background-color: var(--brand-white-off); }
+  .bg-brand-white-soft { background-color: var(--brand-white-soft); }
   .border-brand-green {
     border-color: var(--brand-green);
   }
