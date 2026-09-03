@@ -21,6 +21,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Logo } from "./logo";
 import { MegaMenu } from "./mega-menu";
 import { TrackDialog } from "./track-dialog";
+import { LanguageSwitcher } from "./language-switcher";
 import { useCart } from "@/lib/cart-store";
 import { categories, shopInfo } from "@/lib/data";
 
@@ -128,6 +129,7 @@ export function Header() {
 
             {/* Actions */}
             <div className="flex items-center gap-2">
+              <LanguageSwitcher />
               <Button
                 variant="outline"
                 onClick={() => setTrackOpen(true)}
