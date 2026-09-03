@@ -803,3 +803,37 @@ Stage Summary:
 - Membership flow: form → DB → success — verified
 - QuickSidebar: works on all pages with full navigation
 - 154/154 images load, lint passes, no runtime errors
+
+---
+Task ID: 36
+Agent: main (Z.ai Code)
+Task: Modify color theme (green/red/white/black), English+Bengali, branding slides, phone/email
+
+Work Log:
+- Updated color theme in globals.css: added brand-red (#DC2626), brand-black (#0A0A0A), brand-white (#FFFFFF) variables + utility classes (text/bg/border for all 4 color families)
+  - Green 40%: --brand-green, --brand-green-dark, --brand-green-deep, --brand-green-light
+  - Red 20%: --brand-red, --brand-red-dark, --brand-red-light, --brand-red-tint
+  - White 30%: --brand-white, --brand-white-off, --brand-white-soft
+  - Black 30%: --brand-black, --brand-black-light, --brand-black-soft
+- Updated language: shopInfo now has English + Bengali fields (subtitle, subtitleBn, address, addressBn, description, descriptionBn, copyright, copyrightBn)
+- Updated top slide (HeaderBanner): 5 branding-focused slides in English — no fruits/outdoor items:
+  1. "Grow Green, Live Better" — branding
+  2. "Bring Nature Indoors" — indoor plants
+  3. "Be Part of the Green Revolution" — membership
+  4. "240+ Products One Roof" — product range
+  5. "Delivered Nationwide" — COD + phone
+- Updated ImageSlider: 3 English branding slides (Rooftop Gardening, Grow Your Own Food, Green Sanctuary)
+- Updated phone: 01753961715 (all references)
+- Updated email: contact.gardeningbd@gmail.com (all references)
+- Updated address: Dhaka, Bangladesh
+- Updated product count: 240+
+- Verified: all 5 slides show English branding text, phone/email updated, 156/156 images load, 0 errors, lint passes
+- Committed and pushed to GitHub (commit ab9c900)
+
+Stage Summary:
+- Color theme: green 40%, red 20%, white 30%, black 30% — all CSS variables + utility classes added
+- Language: English + Bengali throughout (shopInfo, slides, branding)
+- Top slide: 5 branding-focused English slides (no fruits/outdoor items)
+- ImageSlider: 3 English branding slides
+- Phone: 01753961715, Email: contact.gardeningbd@gmail.com
+- 156/156 images, lint passes, pushed to GitHub
