@@ -6,6 +6,7 @@ import { X, ShoppingBag, Loader2, CheckCircle2, Phone, MapPin, User, Truck } fro
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { track } from "@/lib/tracking";
 import {
   Dialog,
   DialogContent,
@@ -51,6 +52,7 @@ export function CheckoutDialog({
 
     setState("loading");
     setError("");
+    track.beginCheckout(items.map((i) => ({ id: i.product.id, name: i.product.name, price: i.product.price, quantity: i.quantity })), grandTotal);
 
     try {
       const res = await fetch("/api/orders", {
@@ -86,6 +88,7 @@ export function CheckoutDialog({
 
       setOrderNumber(data.order.orderNumber);
       setState("success");
+      track.purchase(data.order.orderNumber, items.map((item) => ({ id: item.product.id, name: item.product.name, price: item.product.price, quantity: item.quantity })), grandTotal);
       clear();
     } catch (err: any) {
       setError(err.message || "অর্ডার করতে সমস্যা হয়েছে");
