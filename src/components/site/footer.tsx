@@ -27,7 +27,7 @@ export function Footer() {
               </span>
               <div>
                 <p className="text-sm font-bold">সারা দেশে ডেলিভারি</p>
-                <p className="text-xs text-white/70">দ্রুত ও নিরাপদ হোম ডেলিভারি</p>
+                <p className="text-xs text-white">দ্রুত ও নিরাপদ হোম ডেলিভারি</p>
               </div>
             </div>
             <div className="flex items-center gap-3 group">
@@ -36,7 +36,7 @@ export function Footer() {
               </span>
               <div>
                 <p className="text-sm font-bold">ক্যাশ অন ডেলিভারি</p>
-                <p className="text-xs text-white/70">পণ্য হাতে পেয়ে টাকা দিন</p>
+                <p className="text-xs text-white">পণ্য হাতে পেয়ে টাকা দিন</p>
               </div>
             </div>
             <div className="flex items-center gap-3 group">
@@ -45,7 +45,7 @@ export function Footer() {
               </span>
               <div>
                 <p className="text-sm font-bold">১০০% আসল পণ্য</p>
-                <p className="text-xs text-white/70">মান নিশ্চিত, গ্যারান্টিসহ</p>
+                <p className="text-xs text-white">মান নিশ্চিত, গ্যারান্টিসহ</p>
               </div>
             </div>
           </div>
@@ -79,13 +79,13 @@ export function Footer() {
             {/* Brand */}
             <div className="space-y-4 lg:col-span-4">
               <Logo theme="dark" />
-              <p className="text-sm leading-relaxed text-white/80 max-w-sm">
+              <p className="text-sm leading-relaxed text-white max-w-sm">
                 {shopInfo.description}
               </p>
               <div className="space-y-2 text-sm">
                 <a
                   href={`tel:${shopInfo.phone}`}
-                  className="flex items-center gap-2 text-white/90 hover:text-brand-green-bright transition-colors"
+                  className="flex items-center gap-2 text-white hover:text-brand-green-bright transition-colors"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
                     <Phone className="h-4 w-4" />
@@ -94,14 +94,14 @@ export function Footer() {
                 </a>
                 <a
                   href={`mailto:${shopInfo.email}`}
-                  className="flex items-center gap-2 text-white/90 hover:text-brand-green-bright transition-colors"
+                  className="flex items-center gap-2 text-white hover:text-brand-green-bright transition-colors"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
                     <Mail className="h-4 w-4" />
                   </span>
                   <span className="break-all">{shopInfo.email}</span>
                 </a>
-                <span className="flex items-center gap-2 text-white/90">
+                <span className="flex items-center gap-2 text-white">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
                     <MapPin className="h-4 w-4" />
                   </span>
@@ -110,7 +110,7 @@ export function Footer() {
               </div>
               {/* Social */}
               <div className="pt-2">
-                <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-white/60">
+                <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-white">
                   আমাদের ফলো করুন
                 </p>
                 <SocialBar variant="solid" size="sm" />
@@ -119,7 +119,7 @@ export function Footer() {
 
             {/* Shop links */}
             <div className="lg:col-span-2">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white/90">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white">
                 <span className="h-4 w-1 rounded-full bg-brand-green-bright" />
                 শপ করুন
               </h3>
@@ -128,7 +128,7 @@ export function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="group inline-flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white"
+                      className="group inline-flex items-center gap-1 text-sm text-white transition-colors hover:text-white"
                     >
                       <ArrowRight className="h-3 w-3 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-brand-green-bright" />
                       {link.label}
@@ -140,7 +140,7 @@ export function Footer() {
 
             {/* Support links */}
             <div className="lg:col-span-2">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white/90">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white">
                 <span className="h-4 w-1 rounded-full bg-brand-green-bright" />
                 সহায়তা
               </h3>
@@ -151,7 +151,7 @@ export function Footer() {
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="group inline-flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white"
+                      className="group inline-flex items-center gap-1 text-sm text-white transition-colors hover:text-white"
                     >
                       <ArrowRight className="h-3 w-3 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-brand-green-bright" />
                       {link.label}
@@ -163,7 +163,7 @@ export function Footer() {
 
             {/* Company links */}
             <div className="lg:col-span-2">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white/90">
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-white">
                 <span className="h-4 w-1 rounded-full bg-brand-green-bright" />
                 কোম্পানি
               </h3>
@@ -172,7 +172,7 @@ export function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="group inline-flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white"
+                      className="group inline-flex items-center gap-1 text-sm text-white transition-colors hover:text-white"
                     >
                       <ArrowRight className="h-3 w-3 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-brand-green-bright" />
                       {link.label}
@@ -191,7 +191,7 @@ export function Footer() {
                     <Leaf className="h-4 w-4 text-brand-green-bright" />
                     অর্ডার করতে কল করুন
                   </h3>
-                  <p className="mb-3 text-xs text-white/70">
+                  <p className="mb-3 text-xs text-white">
                     প্রতিদিন সকাল ৯টা — রাত ৯টা
                   </p>
                   <a
@@ -211,8 +211,8 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="relative border-t border-white/10 bg-brand-green-deep/80 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <p className="text-xs text-white/60">{shopInfo.copyright}</p>
-          <p className="text-xs text-white/60 flex items-center gap-1">
+          <p className="text-xs text-white">{shopInfo.copyright}</p>
+          <p className="text-xs text-white flex items-center gap-1">
             🌱 বাংলাদেশে তৈরি · Made with 💚 in Bangladesh
           </p>
         </div>
