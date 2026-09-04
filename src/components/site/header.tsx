@@ -76,12 +76,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Announcement bar with rotating messages */}
-      <div className="bg-gradient-brand-deep text-white overflow-hidden">
+      {/* Announcement bar */}
+      <div className="bg-brand-black text-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-9 text-xs">
           <div className="flex items-center gap-4">
             <span className="hidden sm:flex items-center gap-1.5">
-              <Phone className="h-3.5 w-3.5" />
+              <Phone className="h-3.5 w-3.5 text-brand-green-bright" />
               {shopInfo.phone}
             </span>
             <AnimatePresence mode="wait">
@@ -133,14 +133,14 @@ export function Header() {
               <Button
                 variant="outline"
                 onClick={() => setTrackOpen(true)}
-                className="group hidden sm:flex h-10 text-sm font-semibold rounded-full border-brand-green/30 bg-brand-green-tint/50 hover:bg-brand-green hover:text-white hover:border-brand-green transition-all hover:shadow-brand"
+                className="group hidden sm:flex h-10 text-sm font-semibold rounded-full border-brand-black/20 bg-brand-white-soft hover:bg-brand-black hover:text-white hover:border-brand-black transition-all hover:shadow-md"
               >
                 <MapPin className="h-4 w-4 mr-1.5 transition-transform group-hover:scale-110 group-hover:rotate-12" />
                 ট্র্যাক
               </Button>
               <Button
                 onClick={openCart}
-                className="group relative h-10 overflow-hidden bg-gradient-brand hover:shadow-brand-lg text-white rounded-full transition-all hover:scale-105"
+                className="group relative h-10 overflow-hidden bg-brand-green hover:bg-brand-green-dark text-white rounded-full transition-all hover:scale-105 hover:shadow-brand-lg"
               >
                 <ShoppingBag className="h-4 w-4 mr-1.5 transition-transform group-hover:scale-110 group-hover:-rotate-6" />
                 <span className="hidden sm:inline font-semibold">কার্ট</span>
@@ -258,7 +258,7 @@ export function Header() {
         </div>
 
         {/* Category nav (desktop) — with Mega Menu */}
-        <div className="hidden lg:block border-t border-brand-green-light/40 bg-gradient-to-r from-brand-green-tint/60 via-brand-green-tint/40 to-brand-green-tint/60">
+        <div className="hidden lg:block border-t border-border bg-brand-white-soft">
           <div className="mx-auto max-w-7xl px-4">
             <nav className="flex items-center gap-1 h-12 overflow-visible">
               <MegaMenu />
@@ -288,7 +288,7 @@ export function Header() {
               </a>
               <a
                 href="/membership"
-                className="group flex items-center gap-1.5 px-4 py-1.5 text-sm font-bold text-white bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 hover:shadow-brand rounded-lg transition-all whitespace-nowrap hover:scale-105"
+                className="group flex items-center gap-1.5 px-4 py-1.5 text-sm font-bold text-white bg-brand-red hover:bg-brand-red-dark hover:shadow-md rounded-lg transition-all whitespace-nowrap hover:scale-105"
               >
                 <Crown className="h-4 w-4 transition-transform group-hover:scale-125 group-hover:-rotate-6" />
                 সদস্যপদ

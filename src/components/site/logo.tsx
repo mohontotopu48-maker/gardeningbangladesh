@@ -13,15 +13,15 @@ export function Logo({ className, variant = "full", theme = "light" }: LogoProps
       <span
         className={`relative flex h-11 w-11 items-center justify-center rounded-xl overflow-hidden ring-1 ${
           theme === "light"
-            ? "bg-brand-green-light ring-brand-green/20"
+            ? "bg-white ring-brand-green/20"
             : "bg-white/10 ring-white/20"
         }`}
       >
         <Image
-          src="/gb-logo.png"
+          src="/gb-logo-new-128.jpg"
           alt="Gardening Bangladesh Logo"
           fill
-          className="object-contain p-1.5"
+          className="object-cover"
           sizes="44px"
         />
       </span>
@@ -29,7 +29,7 @@ export function Logo({ className, variant = "full", theme = "light" }: LogoProps
         <span className="flex flex-col leading-tight">
           <span
             className={`text-[15px] sm:text-base font-extrabold tracking-tight ${
-              theme === "light" ? "text-brand-green-deep" : "text-white"
+              theme === "light" ? "text-brand-black" : "text-white"
             }`}
           >
             Gardening

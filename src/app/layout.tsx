@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Gardening Bangladesh" }],
   icons: {
-    icon: "/gb-logo.png",
-    appleIcon: "/gb-logo.jpg",
+    icon: "/gb-logo-new-128.jpg",
+    appleIcon: "/gb-logo-new-256.jpg",
   },
   openGraph: {
     title: "Gardening Bangladesh — সবুজে বাঁচি প্রতিদিন",
